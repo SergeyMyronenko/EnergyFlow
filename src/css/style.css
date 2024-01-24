@@ -1,4 +1,14 @@
 @import url('./reset.css');
+@import url('./exercises-modal.css');
+@import url('./exercises.css');
+@import url('./favorites.css');
+@import url('./footer.css');
+@import url('./header.css');
+@import url('./hero.css');
+@import url('./info.css');
+@import url('./mobile-menu.css');
+@import url('./quote.css');
+@import url('./rating-modal.css');
 
 @font-face {
   font-family: 'DM Sans';
@@ -58,4 +68,20 @@ section {
   .container {
     max-width: 1440px;
   }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  z-index: 50;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
