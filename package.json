@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/ukrainian-style/",
+    "build": "vite build --base=/EnergyFlow/",
     "preview": "vite preview"
   },
   "devDependencies": {
