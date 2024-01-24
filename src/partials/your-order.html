@@ -1,0 +1,84 @@
+<section id="order">
+  <div class="main-order-container">
+    <div class="order-background-img"></div>
+    <div class="order-container container">
+      <img
+        class="order-shirt-foto"
+        srcset="
+          ./img/your-order/order_desk.jpg       524w,
+          ./img/your-order/order_desk@2x.jpg   1048w,
+          ./img/your-order/order_tablet.jpg     638w,
+          ./img/your-order/order_tablet@2x.jpg 1276w
+        "
+        sizes="(min-width: 1280px) 524px, (max-width: 1279px) 638px"
+        src="./img/your-order/order_tablet.jpg"
+        alt="Shirt foto"
+      />
+
+      <div class="order-box">
+        <h2 class="order-title">
+          <span class="yellow-order-title">Your order</span> is our priority:
+          Personalized approach and quality of service
+        </h2>
+        <form>
+          <div class="order-form-wrapper">
+            <div class="order-input-wrapper">
+              <label class="order-form-input-label" for="user-name">
+                <input
+                  type="text"
+                  class="order-form-input"
+                  id="user-name"
+                  name="user-name"
+                  pattern="[a-zA-Zа-яА-ЯіІїЇєЄ]+"
+                  title="Oleksii"
+                  required
+                  placeholder="Enter your full name"
+                />
+              </label>
+            </div>
+
+            <div class="input-email-wrapper">
+              <label class="order-form-input-label" for="user-email">
+                <input
+                  type="email"
+                  class="order-form-input"
+                  id="user-email"
+                  name="user_email"
+                  required
+                  placeholder="Enter your email"
+                />
+              </label>
+            </div>
+            <div class="review-form-field-wrapper-comment">
+              <label class="order-form-comment-label" for="user-comment">
+                <textarea
+                  class="order-form-comment"
+                  id="user-comment"
+                  name="user-comment"
+                  placeholder="Comments"
+                ></textarea>
+              </label>
+            </div>
+
+            <button class="order-form-button" type="submit">
+              <span class="order-form-button-inner-wrapper">
+                <span class="order">Send</span>
+                <svg
+                  class="review-form-field-icon"
+                  width="24"
+                  height="16"
+                  aria-label="user icon"
+                >
+                  <use
+                    class="order-icon-arrow"
+                    href="./img/sprite.svg#icon-arrow"
+                  ></use>
+                </svg>
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

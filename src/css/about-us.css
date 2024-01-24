@@ -1,0 +1,99 @@
+.about-title {
+  color: var(--white, #fcf9f9);
+  font-family: Manrope;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -0.03em;
+  margin-bottom: 40px;
+}
+.about-text {
+  color: rgba(252, 249, 249, 0.4);
+  font-family: Manrope;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.04em;
+}
+.about-text-margin {
+  margin-bottom: 20px;
+}
+.about-img {
+  margin-top: 50px;
+}
+
+.about-ornament-wr {
+  max-width: 375px;
+  padding-bottom: 62px;
+  background-image: url(/img/about-us/about-elements.png);
+  background-size: 250px 408px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+}
+  .about-all-content {
+    padding-bottom: 62px;
+    gap: 50px;
+  }
+  
+
+@media (resolution: 192dpi) {
+  .about-ornament-wr {
+    background-image: url(/img/about-us/about-elements-2x.png);
+  }
+}
+@media (min-width: 768px) {
+  .about-ornament-wr {
+    max-width: 768px;
+    background-size: 385px 484px;
+     padding-bottom: 50px;
+    background-image: url(/img/about-us/about-elements-dt1280.png);
+        background-position: right bottom;
+        background-repeat: no-repeat;
+    
+  }
+  .about-all-content {
+    padding-bottom: 50px;
+  
+  }
+  .about-img {
+    margin-top: 40px;
+  }
+  .about-text {
+    font-size: 16px;
+  }
+  .about-title {
+    font-size: 44px;
+    line-height: 1.45;
+  }
+}
+@media (resolution: 192dpi) and (min-width: 768px) {
+  .about-ornament-wr {
+    background-image: url(/img/about-us/about-elements-dt1280-2x.png);
+  }
+}
+@media (min-width: 1280px) {
+  .about-ornament-wr {
+    max-width: 1280px;
+    /* padding-bottom: 80px; */
+    background-image: url(/img/about-us/about-elements-dt1280.png);
+        background-position: right bottom;
+        background-repeat: no-repeat;
+  }
+  .about-all-content {
+    display: flex;
+    padding-bottom: 80px;
+    gap: 50px;
+    
+  }
+  .about-img {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .about-content {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .about-section {
+    padding-bottom: 0;
+  }
+}

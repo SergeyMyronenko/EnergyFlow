@@ -1,0 +1,123 @@
+.footer-span {
+  color: var(--yellow);
+}
+
+.menu-item:hover,
+.menu-item:focus {
+  color: var(--yellow);
+}
+
+.menu-item:focus {
+  outline: none;
+}
+
+.footer-menu-list {
+  display: inline-flex;
+  width: 280px;
+  height: 61px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 25px;
+}
+
+.footer-list {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(18 / 14);
+  text-transform: uppercase;
+}
+
+.footer-title {
+  font-size: 44px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(54 / 44);
+  letter-spacing: -0.03em;
+  margin-bottom: 80px;
+}
+
+.footer-wrapper {
+  height: 649px;
+  border-top: 1px solid rgba(252, 249, 249, 0.1);
+  background-image: url(/img/footer-bg/mobile.png);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+.footer-nav {
+  padding: 40px 0;
+}
+/* @media screen and (min-resolution: 192dpi) {
+       .footer {
+           background-image: url(/img/footer-bg/mobile@2x.png);
+           background-size: contain;
+       }
+   } */
+
+@media screen and (min-width: 768px) {
+  .footer-menu-list {
+    display: flex;
+    width: 478px;
+    height: 18px;
+    flex-direction: row;
+    gap: 25px;
+  }
+  .footer-nav {
+    padding-bottom: 80px;
+  }
+
+  .footer-title {
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(64 / 54);
+    letter-spacing: -0.03em;
+    width: 521px;
+    height: 192px;
+  }
+
+  .footer-wrapper {
+    background-image: url(/img/footer-bg/tablet.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px) {
+  .footer-wrapper {
+    background-image: url(/img/footer-bg/tablet@2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .footer-title {
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(74 / 64);
+    letter-spacing: -0.03em;
+    width: 754px;
+    height: 148px;
+  }
+
+  .footer-wrapper {
+    background-image: url(/img/footer-bg/desktop.png);
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+  .footer-nav {
+    padding-bottom: 117px;
+  }
+}
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1280px) {
+  .footer-wrapper {
+    background-image: url(/img/footer-bg/desktop@2x.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+  }
+}

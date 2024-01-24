@@ -1,0 +1,215 @@
+/* ========================================================= Mobile ========================================================= */
+.hero-group {
+  display: none;
+}
+
+.hero-img-ellipse {
+  display: none;
+}
+
+.hero {
+  padding-top: 132px;
+}
+
+.hero-sun {
+  position: relative;
+}
+
+.hero-title {
+  color: var(--white);
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  margin: 0 0 20px 0;
+  max-width: 335px;
+}
+
+.hero-title-span {
+  color: var(--yellow);
+}
+
+.hero-link {
+  display: inline-flex;
+  height: 49px;
+  padding: 14px 41px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 1px solid rgba(252, 249, 249, 0.1);
+  color: var(--white, #fcf9f9);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  margin-left: 90px;
+  margin-right: auto;
+  gap: 10px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-link:hover,
+.hero-link:focus {
+  border: 1px solid var(--yellow);
+}
+
+.hero-link-icon {
+  width: 26px;
+  height: 10px;
+  fill: var(--yellow);
+  transform: rotate(-30deg);
+}
+
+.hero-button-link {
+  display: inline-flex;
+  gap: 10px;
+}
+
+/* ========================================================= Tablet ========================================================= */
+@media screen and (min-width: 768px) {
+  .hero {
+    padding-top: 178px;
+  }
+
+  .hero-title {
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    margin: 0 0 40px 0;
+    max-width: 549px;
+  }
+
+  .hero-group {
+    position: absolute;
+    top: -30px;
+    right: 36px;
+    width: 115px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-group-icon {
+    fill: var(--yellow);
+  }
+
+  .hero-group-text {
+    color: rgba(252, 249, 249, 0.4);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-link {
+    margin-left: 173px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-img-ellipse {
+    display: block;
+    width: 139px;
+    height: 99px;
+    position: absolute;
+    bottom: 0;
+    right: 32px;
+  }
+
+  .hero-button {
+    margin-left: 173px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+}
+
+/* ========================================================= Descktop ======================================================= */
+@media screen and (min-width: 1280px) {
+  .hero {
+    padding-top: 152px;
+  }
+
+  .hero-block {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 40px;
+  }
+
+  .hero-title {
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 1.18;
+    letter-spacing: -0.03em;
+    margin: 0 0 40px 0;
+    max-width: 518px;
+    margin-top: 95px;
+  }
+
+  .hero-link {
+    margin-left: 173px;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+  }
+  .hero-img-ellipse {
+    right: 94px;
+    bottom: 74px;
+  }
+
+  .hero-button {
+    margin-left: 141px;
+  }
+  .hero-button-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-sun {
+    position: relative;
+    padding-top: 26px;
+  }
+  .hero-group {
+    position: absolute;
+    top: 0;
+    display: flex;
+    width: 115px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    top: 14px;
+    right: 98px;
+  }
+
+  .hero-group-icon {
+    fill: var(--yellow);
+  }
+
+  .hero-group-text {
+    color: rgba(252, 249, 249, 0.4);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-img-ellipse {
+    display: block;
+    width: 139px;
+    height: 99px;
+    position: absolute;
+    bottom: 0;
+    right: 97px;
+  }
+}
