@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-:root {
-  --primary-color: #1b1b1b;
-  --secondary-color: #f6f6f6;
-  --yellow: #eea10c;
-  --grey: #7e847f;
-  --dark-white: #e8e8e8;
-  --white: #ffffff;
-}
-
 .link {
   text-decoration: none;
 }
