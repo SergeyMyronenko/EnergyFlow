@@ -66,11 +66,10 @@
   }
   .star-active,
   .star-active ~ .rating-star-svg {
-    fill: var(--yellow);
+    background-image: url('../img/star-hover.svg');
   }
 
   .rating-form {
-    margin-top: 20px;
     color: rgba(27, 27, 27, 0.6);
     font-family: 'DM Sans';
     font-size: 14px;
@@ -85,6 +84,7 @@
     border: 1px solid rgba(27, 27, 27, 0.4);
     transition: border 500ms cubic-bezier(0.4, 0, 0.2, 1);
     color: var(--primary-color);
+    margin-top: 20px;
   }
   .rating-comment {
     display: block;
@@ -129,14 +129,12 @@
     border-radius: 20px;
     padding: 50px;
   }
-  .rating-form {
-    margin-top: 32px;
-  }
 
   .rating-input {
     width: 350px;
     height: 48px;
     font-size: 16px;
+    margin-top: 32px;
   }
   .rating-comment {
     width: 350px;

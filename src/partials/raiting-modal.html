@@ -5,18 +5,19 @@
         <use href="./img/sprite.svg#cross"></use>
       </svg>
     </button>
-    <p class="rating-title">Rating</p>
-    <div class="rating-stars-wrapper">
-      <p class="rating-data">0.0</p>
-      <div class="rating-stars-list js-stars-list">
-        <div class="rating-star-svg js-rating-star" data-rate="5"></div>
-        <div class="rating-star-svg js-rating-star" data-rate="4"></div>
-        <div class="rating-star-svg js-rating-star" data-rate="3"></div>
-        <div class="rating-star-svg js-rating-star" data-rate="2"></div>
-        <div class="rating-star-svg js-rating-star" data-rate="1"></div>
-      </div>
-    </div>
+
     <form class="rating-form">
+      <p class="rating-title">Rating</p>
+      <div class="rating-stars-wrapper">
+        <p class="rating-data">0.0</p>
+        <div class="rating-stars-list js-stars-list">
+          <div class="rating-star-svg js-rating-star" data-rate="5"></div>
+          <div class="rating-star-svg js-rating-star" data-rate="4"></div>
+          <div class="rating-star-svg js-rating-star" data-rate="3"></div>
+          <div class="rating-star-svg js-rating-star" data-rate="2"></div>
+          <div class="rating-star-svg js-rating-star" data-rate="1"></div>
+        </div>
+      </div>
       <label>
         <input
           class="rating-input"
@@ -32,6 +33,7 @@
           name="comment"
           maxlength="10000"
           placeholder="Your comment"
+          required
         ></textarea>
       </label>
       <button class="rating-submit js-raiting-submit">Send</button>
