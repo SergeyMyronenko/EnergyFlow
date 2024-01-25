@@ -41,17 +41,18 @@
 
 .exersizes-header-filter-cont {
   display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 20px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  /* padding-bottom: 40px; */
 }
 
 .exersizes-input-container {
   position: relative;
   width: fit-content;
-  margin-top: 20px;
 }
 .exersizes-input {
   width: 295px;
@@ -135,6 +136,7 @@
   align-items: center;
   justify-content: center;
   row-gap: 20px;
+  padding-top: 40px;
 }
 
 .exersizes-cards-container {
@@ -143,7 +145,7 @@
   align-items: center;
   justify-content: center;
   row-gap: 20px;
-  /* min-height: 760px; */
+  padding-top: 40px;
 }
 /* ==================================== Стилі картки першої сторінки ============================== */
 
@@ -375,6 +377,7 @@
   /* ==================================== Загальні контейнери карток та повідомлення ========================================= */
 
   .exersizes-header-filter-cont {
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
     margin-top: 32px;
