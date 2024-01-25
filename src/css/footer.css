@@ -1,11 +1,12 @@
 /* ________________Mobile version_____________ */
 
 .footer {
+  margin: 0 auto;
   padding: 40px 0;
   background-image: url(../img/Footer/m-f-img/mob-foot-1x.jpg);
   background-size: cover;
   border-radius: 30px;
-  width: 375px;
+  width: 335px;
   height: 471px;
 }
 
@@ -104,8 +105,10 @@
   line-height: 18px;
 }
 
-.input-footer:hover,.input-footer:focus,.input-footer:active{
-  border: 1px solid #1B1B1B;
+.input-footer:hover,
+.input-footer:focus,
+.input-footer:active {
+  border: 1px solid #1b1b1b;
   outline: none;
 }
 
@@ -151,18 +154,18 @@
   .footer {
     position: relative;
     padding: 64px 0;
-    background-image:  url(../img/Footer/t-f-img/tab-foot-1x.jpg);
+    background-image: url(../img/Footer/t-f-img/tab-foot-1x.jpg);
     border-radius: 50px;
     width: 736px;
     height: 576px;
   }
-@media (min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
-  .footer {
-    background-image: url(../img/Footer/t-f-img/tab-foot-2x.jpg);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .footer {
+      background-image: url(../img/Footer/t-f-img/tab-foot-2x.jpg);
+    }
   }
-}
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -227,7 +230,6 @@
   }
 
   .security-text {
-    
     font-size: 14px;
     line-height: 1.28;
   }
@@ -241,48 +243,47 @@
 
 @media (min-width: 1440px) {
   .footer {
-      position: relative;
-      padding: 64px 0;
-      background-image: url(../img/Footer/d-f-img/desk-foot-1x.jpg);
-      border-radius: 50px;
-      width: 1408px;
-      height: 454px;
-    }
+    position: relative;
+    padding: 64px 0;
+    background-image: url(../img/Footer/d-f-img/desk-foot-1x.jpg);
+    border-radius: 50px;
+    width: 1408px;
+    height: 454px;
+  }
 
-        @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-          .footer {
-            background-image: url(../img/Footer/d-f-img/desk-foot-2x.jpg);
-          }
-        }
-    .container{
-         flex-wrap: nowrap;
-         justify-content: space-between;
-      
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    .footer {
+      background-image: url(../img/Footer/d-f-img/desk-foot-2x.jpg);
     }
-  
-    .footer-group{
-      margin-right: 162px;
-    }
+  }
+  .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 
-    .social-list{
-      margin-top: 40px;
-    }
-        .footer-credo {
-        width: 488px;        
-          font-size: 64px;
-          line-height: 0.96;
-          margin-bottom: 0;
-        }
-    
-        .footer-credo-item {
-          font-size: 64px;
-          line-height: 0.96;
-        }
+  .footer-group {
+    margin-right: 162px;
+  }
 
-        .section-subscription{
-          margin-left: 0;
-          margin-right: 48px;
-        }
+  .social-list {
+    margin-top: 40px;
+  }
+  .footer-credo {
+    width: 488px;
+    font-size: 64px;
+    line-height: 0.96;
+    margin-bottom: 0;
+  }
+
+  .footer-credo-item {
+    font-size: 64px;
+    line-height: 0.96;
+  }
+
+  .section-subscription {
+    margin-left: 0;
+    margin-right: 48px;
+  }
 }
