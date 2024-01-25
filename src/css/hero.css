@@ -7,7 +7,7 @@
 /* photo wrapper */
 .hero-photo-wrapper {
   height: 387px;
-  background-image: url(../img/Hero/hero-background-image-mobile.jpg);
+  background-image: url(../img/Hero/m-h-img/hero-background-image-mobile.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -45,7 +45,6 @@
   border-radius: 30px;
   background: #fff;
   padding: 60px 20px 80px 20px;
-  margin-bottom: 20px;
 }
 
 .hero-title {
@@ -85,7 +84,7 @@
   .hero-photo-wrapper {
     height: 100%;
     width: 252px;
-    background-image: url(../img/Hero/hero-background-image-tablet.jpg);
+    background-image: url(../img/Hero/t-h-img/hero-background-image-tablet.jpg);
     border-radius: 50px 0px 50px 50px;
     margin-bottom: 0;
   }
@@ -130,7 +129,7 @@
   .hero-photo-wrapper {
     height: 100%;
     width: 50%;
-    background-image: url(../img/Hero/hero-background-image-desktop.jpg);
+    background-image: url(../img/Hero/d-h-img/hero-background-image-desktop.jpg);
     border-radius: 50px 0px 50px 50px;
     margin-bottom: 0;
   }
@@ -166,7 +165,7 @@
   (min-resolution: 2dppx),
   (min-device-pixel-ratio: 2) {
   .hero-photo-wrapper {
-    background-image: url(../img/Hero/hero-background-image-mobile@2x.jpg);
+    background-image: url(../img/Hero/m-h-img/hero-background-image-mobile@2x.jpg);
   }
 }
 
@@ -176,7 +175,7 @@
   (min-resolution: 2dppx) and (min-width: 768px),
   (min-device-pixel-ratio: 2) and (min-width: 768px) {
   .hero-photo-wrapper {
-    background-image: url(../img/Hero/hero-background-image-tablet@2x.jpg);
+    background-image: url(../img/Hero/t-h-img/hero-background-image-tablet@2x.jpg);
   }
 }
 
@@ -186,6 +185,6 @@
   (min-resolution: 2dppx) and (min-width: 1280px),
   (min-device-pixel-ratio: 2) and (min-width: 1280px) {
   .hero-photo-wrapper {
-    background-image: url(../img/Hero/hero-background-image-desktop@2x.jpg);
+    background-image: url(../img/Hero/d-h-img/hero-background-image-desktop@2x.jpg);
   }
 }
