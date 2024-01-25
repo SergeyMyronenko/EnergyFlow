@@ -1,0 +1,83 @@
+.header-page {
+}
+.header-main {
+}
+.header-nav {
+  display: flex;
+}
+.header-logo {
+  color: #1b1b1b;
+
+  font-family: 'DM Sans';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px; /* 100% */
+  letter-spacing: -0.56px;
+  width: 150px;
+  margin: 14px 397px 14px 48px;
+}
+.header-nav-list {
+  display: block;
+  width: 211px;
+  height: 52px;
+  flex-shrink: 0;
+
+  border-radius: 60px;
+  background: #7e847f;
+}
+.duple {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+.header-list-item {
+  display: flex;
+  padding: 6px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 30px;
+  background: #fff;
+}
+.header-list-link {
+  display: flex;
+  padding: 6px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  border-radius: 30px;
+  background: #fff;
+
+  color: #1b1b1b;
+
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 150% */
+}
+
+.header-list-link:active {
+  color: #f6f6f6;
+}
+.header-social-list {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  border-radius: 0px 50px 50px 50px;
+  background: #fff;
+}
+.header-social-list-item {
+}
+.header-social-list-link {
+}
+.header-social-list-icon {
+}
+.header-burger {
+}
+.burger {
+}
