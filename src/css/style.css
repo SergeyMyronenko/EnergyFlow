@@ -33,6 +33,7 @@
   --secondary-color: #f6f6f6;
   --yellow: #eea10c;
   --grey: #7e847f;
+  --dark-grey: #5F6560;
   --dark-white: #e8e8e8;
   --white: #ffffff;
 }
@@ -64,7 +65,7 @@ section {
     max-width: 768px;
   }
 }
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   .container {
     max-width: 1440px;
   }
