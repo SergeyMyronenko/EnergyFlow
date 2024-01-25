@@ -1,8 +1,9 @@
 .header-page {
 }
 .header-main {
+}
+.header-nav {
   display: flex;
-  flex-direction: row;
 }
 .header-logo {
   color: #1b1b1b;
