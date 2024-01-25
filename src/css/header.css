@@ -15,6 +15,7 @@
   line-height: 28px; /* 100% */
   letter-spacing: -0.56px;
   width: 150px;
+  margin: 14px 397px 14px 48px;
 }
 .header-nav-list {
   display: block;
@@ -26,12 +27,14 @@
   background: #7e847f;
 }
 .header-list-item {
-  width: 211px;
-  height: 52px;
-  flex-shrink: 0;
+  display: flex;
+  padding: 6px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
-  border-radius: 60px;
-  background: #7e847f;
+  border-radius: 30px;
+  background: #fff;
 }
 .header-list-link {
   display: flex;
