@@ -34,7 +34,7 @@
   --secondary-color: #f6f6f6;
   --yellow: #eea10c;
   --grey: #7e847f;
-  --dark-grey: #5F6560;
+  --dark-grey: #5f6560;
   --dark-white: #e8e8e8;
   --white: #ffffff;
 }
@@ -87,8 +87,23 @@ section {
   visibility: hidden;
   pointer-events: none;
 }
+
 .is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
