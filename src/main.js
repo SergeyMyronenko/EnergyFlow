@@ -38,3 +38,6 @@ function getExercises(name) {
     });
 }
 getExercises();
+
+import './js/mobile-menu-function';
+
