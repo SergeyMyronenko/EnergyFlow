@@ -40,11 +40,13 @@
   border-radius: 60px;
   background: #7e847f;
 }
+
  /* {
   display: inline-flex;
   align-items: center;
   gap: 16px;
 } */
+
 .header-list-item {
   display: flex;
   padding: 6px 26px;
