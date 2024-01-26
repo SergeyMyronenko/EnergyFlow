@@ -26,26 +26,26 @@ function closeModalByBtn(e) {
     window.removeEventListener('click', closeModal);
   }
 }
-
 function closeModalByEsc(e) {
   if (e.code === 'Escape') {
     refs.modalBackdrop.classList.remove('is-open');
     window.removeEventListener('click', closeModal);
   }
 }
-function getRate(e) {
-  let currentStar = e.target;
-  let activeStar = refs.rateStars.querySelector('.star-active');
 
-  currentStar.classList.add('star-active');
+function getRate(e) {
+  let activeStar = refs.rateStars.querySelector('.star-active');
+  e.target.classList.add('star-active');
+
   if (activeStar) {
     activeStar.classList.remove('star-active');
   }
 
-  setTimeout(() => {
-    refs.rateValue.textContent = `${currentStar.dataset.rate}.0`;
-  }, 0);
-  rate = currentStar.dataset.rate;
+  refs.rateValue.textContent = `${e.target.dataset.rate}.0`;
+  if (!e.target.classList.contains('star-active')) {
+    refs.rateValue.textContent = '0.0';
+  }
+  rate = e.target.dataset.rate;
 }
 
 function getData(e) {
