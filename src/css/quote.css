@@ -61,7 +61,7 @@
     height: 272px;
     margin-bottom: 20px;
     border-radius: 50px;
-    background-image: url(../img/Block\ 1/m-q-ex-img/m-q-ex-img@2x.jpg);
+    background-image: url(../img/Block-1/m-q-ex-img/m-q-ex-img@2x.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -131,7 +131,7 @@
     height: 302px;
     margin-bottom: 20px;
     border-radius: 50px;
-    background-image: url(../img/Block\ 1/t-q-ex-img/t-q-ex-img@2x.jpg);
+    background-image: url(../img/Block-1/t-q-ex-img/t-q-ex-img@2x.jpg);
   }
 }
 @media (min-width: 1440px) {
@@ -195,7 +195,7 @@
     width: 704px;
     height: 302px;
     border-radius: 50px;
-    background-image: url(../img/Block\ 1/d-q-ex-img/d-q-ex-img@2x.jpg);
+    background-image: url(../img/Block-1/d-q-ex-img/d-q-ex-img@2x.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
