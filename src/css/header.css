@@ -1,9 +1,14 @@
+.header-page {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;}
 
 .header-main {
-
-  height: 52px;
-  margin: 0;
-  padding: 0;
+   height: 52px;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,9 +17,10 @@
 
 .header-burger {
   position: relative;
-  width: 32px;
-  height: 16px;
-  cursor: pointer;
+    width: 32px;
+    height: 16px;
+    cursor: pointer;
+  margin-right: 20px;
   display: flex;
   border: transparent;
   justify-content: center;
@@ -48,6 +54,7 @@
   height: 44px;
   border-radius: 10px;
   border: 1px solid rgba(126, 132, 127, 0.20);
+
   
 }
 .header-social-list-icon {
@@ -117,15 +124,120 @@
       display: none;
   }
   .header-social-list{
-      display: flex; 
+    /* display: flex; */
+    display: none;
+    gap: 12px;
+  }
+
+  .header-social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(126, 132, 127, 0.20);
+    
+  }
+  .header-social-list-icon {
+    fill: #7E847F;
+  }
+  .header-social-list-icon:hover{
+    fill:#5F6560;
+  }
+  .header-logo{
+    color: #1B1B1B;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.12em; 
+    letter-spacing: -0.02em;
+    margin-left: 20px;
+  }
+  .header-nav{
+
+    display: flex;
+    align-items: center; 
+    /* justify-content: space-between;  */
+    
   }
   .header-nav-list{
-       display: flex;
-      }
-      .header-logo{
-          font-size: 28px;
-          line-height: 1em; 
-          letter-spacing: -0.02em;
+    display: none;
+    align-items: center; 
+    justify-content: center; 
+    width: 211px;
+    height: 52px;
+    background-color: #7e847f;
+    border-radius: 60px;
+    margin: 0;
+    padding: 0;
+    gap:16px;
+  }
+  .header-list-item{
+    display: flex;
+    justify-content: center; 
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+  }
+  /* будет добавляться класс и меняться цвет шрифта у фейворитс */
+  /* .header-home{
+    width: 96px;
+    height: 36px;
+    padding: 6px 26px;
+    background-color: white;
+    color: #1B1B1B;
+    border-radius: 30px;
+  } */
+
+  .header-favorites {
+/* при переходе на фейворитс у хоум будет меняться цвет на белый */
+    width: 96px;
+    height: 36px;
+    padding: 6px 26px;
+    background-color: white;
+    color: #1B1B1B;
+    border-radius: 30px;
+  }
+  @media (min-width: 768px) {
+    .header-page {
+        top: 24px;
         }
 
-} 
+    .header-burger{
+        display: none;
+    }
+    .header-social-list{
+        display: flex; 
+    }
+    .header-nav-list{
+         display: flex;
+        }
+    .header-logo{
+        font-size: 28px;
+        line-height: 1em; 
+        letter-spacing: -0.02em;
+          }
+    .header-social-list {
+        margin-right: 32px;
+    }
+    .header-logo {
+        margin-left: 32px;
+    }
+
+  } 
+  @media (min-width: 1440px) {
+    .header-page {
+        top: 32px;
+        }
+    .header-social-list {
+        margin-right: 48px;
+    }
+    .header-logo {
+        margin-left: 48px;
+    }
+  }
+   
