@@ -202,6 +202,7 @@
     color: #1B1B1B;
     border-radius: 30px;
   }
+}
   @media (min-width: 768px) {
     .header-page {
         top: 24px;
