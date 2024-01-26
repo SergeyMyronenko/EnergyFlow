@@ -1,0 +1,237 @@
+.favorites-quote-section {
+  display: flex;
+  flex-direction: column;
+}
+/* quote */
+.quote-wrapper,
+.quote-photo-wrapper,
+.quote-daily-norm-wrapper {
+  height: 272px;
+  width: 335px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.quote-wrapper {
+  background: var(--grey);
+  padding: 42px 20px 40px 66px;
+  position: relative;
+}
+
+.quote-dude-icon {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+}
+
+.quote-inverted-commas-icon {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+.qote-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  color: var(--secondary-color);
+  font-family: 'DM Sans';
+}
+.quote-title {
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px; /* 140% */
+}
+
+.quoote-text {
+  color: rgba(246, 246, 246, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+.quote-autor {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px; /* 150% */
+}
+
+/* photo */
+.quote-photo-wrapper {
+  background-image: url(../img/Favorites-quote/m-f-q-img/favorites-quote-photo-mobile.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* daily norm of sports */
+.quote-daily-norm-wrapper {
+  background: var(--white);
+}
+
+.daily-norm-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 96px 101px;
+}
+
+.daily-norm-gym-icon {
+  margin-bottom: 15px;
+}
+.sport-time {
+  color: var(--primary-color);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: 'DM Sans';
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 20px; /* 100% */
+  margin-bottom: 6px;
+}
+
+.daily-norm {
+  color: rgba(27, 27, 27, 0.6);
+  font-family: 'DM Sans';
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px; /* 128.571% */
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .quote-wrapper,
+  .quote-photo-wrapper,
+  .quote-daily-norm-wrapper {
+    height: 302px;
+    border-radius: 50px;
+  }
+
+  .quote-wrapper {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 64px 80px 64px 130px;
+  }
+
+  .quote-dude-icon {
+    top: 64px;
+    left: 80px;
+  }
+
+  .quote-inverted-commas-icon {
+    top: 32px;
+    right: 80px;
+  }
+
+  .quote-title {
+    font-size: 24px;
+    line-height: 32px; /* 133.333% */
+  }
+
+  .quoote-text {
+    font-size: 16px;
+    line-height: 24px; /* 150% */
+  }
+
+  .quote-autor {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+  }
+
+  .quote-photo-wrapper,
+  .quote-daily-norm-wrapper {
+    width: 50%;
+  }
+
+  .quote-photo-wrapper {
+    background-image: url(../img/Favorites-quote/t-f-q-img/favorites-quote-photo-tablet.jpg);
+  }
+
+  .photo-daily-norm-wrapper {
+    display: flex;
+  }
+
+  .daily-norm-wrapper {
+    padding: 106px 118px;
+  }
+
+  .sport-time {
+    font-size: 24px;
+    line-height: 32px; /* 133.333% */
+  }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1440px) {
+  .favorites-quote-section {
+    flex-direction: row;
+  }
+
+  .quote-wrapper {
+    width: 50%;
+  }
+
+  .photo-daily-norm-wrapper {
+    width: 50%;
+  }
+
+  .quote-photo-wrapper,
+  .quote-daily-norm-wrapper {
+    width: 50%;
+  }
+
+  .quote-dude-icon {
+    top: 64px;
+    left: 64px;
+  }
+
+  .quote-inverted-commas-icon {
+    top: 32px;
+    right: 64px;
+  }
+
+  .quote-wrapper {
+    padding-left: 114px;
+    padding-right: 64px;
+    margin-bottom: 0;
+  }
+
+  .quote-photo-wrapper {
+    background-image: url(../img/Favorites-quote/d-f-q-img/favorites-quote-photo-desktop.jpg);
+  }
+
+  .daily-norm-wrapper {
+    padding: 106px 108px;
+  }
+}
+
+/* DPI mobile */
+
+@media screen and (min-resolution: 192dpi),
+  (min-resolution: 2dppx),
+  (min-device-pixel-ratio: 2) {
+  .quote-photo-wrapper {
+    background-image: url(../img/Favorites-quote/m-f-q-img/favorites-quote-photo-mobile@2x.jpg);
+  }
+}
+
+/* DPI tablet */
+
+@media screen and (min-resolution: 192dpi) and (min-width: 768px),
+  (min-resolution: 2dppx) and (min-width: 768px),
+  (min-device-pixel-ratio: 2) and (min-width: 768px) {
+  .hero-photo-wrapper {
+    background-image: url(../img/Favorites-quote/t-f-q-img/favorites-quote-photo-tablet@2x.jpg);
+  }
+}
+
+/* DPI desktop */
+
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+  (min-resolution: 2dppx) and (min-width: 1440px),
+  (min-device-pixel-ratio: 2) and (min-width: 1440px) {
+  .hero-photo-wrapper {
+    background-image: url(../img/Favorites-quote/d-f-q-img/favorites-quote-photo-desktop@2x.jpg);
+  }
+}
