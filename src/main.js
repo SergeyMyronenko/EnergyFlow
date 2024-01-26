@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const BASE_URL = 'https://energyflow.b.goit.study/api';
 
 function baseRequest(filter) {
@@ -38,3 +36,6 @@ function getExercises(name) {
     });
 }
 getExercises();
+
+import './js/mobile-menu-function';
+

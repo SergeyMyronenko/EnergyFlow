@@ -1,0 +1,203 @@
+@media (min-width: 375px) {
+  .quote-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 50px;
+    background: #7e847f;
+    width: 335px;
+    height: 272px;
+  }
+
+  .quote-titel-icon {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-left: 20px;
+  }
+
+  .quote-title {
+    padding-left: 12px;
+    color: #f6f6f6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .icon-comma {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 40px;
+    right: 20px;
+  }
+
+  .quote-text {
+    padding-top: 14px;
+    padding-left: 66px;
+    padding-right: 20px;
+    color: rgba(246, 246, 246, 0.6);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.28;
+  }
+  .quote-author {
+    padding-top: 14px;
+    padding-left: 66px;
+    padding-bottom: 40px;
+    color: #f6f6f6;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+  .image-block-1-container {
+    width: 335px;
+    height: 272px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background-image: url(../img/Block-1/m-q-ex-img/m-q-ex-img@2x.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .quote-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 50px;
+    background: #7e847f;
+    width: 736px;
+    height: 302px;
+  }
+
+  .quote-titel-icon {
+    display: flex;
+    align-items: center;
+    padding-top: 64px;
+    padding-left: 80px;
+  }
+
+  .quote-title {
+    padding-left: 16px;
+    color: #f6f6f6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.33;
+  }
+
+  .icon-comma {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    top: 32px;
+    right: 80px;
+  }
+
+  .quote-text {
+    padding-top: 16px;
+    padding-left: 130px;
+    padding-right: 80px;
+    color: rgba(246, 246, 246, 0.6);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  .quote-author {
+    padding-top: 25px;
+    padding-left: 130px;
+    color: #f6f6f6;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .image-block-1-container {
+    width: 736px;
+    height: 302px;
+    margin-bottom: 20px;
+    border-radius: 50px;
+    background-image: url(../img/Block-1/t-q-ex-img/t-q-ex-img@2x.jpg);
+  }
+}
+@media (min-width: 1440px) {
+  .quote-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 50px;
+    background: #7e847f;
+    width: 704px;
+    height: 302px;
+    margin-bottom: 16px;
+  }
+
+  .quote-titel-icon {
+    display: flex;
+    padding-top: 64px;
+    padding-left: 64px;
+  }
+
+  .quote-title {
+    padding-left: 16px;
+    color: #f6f6f6;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.33;
+  }
+
+  .icon-comma {
+    position: absolute;
+    top: 32px;
+    right: 64px;
+  }
+
+  .quote-text {
+    padding-top: 16px;
+    padding-left: 114px;
+    padding-right: 64px;
+    color: rgba(246, 246, 246, 0.6);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .quote-author {
+    padding-top: 16px;
+    padding-left: 114px;
+    color: #f6f6f6;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .image-block-1-container {
+    width: 704px;
+    height: 302px;
+    border-radius: 50px;
+    background-image: url(../img/Block-1/d-q-ex-img/d-q-ex-img@2x.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}

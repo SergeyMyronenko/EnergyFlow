@@ -27,7 +27,7 @@
 }
 
 .tags-list-item {
-  color: #f6f6f6;
+  color: var(--secondary-color);
   font-family: 'DM Sans';
   font-size: 12px;
   font-weight: 400;
@@ -43,12 +43,12 @@
 /* title wrapper */
 .hero-text-wrapper {
   border-radius: 30px;
-  background: #fff;
+  background: var(--white);
   padding: 60px 20px 80px 20px;
 }
 
 .hero-title {
-  color: #1b1b1b;
+  color: var(--primary-color);
   font-family: 'DM Sans';
   font-size: 56px;
   font-weight: 400;
@@ -58,13 +58,13 @@
 }
 
 .hero-title-accent {
-  color: #7e847f;
+  color: var(--grey);
   font-style: italic;
 }
 
 .hero-text {
   margin: 0;
-  color: #1b1b1b;
+  color: var(--primary-color);
   font-family: 'DM Sans';
   font-size: 14px;
   font-style: normal;
@@ -123,9 +123,9 @@
   }
 }
 
-/* Desktop */
+/* Desktop v2 */
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .hero-photo-wrapper {
     height: 100%;
     width: 50%;
@@ -181,9 +181,9 @@
 
 /* DPI desktop */
 
-@media screen and (min-resolution: 192dpi) and (min-width: 1280px),
-  (min-resolution: 2dppx) and (min-width: 1280px),
-  (min-device-pixel-ratio: 2) and (min-width: 1280px) {
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+  (min-resolution: 2dppx) and (min-width: 1440px),
+  (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .hero-photo-wrapper {
     background-image: url(../img/Hero/d-h-img/hero-background-image-desktop@2x.jpg);
   }

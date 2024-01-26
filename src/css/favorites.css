@@ -1,0 +1,243 @@
+.favorites-card {
+  border-radius: 30px;
+  background: #e8e8e8;
+  height: 1644px;
+  flex-shrink: 0;
+}
+
+.favorites-title {
+  color: #1b1b1b;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  padding-top: 40px;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.favorites-contanier-block {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.favorites-list-item {
+  width: 295px;
+  height: 165px;
+  border-radius: 15px;
+  background: #fff;
+  padding-top: 16px;
+  padding-left: 16px;
+}
+
+.favorites-svg {
+  width: 76px;
+  height: 26px;
+  border-radius: 15px;
+}
+
+.favorites-svg-text {
+  fill: #f6f6f6;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.favorites-icon-svg {
+  stroke: #1b1b1b;
+  margin-left: 5px;
+}
+
+.favorites-list-button {
+  display: inline-block;
+  color: #1b1b1b;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  border: none;
+  padding: 0;
+  background: none;
+  margin-left: 109px;
+}
+
+.favorites-list-button-icon {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+.favorites-list-container {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.favorite-list-svg {
+  margin-right: 16px;
+}
+
+.favorites-list-text {
+  color: #1b1b1b;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.favorites-card-text {
+  margin-top: 18px;
+}
+
+.favorites-card-text-list {
+  padding: 0;
+}
+
+.favorites-card-text-item {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 8px;
+}
+
+.favorites-card-text-wrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.favorites-card-text-title {
+  color: rgba(27, 27, 27, 0.4);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin-right: 4px;
+  margin: 0;
+}
+
+.favorites-card-text-block {
+  color: #1b1b1b;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.message-info-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  gap: 28px;
+}
+
+.message-info {
+  border-radius: 30px;
+  background: #e8e8e8;
+  width: 335px;
+  height: 450px;
+  flex-shrink: 0;
+}
+
+.message-info-svg {
+  width: 85px;
+  height: 52px;
+}
+
+.message-info-text {
+  width: 247px;
+  height: 90px;
+  color: #1b1b1b;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+}
+
+/* ------------TABLET----------------- */
+
+@media (min-width: 768px) {
+  .favorites-card {
+    width: 736px;
+    height: 928px;
+  }
+
+  .favorites-contanier-block {
+    display: flex;
+    margin: 0;
+  }
+
+  .favorites-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 20px;
+  }
+
+  .favorites-list-item {
+    width: 313px;
+  }
+
+  .message-info-svg {
+    width: 115px;
+    height: 71px;
+  }
+
+  .message-info-text {
+    width: 554px;
+    height: 72px;
+    font-size: 18px;
+    line-height: 1.33;
+  }
+}
+/* ------------------DESKTOP----------------------- */
+@media (min-width: 1440px) {
+  .favorites-card {
+    width: 1408px;
+    height: 687px;
+  }
+
+  .favorites-contanier-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .favorites-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 20px;
+    row-gap: 28px;
+  }
+
+  .favorites-list-item {
+    width: calc((100% - 40px) / 3 - 20px);
+    box-sizing: border-box;
+    max-width: 424px;
+    height: 141px;
+  }
+
+  .favorites-card-text {
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .favorites-list-button {
+    margin-left: 231px;
+  }
+}
