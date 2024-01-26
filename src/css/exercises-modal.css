@@ -34,7 +34,7 @@
     background: #F6F6F6;
     position: relative;
     z-index: 10;
-    width: 295px;
+    width: 335px;
     padding: 40px 20px;
     border-radius: 20px;
 }
@@ -47,9 +47,10 @@
 }
 
 .modal-img {
-    background-image: url();
+    background-image: linear-gradient(0deg, rgba(27, 27, 27, 0.20) 0%, rgba(27, 27, 27, 0.20) 100%), url();
     width: 295px;
     height: 258px;
+    border-radius: 12px;
 }
 
 .modal-button-close {
@@ -108,7 +109,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px 20px;
-    width: 290px;
+    width: 295px;
     margin-bottom: 20px;
 }
 
@@ -152,7 +153,7 @@
 
 .modal-button-favorites {
     display: flex;
-    padding: 12px 83px;
+    padding: 12px 80px;
     justify-content: center;
     align-items: center;
     gap: 8px;
@@ -178,7 +179,7 @@
 
 .modal-button-rating {
     display: block;
-    padding: 12px 107px;
+    padding: 12px 106px;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
