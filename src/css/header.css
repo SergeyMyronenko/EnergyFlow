@@ -68,6 +68,7 @@
   font-weight: 700;
   line-height: 1.12em;
   letter-spacing: -0.02em;
+  margin-left: 20px;
 }
 .header-nav {
   display: flex;
