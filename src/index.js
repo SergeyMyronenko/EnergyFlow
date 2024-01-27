@@ -5,3 +5,4 @@ import './js/mobile-menu-function';
 import './js/subscription';
 import './js/rating-functions';
 import './js/send-rating-modal';
+import './js/quote';
