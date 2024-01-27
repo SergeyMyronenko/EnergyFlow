@@ -114,6 +114,9 @@
   color: #1b1b1b;
   border-radius: 30px;
 }
+.mobile-menu-wrapper.modal-is-hidden {
+    display: none;
+  }
 @media (min-width: 768px) {
   .header-burger {
     display: none;
