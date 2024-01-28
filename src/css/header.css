@@ -68,6 +68,7 @@
   font-weight: 700;
   line-height: 1.12em;
   letter-spacing: -0.02em;
+  margin-left: 20px;
 }
 .header-nav {
   display: flex;
@@ -114,6 +115,9 @@
   color: #1b1b1b;
   border-radius: 30px;
 }
+.mobile-menu-wrapper.modal-is-hidden {
+    display: none;
+  }
 @media (min-width: 768px) {
   .header-burger {
     display: none;

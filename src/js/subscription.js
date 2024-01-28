@@ -1,3 +1,7 @@
+import axios from 'axios';
+import Swal from 'sweetalert2';
+import 'sweetalert2/src/sweetalert2.scss';
+
 const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 const feedbackFormData = "feedback-form-state";
 const form = document.querySelector('.footer-subscription');

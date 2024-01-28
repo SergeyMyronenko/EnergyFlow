@@ -1,7 +1,6 @@
 .favorites-card {
   border-radius: 30px;
   background: #e8e8e8;
-  height: 1644px;
   flex-shrink: 0;
 }
 
@@ -13,7 +12,6 @@
   letter-spacing: 0.02em;
   padding-top: 40px;
   padding-left: 20px;
-  margin-bottom: 20px;
 }
 
 .favorites-contanier-block {
@@ -22,6 +20,7 @@
   flex-direction: column;
   align-items: center;
   flex-wrap: nowrap;
+  margin-top: 20px;
 }
 
 .favorites-list {
@@ -36,8 +35,28 @@
   height: 165px;
   border-radius: 15px;
   background: #fff;
-  padding-top: 16px;
-  padding-left: 16px;
+  padding: 16px;
+}
+
+.favorites-card-header {
+  display: inline-block;
+}
+
+.favorites-oval {
+  display: inline-block;
+  width: 75px; /* задайте ширину */
+  height: 25px; /* задайте висоту (половина ширини) */
+  background-color: #7e847f; /* колір заливки */
+  border-radius: 15px; /* встановіть радіус */
+}
+
+.favorites-oval span {
+  color: #f6f6f6;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 0.2em;
+  padding: 5px 8px;
+  margin: 0 auto;
 }
 
 .favorites-svg {
@@ -53,12 +72,17 @@
 }
 
 .favorites-icon-svg {
+  display: inline-block;
   stroke: #1b1b1b;
   margin-left: 5px;
+  border: none;
+  padding: 0;
+  background: none;
+  box-sizing: border-box;
+  vertical-align: middle;
 }
 
 .favorites-list-button {
-  display: inline-block;
   color: #1b1b1b;
   font-size: 14px;
   font-weight: 400;
@@ -66,7 +90,7 @@
   border: none;
   padding: 0;
   background: none;
-  margin-left: 109px;
+  margin-left: 100px;
 }
 
 .favorites-list-button-icon {
@@ -238,6 +262,6 @@
   }
 
   .favorites-list-button {
-    margin-left: 231px;
+    margin-left: 220px;
   }
 }
