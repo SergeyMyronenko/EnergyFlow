@@ -6,7 +6,7 @@ const refs = {
   form: document.querySelector('.js-rating-form'),
   rateStars: document.querySelector('.js-stars-list'),
   star: document.querySelectorAll('.js-rating-star'),
-  openModalsBtn: document.querySelector('.exersizes-result-card-container'),
+  openModalsBtn: document.querySelectorAll('.exersizes-card-btn'),
   openRatingBtn: document.querySelector('.modal-button-rating'),
   exerciseModal: document.querySelector('.modal'),
   closeExerciseBtn: document.querySelector('.modal-button-close'),
@@ -14,21 +14,22 @@ const refs = {
 };
 
 // ========= OPEN LISTENERS =======//
-refs.openModalsBtn.addEventListener('click', openExerciseModal);
 refs.openRatingBtn.addEventListener('click', openRatingModal);
+refs.openModalsBtn.forEach(btn => {
+  btn.addEventListener('click', openExerciseModal);
+});
 
 // ========= CLOSE LISTENERS =======//
 document.addEventListener('click', closeModal);
 document.addEventListener('keydown', closeModalByEsc);
 refs.closeBtn.addEventListener('click', closeModalByBtn);
 refs.closeExerciseBtn.addEventListener('click', closeExerciseModalByBtn);
+
 async function openExerciseModal(e) {
   try {
-    if (e.target.classList.contains('exersizes-card-btn')) {
-      const response = await getData('64f389465ae26083f39b17cd');
-      refs.exsCont.innerHTML = createMarkup(response.data);
-      refs.exerciseModal.classList.toggle('is-open');
-    }
+    const response = await getData('64f389465ae26083f39b17cd');
+    refs.exsCont.innerHTML = createMarkup(response.data);
+    refs.exerciseModal.classList.toggle('is-open');
   } catch (error) {
     throw new Error(error.message);
   }
@@ -36,7 +37,6 @@ async function openExerciseModal(e) {
 
 async function openRatingModal(e) {
   if (e.currentTarget) {
-    createMarkup(getData('64f389465ae26083f39b18d'));
     refs.ratingModal.classList.toggle('is-open');
   }
 }
