@@ -180,6 +180,8 @@
 
 .modal-buttons {
   display: flex;
+  flex-direction: column;
+  gap: 9px;
   justify-content: end;
 }
 
