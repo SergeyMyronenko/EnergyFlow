@@ -180,6 +180,8 @@
 
 .modal-buttons {
   display: flex;
+  flex-direction: column;
+  gap: 9px;
   justify-content: end;
 }
 
@@ -222,15 +224,14 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
-  border: none;
   transition: border 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button-rating:hover,
-.modal-button-rating:focus,
-.modal-button-rating:focus-visible {
+.modal-button-rating:focus {
   border: 1px solid var(--grey);
-  outline: 0;
+  outline: none;
+
 }
 
 /*___________________________Tablet_______________________ */
