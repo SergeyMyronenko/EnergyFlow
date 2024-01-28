@@ -40,30 +40,47 @@ async function fetchNewQuote() {
   }
 }
 
-async function displayQuote() {
+// Асинхронна функція для відображення цитати
+async function displayQuote(config) {
   try {
+    // Отримуємо дані цитати
     const quoteData = await getQuote();
-    const quoteTextElement = document.querySelector('.quote-text');
-    const quoteAuthorElement = document.querySelector('.quote-author');
+    // Знаходимо елемент для відображення тексту цитати
+    const quoteTextElement = document.querySelector(config.quoteTextSelector);
+    // Знаходимо елемент для відображення автора цитати
+    const quoteAuthorElement = document.querySelector(
+      config.quoteAuthorSelector
+    );
 
+    // Якщо не знайдено елементів для відображення тексту або автора цитати, викидаємо помилку
     if (!quoteTextElement || !quoteAuthorElement) {
       throw new Error('Елементи для відображення цитати не знайдено');
     }
 
+    // Встановлюємо текст цитати
     quoteTextElement.innerText = quoteData.quote;
+    // Встановлюємо автора цитати
     quoteAuthorElement.innerText = quoteData.author;
   } catch (error) {
+    // Виводимо помилку в консоль, якщо відбулася помилка при відображенні цитати
     console.error('Сталася помилка при відображенні цитати:', error);
   }
 }
 
-// displayQuote();
+// Об'єкт конфігурації для цитат на сторінці
+const pageQuoteConfig = {
+  quoteTextSelector: '.quote-text', // Селектор для тексту цитати
+  quoteAuthorSelector: '.quote-author', // Селектор для автора цитати
+};
 
-// Перевіряємо, чи існують елементи з класами 'quote-text' та 'quote-author' на сторінці.
-// Якщо так, то викликаємо функцію displayQuote() для відображення цитати.
+// Перевіряємо, чи є на сторінці елементи для тексту та автора цитати
 if (
-  document.querySelector('.quote-text') &&
-  document.querySelector('.quote-author')
+  document.querySelector(pageQuoteConfig.quoteTextSelector) &&
+  document.querySelector(pageQuoteConfig.quoteAuthorSelector)
 ) {
-  displayQuote();
+  // Якщо елементи є, відображаємо цитату
+  displayQuote(pageQuoteConfig);
 }
+
+// Експортуємо функцію displayQuote
+export { displayQuote };

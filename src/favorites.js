@@ -1,20 +1,17 @@
-import { getQuote } from './js/quote.js';
+// Імпортуємо функцію displayQuote з іншого модуля
+import { displayQuote } from './js/quote.js';
 
-async function displayFavoriteQuote() {
-  try {
-    const quoteData = await getQuote();
-    const quoteTextElement = document.querySelector('.quoote-text');
-    const quoteAuthorElement = document.querySelector('.quote-autor');
+// Об'єкт конфігурації для цитат на сторінці "Улюблене"
+const pageFavorConfig = {
+  quoteTextSelector: '.quoote-text', // Селектор для тексту цитати
+  quoteAuthorSelector: '.quote-autor', // Селектор для автора цитати
+};
 
-    if (!quoteTextElement || !quoteAuthorElement) {
-      throw new Error('Елементи для відображення цитати не знайдено');
-    }
-
-    quoteTextElement.innerText = quoteData.quote;
-    quoteAuthorElement.innerText = quoteData.author;
-  } catch (error) {
-    console.error('Сталася помилка при відображенні цитати:', error);
-  }
+// Перевіряємо, чи є на сторінці елементи для тексту та автора цитати
+if (
+  document.querySelector(pageFavorConfig.quoteTextSelector) &&
+  document.querySelector(pageFavorConfig.quoteAuthorSelector)
+) {
+  // Якщо елементи є, відображаємо цитату
+  displayQuote(pageFavorConfig);
 }
-
-displayFavoriteQuote();
