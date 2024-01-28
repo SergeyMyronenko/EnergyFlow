@@ -4,7 +4,7 @@ const refs = {
   closeBtn: document.querySelector('.js-rating-close'),
   form: document.querySelector('.js-rating-form'),
   rateStars: document.querySelector('.js-stars-list'),
-  rateValue: document.querySelector('.js-rating-data'),
+  // rateValue: document.querySelector('.js-rating-data'),
   star: document.querySelectorAll('.js-rating-star'),
   openModalsBtn: document.querySelector('.exersizes-result-card-container'),
   openRatingBtn: document.querySelector('.modal-button-rating'),
@@ -22,7 +22,7 @@ document.addEventListener('keydown', closeModalByEsc);
 refs.closeBtn.addEventListener('click', closeModalByBtn);
 refs.closeExerciseBtn.addEventListener('click', closeExerciseModalByBtn);
 
-refs.rateStars.addEventListener('click', getRate);
+// refs.rateStars.addEventListener('click', getRate);
 
 function openExerciseModal(e) {
   if (e.target.classList.contains('exersizes-card-btn')) {
@@ -69,19 +69,4 @@ function closeModalByEsc(e) {
   if (e.code === 'Escape' && refs.exerciseModal.classList.contains('is-open')) {
     refs.exerciseModal.classList.remove('is-open');
   }
-}
-
-function getRate(e) {
-  let activeStar = refs.rateStars.querySelector('.star-active');
-  e.target.classList.add('star-active');
-
-  if (activeStar) {
-    activeStar.classList.remove('star-active');
-  }
-
-  refs.rateValue.textContent = `${e.target.dataset.rate}.0`;
-  if (!e.target.classList.contains('star-active')) {
-    refs.rateValue.textContent = '0.0';
-  }
-  rate = e.target.dataset.rate;
 }
