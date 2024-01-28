@@ -2,6 +2,8 @@
   border-radius: 30px;
   background: #e8e8e8;
   flex-shrink: 0;
+  width: 335px;
+  padding-top: 40px;
 }
 
 .favorites-title {
@@ -11,10 +13,10 @@
   line-height: 1;
   letter-spacing: 0.02em;
   padding-top: 40px;
-  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
-.favorites-contanier-block {
+.favorites-container-block {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -38,14 +40,18 @@
   padding: 16px;
 }
 
-.favorites-card-header {
-  display: inline-block;
+.favorites-card-heder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .favorites-oval {
-  display: inline-block;
-  width: 75px; /* задайте ширину */
-  height: 25px; /* задайте висоту (половина ширини) */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 76px; /* задайте ширину */
+  height: 26px; /* задайте висоту (половина ширини) */
   background-color: #7e847f; /* колір заливки */
   border-radius: 15px; /* встановіть радіус */
 }
@@ -72,17 +78,18 @@
 }
 
 .favorites-icon-svg {
-  display: inline-block;
+  display: block;
   stroke: #1b1b1b;
-  margin-left: 5px;
   border: none;
   padding: 0;
   background: none;
   box-sizing: border-box;
-  vertical-align: middle;
 }
 
 .favorites-list-button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
   color: #1b1b1b;
   font-size: 14px;
   font-weight: 400;
@@ -90,12 +97,10 @@
   border: none;
   padding: 0;
   background: none;
-  margin-left: 100px;
 }
 
 .favorites-list-button-icon {
-  display: inline-block;
-  margin-left: 8px;
+  display: block;
 }
 
 .favorites-list-container {
@@ -187,6 +192,14 @@
   line-height: 1.28;
 }
 
+.pagination-favorites {
+  gap: 8px;
+  margin-top: 20px;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+}
+
 /* ------------TABLET----------------- */
 
 @media (min-width: 768px) {
@@ -214,7 +227,15 @@
     width: 313px;
   }
 
+  .message-info {
+    display: block;
+    border-radius: 30px;
+    background: #e8e8e8;
+    width: 736px;
+  }
+
   .message-info-svg {
+    text-align: center;
     width: 115px;
     height: 71px;
   }
