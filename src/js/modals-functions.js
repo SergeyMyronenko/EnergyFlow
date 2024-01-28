@@ -30,6 +30,11 @@ async function openExerciseModal(e) {
     const response = await getData('64f389465ae26083f39b17cd');
     refs.exsCont.innerHTML = createMarkup(response.data);
     refs.exerciseModal.classList.toggle('is-open');
+    const ratingActive = document.querySelector('.ex-rating-active');
+    const ratingValue = document.querySelector('.modal-rating-value');
+    ratingActive.style.width = await `${
+      parseInt(ratingValue.textContent) / 0.05
+    }%`;
   } catch (error) {
     throw new Error(error.message);
   }
