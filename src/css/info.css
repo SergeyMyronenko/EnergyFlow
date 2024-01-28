@@ -16,7 +16,6 @@
     background: #1b1b1b;
     width: 335px;
     height: 269px;
-    margin-bottom: 20px;
   }
 
   .icon-gym {
@@ -92,7 +91,6 @@
     background: #1b1b1b;
     width: 736px;
     height: 302px;
-    margin-bottom: 16px;
   }
   .icon-gym {
     fill: #fff;
@@ -147,7 +145,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1440px) {
   .image-info-container {
     width: 704px;
     height: 302px;
