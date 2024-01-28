@@ -45,11 +45,12 @@
 }
 
 .favorites-oval {
-  display: inline-block;
-  width: 75px;
-  height: 25px;
+  display: flex;
+  width: 76px;
+  height: 26px;
   background-color: #7e847f;
   border-radius: 15px;
+  align-items: center;
 }
 
 .favorites-oval span {
@@ -89,6 +90,7 @@
   transform: scale(0.95);
 }
 .favorites-list-button {
+  display: flex;
   color: #1b1b1b;
   font-size: 14px;
   font-weight: 400;
@@ -96,7 +98,7 @@
   border: none;
   padding: 0;
   background: none;
-  margin-left: 100px;
+  margin-left: 109px;
 }
 
 .favorites-list-button:hover,
@@ -139,7 +141,7 @@
   display: flex;
   flex-wrap: wrap;
   column-gap: 16px;
-  row-gap: 8px;
+  row-gap: 6px;
 }
 
 .favorites-card-text-wrapper {
@@ -173,6 +175,7 @@
   align-items: center;
   margin-top: 80px;
   gap: 28px;
+  margin-bottom: 128px;
 }
 
 .message-info {
@@ -236,12 +239,16 @@
 @media (min-width: 768px) {
   .favorites-card {
     width: 736px;
-    height: 928px;
+    height: auto;
   }
 
   .favorites-contanier-block {
     display: flex;
     margin: 0;
+  }
+  .favorites-title {
+    padding-top: 64px;
+    margin-bottom: 0px;
   }
 
   .favorites-list {
@@ -252,6 +259,7 @@
     align-items: center;
     column-gap: 14px;
     row-gap: 20px;
+    margin-bottom: 64px;
   }
 
   .favorites-list-item {
@@ -264,7 +272,12 @@
   }
 
   .message-info {
-    margin: 0 auto;
+    width: 736px;
+  }
+
+  .message-info-block {
+    margin-top: 208px;
+    margin-bottom: 437px;
   }
 
   .message-info-svg {
@@ -288,6 +301,12 @@
 @media (min-width: 1440px) {
   .favorites-card {
     width: 1408px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .favorites-title {
+    margin-bottom: 0px;
   }
 
   .favorites-contanier-block {
@@ -306,6 +325,15 @@
     row-gap: 28px;
   }
 
+  .message-info {
+    width: 1408px;
+  }
+
+  .message-info-block {
+    margin-top: 146px;
+    margin-bottom: 258px;
+  }
+
   .favorites-list-item {
     width: calc((100% - 40px) / 3 - 20px);
     box-sizing: border-box;
@@ -320,5 +348,9 @@
 
   .favorites-list-button {
     margin-left: 220px;
+  }
+
+  .favorites-icon-svg {
+    margin-left: 10px;
   }
 }
