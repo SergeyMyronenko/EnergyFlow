@@ -1,15 +1,16 @@
-export let rate = 0;
+import { getData, createMarkup } from './exercises-modal';
+
 const refs = {
   ratingModal: document.querySelector('.js-backdrop-modal'),
   closeBtn: document.querySelector('.js-rating-close'),
   form: document.querySelector('.js-rating-form'),
   rateStars: document.querySelector('.js-stars-list'),
-  // rateValue: document.querySelector('.js-rating-data'),
   star: document.querySelectorAll('.js-rating-star'),
   openModalsBtn: document.querySelector('.exersizes-result-card-container'),
   openRatingBtn: document.querySelector('.modal-button-rating'),
   exerciseModal: document.querySelector('.modal'),
   closeExerciseBtn: document.querySelector('.modal-button-close'),
+  exsCont: document.querySelector('.exs-container'),
 };
 
 // ========= OPEN LISTENERS =======//
@@ -21,16 +22,21 @@ document.addEventListener('click', closeModal);
 document.addEventListener('keydown', closeModalByEsc);
 refs.closeBtn.addEventListener('click', closeModalByBtn);
 refs.closeExerciseBtn.addEventListener('click', closeExerciseModalByBtn);
-
-// refs.rateStars.addEventListener('click', getRate);
-
-function openExerciseModal(e) {
-  if (e.target.classList.contains('exersizes-card-btn')) {
-    refs.exerciseModal.classList.toggle('is-open');
+async function openExerciseModal(e) {
+  try {
+    if (e.target.classList.contains('exersizes-card-btn')) {
+      const response = await getData('64f389465ae26083f39b17cd');
+      refs.exsCont.innerHTML = createMarkup(response.data);
+      refs.exerciseModal.classList.toggle('is-open');
+    }
+  } catch (error) {
+    throw new Error(error.message);
   }
 }
-function openRatingModal(e) {
+
+async function openRatingModal(e) {
   if (e.currentTarget) {
+    createMarkup(getData('64f389465ae26083f39b18d'));
     refs.ratingModal.classList.toggle('is-open');
   }
 }
