@@ -56,9 +56,11 @@
 }
 .header-social-list-icon {
   fill: #7e847f;
+  transition: transform 0.3s ease-in-out;
 }
 .header-social-list-icon:hover {
   fill: #5f6560;
+
 }
 .header-logo {
   color: #1b1b1b;
