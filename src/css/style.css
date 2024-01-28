@@ -54,7 +54,7 @@ section {
 
 @media (min-width: 375px) {
   .container {
-    max-width: 335px;
+    max-width: 375px;
   }
 }
 @media (min-width: 768px) {
@@ -63,12 +63,12 @@ section {
   }
   .container {
     padding: 0 16px;
-    max-width: 736px;
+    max-width: 768px;
   }
 }
 @media (min-width: 1440px) {
   .container {
-    max-width: 1408px;
+    max-width: 1440px;
   }
 }
 
