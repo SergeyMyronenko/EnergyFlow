@@ -1,6 +1,5 @@
 /* Mobile */
-
-.hero-section {
+.hero-wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -75,10 +74,9 @@
 
 /* Tablet */
 @media screen and (min-width: 768px) {
-  .hero-section {
+  .hero-wrapper {
     height: 884px;
-    flex-direction: row;
-    margin-bottom: 16px;
+    display: flex;
   }
 
   .hero-photo-wrapper {
@@ -126,6 +124,10 @@
 /* Desktop v2 */
 
 @media screen and (min-width: 1440px) {
+  .hero-wrapper {
+    flex-direction: row;
+  }
+
   .hero-photo-wrapper {
     height: 100%;
     width: 50%;

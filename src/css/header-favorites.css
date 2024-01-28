@@ -1,0 +1,110 @@
+.on-favorites {
+  padding-top: 24px;
+  padding-bottom: 22px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .on-favorites {
+    padding-top: 48px;
+    padding-bottom: 80px;
+  }
+
+  .on-favorites .header-nav-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 52px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 28px;
+    padding-right: 42px;
+    border-radius: 60px;
+    background: #7e847f;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1440px) {
+  .on-favorites {
+    padding-top: 42px;
+    padding-bottom: 62px;
+  }
+}
+
+/* Animation of pages hover */
+@media (min-width: 768px) {
+  .on-favorites .ghost {
+    position: absolute;
+    width: 96px;
+    height: 36px;
+    right: 28px;
+    border-radius: 60px;
+    background-color: #fff;
+    z-index: 1;
+    transition: transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .on-favorites .link-home {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    transition: color 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .on-favorites .link-favorites {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    transition: color 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .on-favorites .home {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+  }
+  .on-favorites .favorites {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 110%;
+    height: 100%;
+    background-color: transparent;
+  }
+
+  .on-favorites .home:hover > .link-home {
+    transform: translateX(40%);
+  }
+
+  .on-favorites .home:hover > .link-home {
+    color: #000;
+  }
+
+  .on-favorites .home:hover + .favorites > .link-favorites {
+    color: #fff;
+  }
+
+  .on-favorites .home:hover + .favorites > .link-favorites {
+    transform: translateX(30%);
+  }
+
+  .on-favorites .home:hover ~ .ghost {
+    transform: translateX(-71%);
+  }
+
+  .on-favorites .d:first-child:hover .d:last-child {
+    background-color: #000;
+  }
+}
