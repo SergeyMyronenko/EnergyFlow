@@ -25,9 +25,14 @@ refs.closeExerciseBtn.addEventListener('click', closeExerciseModalByBtn);
 async function openExerciseModal(e) {
   try {
     if (e.target.classList.contains('exersizes-card-btn')) {
-      const response = await getData('64f389465ae26083f39b17cd');
+      const response = await getData('64f389465ae26083f39b18d0');
       refs.exsCont.innerHTML = createMarkup(response.data);
       refs.exerciseModal.classList.toggle('is-open');
+      const ratingActive = document.querySelector('.ex-rating-active');
+      const ratingValue = document.querySelector('.modal-rating-value');
+      ratingActive.style.width = await `${
+        parseInt(ratingValue.textContent) / 0.05
+      }%`;
     }
   } catch (error) {
     throw new Error(error.message);
@@ -36,7 +41,6 @@ async function openExerciseModal(e) {
 
 async function openRatingModal(e) {
   if (e.currentTarget) {
-    createMarkup(getData('64f389465ae26083f39b18d'));
     refs.ratingModal.classList.toggle('is-open');
   }
 }

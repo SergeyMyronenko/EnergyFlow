@@ -15,33 +15,34 @@ export function createMarkup(obj) {
           <div class="modal-rating">
             <p class="modal-rating-value">${obj.rating}</p>
 
-            <ul class="modal-rating-list">
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="./img/sprite.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="./img/sprite.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="./img/sprite.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="./img/sprite.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="./img/sprite.svg#star"></use>
-                </svg>
-              </li>
-            </ul>
+              <div class="ex-rating">
+                <div class="ex-rating-body">
+                  <div class="ex-rating-active"></div>
+                  <div class="ex-rating-items">
+                    <input
+                      type="radio"
+                      class="ex-rating-item"
+                      value="1"
+                      name="exrating"
+                    /><input
+                      type="radio"
+                      class="ex-rating-item"
+                      value="2"
+                      name="exrating"
+                    /><input
+                      type="radio"
+                      class="ex-rating-item"
+                      value="3"
+                      name="exrating"
+                    /><input
+                      type="radio"
+                      class="ex-rating-item"
+                      value="4"
+                      name="exrating"
+                    /><input type="radio" class="ex-rating-item" value="5" name="exrating" />
+                  </div>
+                </div>
+              </div>
           </div>
 
           <ul class="modal-list">

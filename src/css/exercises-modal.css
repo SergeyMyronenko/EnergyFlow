@@ -77,8 +77,8 @@
 
 .modal-rating {
   display: inline-flex;
-  align-items: flex-start;
-  gap: 2px;
+  align-items: center;
+  gap: 4px;
   margin-bottom: 20px;
 }
 
@@ -88,12 +88,53 @@
   font-weight: 400;
   line-height: 1.5;
 }
+.ex-rating {
+  display: flex;
+  font-size: 20px;
+}
+.ex-rating-body {
+  position: relative;
+}
+.ex-rating-body::before {
+  content: '★★★★★';
+  display: block;
+  color: var(--grey);
+}
+.ex-rating-items {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.ex-rating-item {
+  flex: 0 0 20%;
+  height: 100%;
+  opacity: 0;
+}
+.ex-rating-active {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.ex-rating-active::before {
+  content: '★★★★★';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: var(--yellow);
+}
 
-.modal-rating-list {
+/* .modal-rating-list {
   display: flex;
   gap: 2px;
   cursor: pointer;
-}
+} */
 
 .modal-rating-icon {
   fill: rgba(27, 27, 27, 0.2);
