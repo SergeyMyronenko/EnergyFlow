@@ -1,4 +1,4 @@
-.favorites-quote-section {
+.favorites-quote-wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -164,7 +164,7 @@
 /* Desktop */
 
 @media screen and (min-width: 1440px) {
-  .favorites-quote-section {
+  .favorites-quote-wrapper {
     flex-direction: row;
   }
 
