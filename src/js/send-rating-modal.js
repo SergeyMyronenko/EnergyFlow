@@ -1,4 +1,3 @@
-// import { rate } from './modals-functions';
 import axios from 'axios';
 
 const refs = {

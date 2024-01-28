@@ -1,270 +1,272 @@
 /*___________________________Mobile ______________________ */
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    opacity: 1;
-    pointer-events: auto;
-    display: flex;
-    align-items: center;
-    overflow-y: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 1;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
 }
 
 .modal-wrapper {
-    margin: auto;
+  margin: auto;
 }
-
 .modal-inner {
-    margin: 40px 0;
-    background: #F6F6F6;
-    position: relative;
-    z-index: 10;
-    width: 335px;
-    padding: 40px 20px;
-    border-radius: 20px;
+  margin: 40px 0;
+  background: #f6f6f6;
+  position: relative;
+  z-index: 10;
+  width: 335px;
+  padding: 40px 20px;
+  border-radius: 20px;
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
 }
 
 .modal-img {
-    background-image: linear-gradient(0deg, rgba(27, 27, 27, 0.20) 0%, rgba(27, 27, 27, 0.20) 100%), url();
-    width: 295px;
-    height: 258px;
-    border-radius: 12px;
+  background-image: linear-gradient(
+      0deg,
+      rgba(27, 27, 27, 0.2) 0%,
+      rgba(27, 27, 27, 0.2) 100%
+    ),
+    url();
+  width: 270px;
+  height: 258px;
+  border-radius: 12px;
 }
-
 .modal-button-close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    border: none;
-    background: none;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
 .modal-button-close-icon {
-    stroke: var(--primary-color);
-    transition: stroke 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  stroke: var(--primary-color);
+  transition: stroke 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button-close-icon:hover {
-    stroke: rgba(27, 27, 27, 0.4);
+  stroke: rgba(27, 27, 27, 0.4);
 }
 
 .modal-title {
-    color: var(--primary-color);
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 1;
-    margin-bottom: 8px;
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 8px;
 }
 
 .modal-rating {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 2px;
-    margin-bottom: 20px;
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2px;
+  margin-bottom: 20px;
 }
 
 .modal-rating-value {
-    color: var(--primary-color);
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
+  color: var(--primary-color);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .modal-rating-list {
-    display: flex;
-    gap: 2px;
-    cursor: pointer;
+  display: flex;
+  gap: 2px;
+  cursor: pointer;
 }
 
 .modal-rating-icon {
-    fill: rgba(27, 27, 27, 0.20);
+  fill: rgba(27, 27, 27, 0.2);
 }
 
 .modal-list {
-    padding: 10px 0;
-    border-top: 1px solid rgba(27, 27, 27, 0.20);
-    border-bottom: 1px solid rgba(27, 27, 27, 0.20);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px 20px;
-    width: 295px;
-    margin-bottom: 20px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(27, 27, 27, 0.2);
+  border-bottom: 1px solid rgba(27, 27, 27, 0.2);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px 20px;
+  width: 295px;
+  margin-bottom: 20px;
 }
 
 .modal-list-item {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .modal-list-item-name {
-    color: rgba(27, 27, 27, 0.40);
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1.5;
+  color: rgba(27, 27, 27, 0.4);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .modal-list-item-value {
-    color: var(--primary-color);
-    font-feature-settings: 'clig' off, 'liga' off;
-    font-weight: 500;
-    line-height: 1.28;
-    font-size: 14px;
+  color: var(--primary-color);
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-weight: 500;
+  line-height: 1.28;
+  font-size: 14px;
 }
 
 .modal-description {
-    width: 295px;
-    height: 125px;
-    flex-shrink: 0;
-    color: rgba(27, 27, 27, 0.60);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.28;
-    margin-bottom: 40px;
+  width: 295px;
+  height: 125px;
+  flex-shrink: 0;
+  color: rgba(27, 27, 27, 0.6);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  margin-bottom: 40px;
 }
 
 .modal-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
+  display: flex;
+  justify-content: end;
 }
 
 .modal-button-favorites {
-    display: flex;
-    padding: 12px 80px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    border-radius: 30px;
-    background: var(--grey);
-    color: var(--secondary-color);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.28;
-    border: none;
-    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  padding: 12px 80px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 30px;
+  background: var(--grey);
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  border: none;
+  transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button-favorites:hover,
 .modal-button-favorites:focus,
 .modal-button-favorites:focus-visible {
-    background: #5F6560;
-    outline: 0;
+  background: #5f6560;
+  outline: 0;
 }
 
 .modal-button-favorites-icon {
-    fill: none;
-    stroke: var(--secondary-color);
+  fill: none;
+  stroke: var(--secondary-color);
 }
 
 .modal-button-rating {
-    display: block;
-    padding: 12px 106px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.28;
-    border: none;
-    transition: border 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  padding: 12px 106px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  border: none;
+  transition: border 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button-rating:hover,
 .modal-button-rating:focus,
 .modal-button-rating:focus-visible {
-    border: 1px solid var(--grey);
-    outline: 0;
+  border: 1px solid var(--grey);
+  outline: 0;
 }
 
 /*___________________________Tablet_______________________ */
 @media (min-width: 768px) {
-    .modal-inner {
-        width: 732px;
-        padding: 40px;
-    }
+  .modal-inner {
+    width: 732px;
+    padding: 40px;
+  }
 
-    .modal-content {
-        flex-direction: row;
-        gap: 24px;
-    }
+  .modal-content {
+    flex-direction: row;
+    gap: 24px;
+  }
 
-    .modal-img {
-        width: 270px;
-        height: 259px;
-    }
+  .modal-img {
+    width: 270px;
+    height: 259px;
+  }
 
-    .modal-button-close {
-        top: 16px;
-        right: 16px;
-        width: 28px;
-        height: 28px;
-    }
+  .modal-button-close {
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 28px;
+  }
 
-    .modal-rating {
-        margin-bottom: 16px;
-    }
+  .modal-rating {
+    margin-bottom: 16px;
+  }
 
-    .modal-list {
-        padding: 8px 0;
-        gap: 16px 16px;
-        width: 342px;
-        margin-bottom: 16px;
-        width: 290px;
-    }
+  .modal-list {
+    padding: 8px 0;
+    gap: 16px 16px;
+    width: 342px;
+    margin-bottom: 16px;
+    width: 290px;
+  }
 
-    .modal-description {
-        margin-bottom: 32px;
-    }
+  .modal-description {
+    margin-bottom: 32px;
+  }
 
-    .modal-buttons {
-        flex-direction: row;
-        gap: 7px;
-    }
+  .modal-buttons {
+    flex-direction: row;
+    gap: 7px;
+  }
 
-    .modal-button-favorites {
-        padding: 12px 24px;
-    }
+  .modal-button-favorites {
+    padding: 12px 24px;
+  }
 
-    .modal-button-rating {
-        padding: 12px 24px;
-    }
+  .modal-button-rating {
+    padding: 12px 24px;
+  }
 }
 
 /*___________________________Desktop______________________ */
 @media (min-width: 1440px) {
-    .modal-inner {
-        width: 732px;
-    }
+  .modal-inner {
+    width: 732px;
+  }
 
-    .modal-content {
-        gap: 40px;
-    }
+  .modal-content {
+    gap: 40px;
+  }
 
-    .modal-buttons {
-        gap: 9px;
-    }
+  .modal-buttons {
+    gap: 9px;
+  }
 
-    .modal-description {
-        width: 342px;
-    }
+  .modal-description {
+    width: 342px;
+  }
 }
