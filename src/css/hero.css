@@ -43,7 +43,9 @@
 .hero-text-wrapper {
   border-radius: 30px;
   background: var(--white);
-  padding: 60px 20px 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-title {
@@ -81,7 +83,7 @@
 
   .hero-photo-wrapper {
     height: 100%;
-    width: 252px;
+    width: 248px;
     background-image: url(../img/Hero/t-h-img/hero-background-image-tablet.jpg);
     border-radius: 50px 0px 50px 50px;
     margin-bottom: 0;
