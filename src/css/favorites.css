@@ -41,19 +41,15 @@
 }
 
 .favorites-card-heder {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: inline-block;
 }
 
 .favorites-oval {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: 76px; /* задайте ширину */
-  height: 26px; /* задайте висоту (половина ширини) */
-  background-color: #7e847f; /* колір заливки */
-  border-radius: 15px; /* встановіть радіус */
+  display: inline-block;
+  width: 75px;
+  height: 25px;
+  background-color: #7e847f;
+  border-radius: 15px;
 }
 
 .favorites-oval span {
@@ -78,18 +74,21 @@
 }
 
 .favorites-icon-svg {
-  display: block;
+  display: inline-block;
   stroke: #1b1b1b;
   border: none;
   padding: 0;
   background: none;
   box-sizing: border-box;
+  vertical-align: middle;
+  margin-left: 5px;
 }
 
+.favorites-icon-svg:hover,
+.favorites-icon-svg:focus {
+  transform: scale(0.95);
+}
 .favorites-list-button {
-  display: flex;
-  gap: 8px;
-  align-items: center;
   color: #1b1b1b;
   font-size: 14px;
   font-weight: 400;
@@ -97,10 +96,17 @@
   border: none;
   padding: 0;
   background: none;
+  margin-left: 100px;
+}
+
+.favorites-list-button:hover,
+.favorites-list-button:focus {
+  transform: scale(0.95);
 }
 
 .favorites-list-button-icon {
-  display: block;
+  display: inline-block;
+  margin-left: 8px;
 }
 
 .favorites-list-container {
@@ -170,11 +176,11 @@
 }
 
 .message-info {
+  display: flex;
+  flex-direction: column;
   border-radius: 30px;
   background: #e8e8e8;
   width: 335px;
-  height: 450px;
-  flex-shrink: 0;
 }
 
 .message-info-svg {
@@ -191,13 +197,38 @@
   font-weight: 400;
   line-height: 1.28;
 }
-
-.pagination-favorites {
-  gap: 8px;
-  margin-top: 20px;
+/*----------PAGINATOR MOBILE ---------*/
+.favorites-pagination-block {
   display: flex;
-  height: 32px;
+  gap: 8px;
   justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.favorites-pagination-block button {
+  color: rgba(27, 27, 27, 0.4);
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.favorites-pagination-block button.active-btn {
+  color: #1b1b1b;
+  border-color: #1b1b1b;
+}
+.active-btn {
+  color: #1b1b1b;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+  border: 1px solid #1b1b1b;
+  transition: color 0.25s var(--transition-animation);
+  border-color: 0.25s var(--transition-animation);
 }
 
 /* ------------TABLET----------------- */
@@ -227,11 +258,13 @@
     width: 313px;
   }
 
+  .favorites-list-item:hover,
+  .favorites-list-item:focus {
+    transform: scale(0.95);
+  }
+
   .message-info {
-    display: block;
-    border-radius: 30px;
-    background: #e8e8e8;
-    width: 736px;
+    margin: 0 auto;
   }
 
   .message-info-svg {
@@ -246,12 +279,15 @@
     font-size: 18px;
     line-height: 1.33;
   }
+
+  .favorites-pagination-block {
+    display: none;
+  }
 }
 /* ------------------DESKTOP----------------------- */
 @media (min-width: 1440px) {
   .favorites-card {
     width: 1408px;
-    height: 687px;
   }
 
   .favorites-contanier-block {
