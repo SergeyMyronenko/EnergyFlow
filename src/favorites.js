@@ -1,5 +1,6 @@
 import { displayQuote } from './js/quote.js';
 import './js/favorites-list.js';
+import './js/delete-from-favorites.js'
 import axios from 'axios';
 
 const pageFavorConfig = {

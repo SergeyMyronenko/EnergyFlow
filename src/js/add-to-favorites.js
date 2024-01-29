@@ -3,7 +3,7 @@ const addToFavoritesBtn = document.querySelector('.modal-button-favorites');
 const modalWindow = document.querySelector('.modal');
 addToFavoritesBtn.addEventListener('click', addToFavorites);
 
-let FAVORITES_ID = 'favoriteData';
+export let FAVORITES_ID = 'favoriteData';
 const inLocalStorage = JSON.parse(localStorage.getItem(FAVORITES_ID)) || [];
 
 async function addToFavorites(e) {
