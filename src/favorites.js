@@ -1,5 +1,6 @@
 import { displayQuote } from './js/quote.js';
 import './js/add-to-favorites.js';
+import axios from 'axios';
 
 const pageFavorConfig = {
   quoteTextSelector: '.quoote-text', // Селектор для тексту цитати
