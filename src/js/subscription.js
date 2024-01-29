@@ -6,6 +6,7 @@ const emailPattern = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
 const feedbackFormData = "feedback-form-state";
 const form = document.querySelector('.footer-subscription');
 const emailInput = form.querySelector('.input-footer');
+const button = document.querySelector('.footer-button');
 
 function displayErrorMessage(message) {
     Swal.fire({
@@ -38,6 +39,7 @@ const fetchSubscription = async(email) => {
 
 const validityСheck = async (event) => {
     event.preventDefault();
+    button.blur();
     const footerEmail = emailInput.value.trim();
     if (!emailPattern.test(footerEmail)) {
         displayErrorMessage('Enter a valid email!');
