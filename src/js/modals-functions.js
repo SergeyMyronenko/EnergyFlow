@@ -6,7 +6,7 @@ const refs = {
   form: document.querySelector('.js-rating-form'),
   rateStars: document.querySelector('.js-stars-list'),
   star: document.querySelectorAll('.js-rating-star'),
-  openModalsBtn: document.querySelectorAll('.exersizes-card-btn'),
+  openModalsBtn: document.querySelector('.exersizes-cards-container'),
   openRatingBtn: document.querySelector('.modal-button-rating'),
   exerciseModal: document.querySelector('.modal'),
   closeExerciseBtn: document.querySelector('.modal-button-close'),
@@ -15,9 +15,7 @@ const refs = {
 
 // ========= OPEN LISTENERS =======//
 refs.openRatingBtn.addEventListener('click', openRatingModal);
-refs.openModalsBtn.forEach(btn => {
-  btn.addEventListener('click', openExerciseModal);
-});
+document.addEventListener('click', openExerciseModal);
 
 // ========= CLOSE LISTENERS =======//
 document.addEventListener('click', closeModal);
@@ -28,14 +26,16 @@ refs.closeExerciseBtn.addEventListener('click', closeExerciseModalByBtn);
 // ========= MAIN FUNCTION =======//
 async function openExerciseModal(e) {
   try {
-    const response = await getData(e.currentTarget.dataset.id);
-    refs.exsCont.innerHTML = createMarkup(response.data);
-    refs.exerciseModal.classList.toggle('is-open');
-    const ratingActive = document.querySelector('.ex-rating-active');
-    const ratingValue = document.querySelector('.modal-rating-value');
-    ratingActive.style.width = await `${
-      parseInt(ratingValue.textContent) / 0.05
-    }%`;
+    if (e.target.classList.contains('exersizes-card-btn')) {
+      const response = await getData(e.target.dataset.id);
+      refs.exsCont.innerHTML = createMarkup(response.data);
+      refs.exerciseModal.classList.toggle('is-open');
+      const ratingActive = document.querySelector('.ex-rating-active');
+      const ratingValue = document.querySelector('.modal-rating-value');
+      ratingActive.style.width = await `${
+        parseInt(ratingValue.textContent) / 0.05
+      }%`;
+    }
   } catch (error) {
     throw new Error(error.message);
   }
