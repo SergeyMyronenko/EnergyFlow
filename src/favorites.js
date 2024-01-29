@@ -1,4 +1,5 @@
 import './js/favorites-list.js';
+import './js/favorites-modal.js';
 
 // const pageFavorConfig = {
 //   quoteTextSelector: '.quoote-text', // Селектор для тексту цитати
