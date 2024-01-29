@@ -1,10 +1,8 @@
 'use strict'
 
-import { FAVORITES_ID } from "./add-to-favorites";
+// import { FAVORITES_ID } from "./add-to-favorites";
 
-const localStorageDetails = localStorage.setItem(FAVORITES_ID, JSON.stringify({"name":"air bike","burnedCalories": 312,"bodyPart": "waist","target": "abs"}, ));
-
-const storedData = JSON.parse(localStorage.getItem(FAVORITES_ID)) || [];
+const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
 
 // const inLocalStorage = storedData ? Object.values(storedData) : []; 
 
@@ -16,6 +14,7 @@ function renderFavorites() {
     favoritesContainer.innerHTML = '';
 
     if(storedData.length === 0) {
+        
         favoritesContainer.innerHTML = `
         <img class="message-info-svg" src="./img/dumbbell.png" alt="dumbbell" />
       <p class="message-info-text">
