@@ -1,5 +1,5 @@
 import { displayQuote } from './js/quote.js';
-import './js/add-to-favorites.js';
+import './js/favorites-list.js';
 import axios from 'axios';
 
 const pageFavorConfig = {
