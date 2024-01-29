@@ -14,8 +14,10 @@
     />
     
     <script type="module" crossorigin src="/EnergyFlow/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/EnergyFlow/assets/style-89757184.js">
-    <link rel="stylesheet" href="/EnergyFlow/assets/style-22ac0387.css">
+    <link rel="modulepreload" crossorigin href="/EnergyFlow/assets/vendor-20b07447.js">
+    <link rel="modulepreload" crossorigin href="/EnergyFlow/assets/modals-functions-b6f8c5b4.js">
+    <link rel="stylesheet" href="/EnergyFlow/assets/vendor-9a6909fd.css">
+    <link rel="stylesheet" href="/EnergyFlow/assets/modals-functions-22ac0387.css">
   </head>
 
   <body>
@@ -391,6 +393,120 @@
     </div>
   </div>
 </section>
+    <div class="backdrop modal">
+  <div class="modal-wrapper">
+    <div class="modal-inner">
+      <button class="modal-button-close" type="button">
+        <svg
+          class="modal-button-close-icon"
+          width="24"
+          height="24"
+          aria-label="icon-close"
+        >
+          <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#cross"></use>
+        </svg>
+      </button>
+      <div class="exs-container"></div>
+      <!-- <div class="modal-buttons">
+        <button class="modal-button-favorites" type="button">
+          Add to favorites
+          <svg
+            class="modal-button-favorites-icon"
+            width="20"
+            height="20"
+            aria-label="heart-icon"
+          >
+            <use href="./img/sprite.svg#heart"></use>
+          </svg>
+        </button>
+
+        <button class="modal-button-rating">Give a rating</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+    <div class="backdrop js-backdrop-modal">
+  <div class="rating-modal-wrapper">
+    <button class="rating-close js-rating-close" type="button">
+      <svg class="rating-close-svg" width="28" height="28">
+        <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#cross"></use>
+      </svg>
+    </button>
+
+    <form class="rating-form js-rating-form">
+      <p class="rating-title">Rating</p>
+      <div class="rating-stars-wrapper">
+        <p class="rating-data js-rating-data">0.0</p>
+        <div class="simple-rating">
+          <div class="rating-stars-list js-stars-list">
+            <input
+              class="rating-stars-item"
+              id="rating_5"
+              type="radio"
+              value="5"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_5" data-rate="5"></label>
+
+            <input
+              class="rating-stars-item"
+              id="rating_4"
+              type="radio"
+              value="4"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_4" data-rate="4"></label>
+            <input
+              class="rating-stars-item"
+              id="rating_3"
+              type="radio"
+              value="3"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_3" data-rate="3"></label>
+            <input
+              class="rating-stars-item"
+              id="rating_2"
+              type="radio"
+              value="2"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_2" data-rate="2"></label>
+            <input
+              class="rating-stars-item"
+              id="rating_1"
+              type="radio"
+              value="1"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_1" data-rate="1"></label>
+          </div>
+        </div>
+      </div>
+      <label>
+        <input
+          class="rating-input"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+      </label>
+      <label>
+        <textarea
+          class="rating-comment"
+          name="comment"
+          maxlength="10000"
+          placeholder="Your comment"
+          required
+        ></textarea>
+      </label>
+      <button class="rating-submit js-raiting-submit">Send</button>
+    </form>
+  </div>
+</div>
+
 
     
   </body>
