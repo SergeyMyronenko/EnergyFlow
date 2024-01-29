@@ -73,5 +73,20 @@ export function createMarkup(obj) {
       </div>
     </div>
   </div>
+  <div class="modal-buttons">
+        <button class="modal-button-favorites" type="button" data-id="${obj._id}">
+          Add to favorites
+          <svg
+            class="modal-button-favorites-icon"
+            width="20"
+            height="20"
+            aria-label="heart-icon"
+          >
+            <use href="./img/sprite.svg#heart"></use>
+          </svg>
+        </button>
+
+        <button class="modal-button-rating">Give a rating</button>
+      </div>
   `;
 }

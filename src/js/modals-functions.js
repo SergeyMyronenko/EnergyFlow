@@ -14,7 +14,7 @@ const refs = {
 };
 
 // ========= OPEN LISTENERS =======//
-refs.openRatingBtn.addEventListener('click', openRatingModal);
+document.addEventListener('click', openRatingModal);
 document.addEventListener('click', openExerciseModal);
 
 // ========= CLOSE LISTENERS =======//
@@ -44,7 +44,7 @@ async function openExerciseModal(e) {
 // ========= OPEN/CLOSE FUNCTIONS =======//
 
 async function openRatingModal(e) {
-  if (e.currentTarget) {
+  if (e.target.classList.contains('modal-button-rating')) {
     refs.ratingModal.classList.toggle('is-open');
   }
 }
