@@ -22,5 +22,7 @@ async function addToFavorites(e) {
     modalWindow.classList.remove('is-open');
   } catch (error) {
     console.log(error.message);
+  } finally {
+    addToFavoritesBtn.removeEventListener('click', addToFavorites);
   }
 }
