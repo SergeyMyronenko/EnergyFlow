@@ -14,21 +14,27 @@
       referrerpolicy="no-referrer"
     />
     
-    <link rel="stylesheet" href="/EnergyFlow/assets/style-6ffc2757.css">
+    <script type="module" crossorigin src="/EnergyFlow/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/EnergyFlow/assets/style-89757184.js">
+    <link rel="modulepreload" crossorigin href="/EnergyFlow/assets/vendor-20b07447.js">
+    <link rel="stylesheet" href="/EnergyFlow/assets/style-22ac0387.css">
+    <link rel="stylesheet" href="/EnergyFlow/assets/vendor-9a6909fd.css">
   </head>
 
   <body>
-    <header class="header-page">
+    <header>
+      <header class="header-page on-home">
   <div class="header-main container">
     <a class="header-logo" href="./index.html">energy.flow</a>
     <nav class="header-nav">
       <ul class="header-nav-list">
-        <li class="header-list-item header-home">
-          <a class="header-list-link" href="./index.html">Home</a>
+        <li class="favorites d">
+          <a class="link-favorites" href="./favorites.html">Favorites</a>
         </li>
-        <li class="header-list-item header-favorites">
-          <a class="header-list-link" href="./favorites.html">Favorites</a>
+        <li class="home d">
+          <a class="link-home" href="./index.html">Home</a>
         </li>
+        <div class="ghost d"></div>
       </ul>
     </nav>
     <ul class="header-social-list">
@@ -39,7 +45,7 @@
           target="_blank"
         >
           <svg class="header-social-list-icon" width="28" height="28">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#facebook"></use>
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#facebook"></use>
           </svg>
         </a>
       </li>
@@ -50,7 +56,7 @@
           target="_blank"
         >
           <svg class="header-social-list-icon" width="28" height="28">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#instagram"></use>
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#instagram"></use>
           </svg>
         </a>
       </li>
@@ -61,31 +67,37 @@
           target="_blank"
         >
           <svg class="header-social-list-icon" width="28" height="28">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#youtube"></use>
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#youtube"></use>
           </svg>
         </a>
       </li>
     </ul>
 
     <div class="header-burger">
-        <span class="burger-line"></span>
+      <span class="burger-line"></span>
     </div>
   </div>
 </header>
 
-    <div class="mobile-menu-wrapper visually-hidden">
+    </header>
+    <main>
+      <div class="mobile-menu-wrapper visually-hidden">
   <div class="mobile-menu">
     <div class="mobile-menu-header">
-      <a href="../" class="mobile-menu-logo">energy.flow</a>
+      <a href="./index.html" class="mobile-menu-logo">energy.flow</a>
       <button class="mobile-menu-close-btn" type="button">
         <svg class="mobile-menu-close-btn-icon" width="20" height="20">
-          <use href="/EnergyFlow/assets/sprite-e1d60398.svg#cross"></use>
+          <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#cross"></use>
         </svg>
       </button>
     </div>
     <div class="mobile-menu-content">
-      <button class="mobile-menu-btn-content-home">Home</button>
-      <button class="mobile-menu-btn-content-favorites">Favorites</button>
+      <button class="mobile-menu-btn-content-home">
+        Home<a href="./index.html"></a>
+      </button>
+      <button class="mobile-menu-btn-content-favorites">
+        Favorites<a href="./favorites.html"></a>
+      </button>
     </div>
     <ul class="mobile-menu-social-icons">
       <li class="">
@@ -94,7 +106,7 @@
           class="mobile-menu-social-icon"
         >
           <svg class="mobile-menu-social-list-icon" width="40" height="40">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#facebook"></use>
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#facebook"></use>
           </svg>
         </a>
       </li>
@@ -104,7 +116,7 @@
           class="mobile-menu-social-icon"
         >
           <svg class="mobile-menu-social-list-icon" width="40" height="40">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#instagram"></use>
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#instagram"></use>
           </svg>
         </a>
       </li>
@@ -114,7 +126,7 @@
           class="mobile-menu-social-icon"
         >
           <svg class="mobile-menu-social-list-icon" width="40" height="40">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#youtube"></use>
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#youtube"></use>
           </svg>
         </a>
       </li>
@@ -122,7 +134,7 @@
   </div>
 </div>
 
-    <section class="hero-section">
+      <section class="hero-section">
   <div class="container">
     <div class="hero-photo-wrapper">
       <ul class="tags-list">
@@ -154,17 +166,17 @@
   </div>
 </section>
 
-    <section>
+      <section>
   <div class="container">
     <div class="quote-container">
       <div class="quote-titel-icon">
         <svg class="icon-quote icon-dude" width="32" height="32">
-          <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
+          <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#dude"></use>
         </svg>
         <h2 class="quote-title">Quote of the day</h2>
       </div>
       <svg class="icon-quote icon-comma" width="48" height="48">
-        <use href="/EnergyFlow/assets/sprite-e1d60398.svg#icon-inverted-commas"></use>
+        <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#icon-inverted-commas"></use>
       </svg>
       <p class="quote-text">
         A lot of times I find that people who are blessed with the most talent
@@ -177,21 +189,23 @@
   </div>
 </section>
 
-    <section class="exersizes">
+      <section class="exersizes">
     <div class="container">
 
-    <div class="exersizes-container">
+   <div class="exersizes-container">
+      <div class="exersizes-wrapper">
 
-<!-- =================================================== Заголовок та фільтр Після тесту встановити hidden на span ================================================== -->
+<!-- ===================== Заголовок та фільтр Після тесту встановити hidden на span =========================== -->
 
-          <h2 class="exersizes-header">Exercises<span class="dash">&nbsp;/&nbsp;</span><span class="category">waist</span></h2>
+          <h2 class="exersizes-header">Exercises<span class="dash visually-hidden">&nbsp;/&nbsp;</span><span class="exercise-name visually-hidden"></span></h2>
 <div class="exersizes-header-filter-cont">
-          <ul class="exersizes-list">
+          <ul class="exersizes-list list">
             <li class="exersizes-list-item list">
               <button
                 class="exersizes-menu-btn exersizes-menu-btn-active"
                 type="button"
                 name="muscles"
+                value="Muscles"
               >
                 Muscles
               </button>
@@ -201,514 +215,107 @@
                 class="exersizes-menu-btn"
                 type="button"
                 name="body parts"
+                value="Body parts"
               >
                 Body parts
               </button>
             </li>
             <li class="exersizes-list-item list">
-              <button class="exersizes-menu-btn" type="button" name="equipment">
+              <button class="exersizes-menu-btn" type="button" name="equipment" value="Equipment">
                 Equipment
-              </button>
+              </button> 
             </li>
           </ul>
+          
+<!-- =============== Форма пошуку! Додати hidden ============================================== -->
 
-<!-- ======================================== Форма пошуку! Додати hidden ========================================================================== -->
-
-          <div class="exersizes-input-container ">
+          <div class="exersizes-input-container visually-hidden">
               <input class="exersizes-input" type="email" name="user_email" id="email"  placeholder="Search"
           autocomplete="off" required/>
           <div class="exersizes-input-btn-container"> 
-            <button class="exersizes-input-btn" type="submit" name="search-submit">
-              <svg class="exersizes-input-icon" width="18" height="18" aria-label="search-icon">
-                <use href="/EnergyFlow/assets/sprite-e1d60398.svg#cross"></use>
+            <button class="exersizes-input-btn visually-hidden" type="button">
+              <svg class="exersizes-input-clear-icon"  width="18" height="18" aria-label="search-icon">
+                <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#cross"></use>
               </svg>
-          <button class="exersizes-input-btn" type="submit" name="search-submit">
+          <button class="exersizes-input-btn-s" type="submit" name="search-submit">
               <svg class="exersizes-input-icon" width="18" height="18" aria-label="delete-text-icon">
-                <use href="/EnergyFlow/assets/sprite-e1d60398.svg#search"></use>
+                <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#search"></use>
               </svg>
 </button>
 </div>
           </div>
 </div>
 
-          <!-- ======================================== Контейнер для карток ============================================================  -->
+ <!-- ================ Контейнер для карток =============================================  -->
           
-          <div class="exersizes-cards-container">
-
-            <!-- ======================================== Картки для тесту. ВИДАЛИТИ після налаштування =================================== -->
-
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-            <div class="exersizes-card-bytype">
-              <h3 class="exersizes-card-bytype-header">Abductors</h3>
-              <p class="exersizes-card-bytype-text">Muscles</p>
-            </div>
-<!-- ================================================================================================================= -->
-            
-          </div>
+<ul class="exersizes-cards-container list">
+</ul>
 <!-- ================== Контейнер для карток другої частини. Після тесту макету - додати клас hidden ===================-->
           
-          <div class="exersizes-result-card-container">
+  <ul class="exersizes-result-card-container list visually-hidden">
+ </ul>
 
+<!-- =================== Контейнер для повідомлення. Після тесту макету - додати клас hidden =========================== -->      
 
-<!-- ================== Картки для тесту. Друга частина.  ВИДАЛИТИ після налаштування ==================================-->
-
-            <div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
+<div class="exersizes-message-container visually-hidden">
 </div>
-<div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
-</div>
-<div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
-</div>
-<div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
-</div>
-<div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
-</div>
-<div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
-</div>
-<div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
-</div>
-<div class="exersizes-card">
-    <div class="exersizes-card-header-cont">
-        <div class="exersizes-card-workout-cont">
-            <div class="exersizes-card-workout-header-title">workout</div>
-            <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">4.0</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-            
-            </div>
-           
-        </div>
-       <button class="exersizes-card-btn" type="button">start 
-        <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#arrow"></use>
-        </svg>
-       </button>
-    </div>
-
-    <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="/EnergyFlow/assets/sprite-e1d60398.svg#dude"></use>
-                </svg>
-                <h3 class="exersizes-card-title-h">air bike</h3>
-    </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data">60 / 3 min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
-            <span class="exersizes-card-info-data">Waist</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data">Quads</span></p></li>
-    </ul>
-</div>
-
-         
-<!-- =================================================================================================================== -->
-
- </div>
-
-<!-- ========================== Контейнер для повідомлення. Після тесту макету - додати клас hidden ==================== -->      
-
-<div class="exersizes-message-container">
-
-<!-- ========================= Повідомлення для тесту. ВИДАЛИТИ після налаштування макету=============================== -->
-
-<p class="noresult-message" >Unfortunately, <em class="span-strong">no results</em> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>
-
-<!-- =================================================================================================================== -->
-</div>
-<!-- ===================================== Пагінація ==================================================================== -->
-          <div class="exersizes-paginftion-container">
-            <ul class="exersizes-paginftion-list list">
-
- <!-- ================================ Увага! Після тесту - ВИДАЛИТИ всі li ===================================================== --> 
-
-              <li
-                class="exersizes-paginftion-item exersizes-paginftion-item-active"
-              >
-
-          
-     <button class="exersizes-pagination-btn"
-                  type="button"
-                  name="first"
-                >
-                  1
-                </button>
-              </li>
-              <li class="exersizes-paginftion-item">
-                <button
-                  class="exersizes-pagination-btn"
-                  type="button"
-                  name="second"
-                >
-                  2
-                </button>
-              </li>
-<!-- ====================================================================================================================== -->
+<!-- ==================== Пагінація =============================================== -->
+          <div class="exersizes-pagination-container">
+            <ul class="exersizes-pagination-list list ">
             </ul>
           </div>
+        </div>
+
+        <a href="#top" class="up-link">
+          <svg class="up-svg" width="40" height="40">
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#top"></use>
+          </svg>
+        </a>
         </div>
         </div>
       </section>
 
-    <div class="backdrop modal">
+      <div class="backdrop modal">
   <div class="modal-wrapper">
     <div class="modal-inner">
       <button class="modal-button-close" type="button">
-        <svg class="modal-button-close-icon" width="24" height="24" aria-label="icon-close">
-          <use href="/EnergyFlow/assets/sprite-e1d60398.svg#cross"></use>
+        <svg
+          class="modal-button-close-icon"
+          width="24"
+          height="24"
+          aria-label="icon-close"
+        >
+          <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#cross"></use>
         </svg>
       </button>
-      <div class="modal-content">
-        <div class="modal-img">
-        </div>
+      <div class="exs-container"></div>
+      <div class="modal-buttons">
+        <button class="modal-button-favorites" type="button">
+          Add to favorites
+          <svg
+            class="modal-button-favorites-icon"
+            width="20"
+            height="20"
+            aria-label="heart-icon"
+          >
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#heart"></use>
+          </svg>
+        </button>
 
-        <div class="modal-info">
-          <h4 class="modal-title">Air bake</h4>
-
-          <div class="modal-rating">
-            <p class="modal-rating-value">4.0</p>
-
-            <ul class="modal-rating-list">
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-              </li>
-              <li>
-                <svg class="modal-rating-icon" width="18" height="18" aria-label="icon-star">
-                  <use href="/EnergyFlow/assets/sprite-e1d60398.svg#star"></use>
-                </svg>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="modal-list">
-            <li class="modal-list-item">
-              <p class="modal-list-item-name">Target</p>
-              <p class="modal-list-item-value">Abs</p>
-            </li>
-            <li class="modal-list-item">
-              <p class="modal-list-item-name">Body Part</p>
-              <p class="modal-list-item-value">Waist</p>
-            </li>
-            <li class="modal-list-item">
-              <p class="modal-list-item-name">Equipment</p>
-              <p class="modal-list-item-value">Body weight</p>
-            </li>
-            <li class="modal-list-item">
-              <p class="modal-list-item-name">Popular</p>
-              <p class="modal-list-item-value">150</p>
-            </li>
-            <li class="modal-list-item">
-              <p class="modal-list-item-name">Burned calories</p>
-              <p class="modal-list-item-value">323/3 min</p>
-            </li>
-          </ul>
-
-          <p class="modal-description">This refers to your core muscles, which include the rectus abdominis,
-            obliques, and transverse abdominis. They're
-            essential for maintaining posture, stability, and generating force in many movements. Exercises that
-            target the abs
-            include crunches, leg raises, and planks.</p>
-
-          <div class="modal-buttons">
-            <button class="modal-button-favorites" type="button">Add to favorites
-              <svg class="modal-button-favorites-icon" width="20" height="20" aria-label="heart-icon">
-                <use href="/EnergyFlow/assets/sprite-e1d60398.svg#heart"></use>
-              </svg>
-            </button>
-
-            <button class="modal-button-rating">Give a rating</button>
-          </div>
-        </div>
+        <button class="modal-button-rating">Give a rating</button>
       </div>
     </div>
   </div>
 </div>
 
-
-    <section>
+      <section>
   <div class="container">
     <div class="image-info-container"></div>
     <div class="info-container">
       <div class="info-titel-icon">
         <div class="box-icon-gym">
           <svg class="icon-quote icon-gym" width="20" height="20">
-            <use href="/EnergyFlow/assets/sprite-e1d60398.svg#gym"></use>
+            <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#gym"></use>
           </svg>
         </div>
         <h2 class="info-title">110 min</h2>
@@ -724,11 +331,11 @@
   </div>
 </section>
 
-    <div class="backdrop js-backdrop-modal">
+      <div class="backdrop js-backdrop-modal">
   <div class="rating-modal-wrapper">
     <button class="rating-close js-rating-close" type="button">
       <svg class="rating-close-svg" width="28" height="28">
-        <use href="/EnergyFlow/assets/sprite-e1d60398.svg#cross"></use>
+        <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#cross"></use>
       </svg>
     </button>
 
@@ -736,12 +343,50 @@
       <p class="rating-title">Rating</p>
       <div class="rating-stars-wrapper">
         <p class="rating-data js-rating-data">0.0</p>
-        <div class="rating-stars-list js-stars-list">
-          <div class="rating-star-svg js-rating-star" data-rate="5"></div>
-          <div class="rating-star-svg js-rating-star" data-rate="4"></div>
-          <div class="rating-star-svg js-rating-star" data-rate="3"></div>
-          <div class="rating-star-svg js-rating-star" data-rate="2"></div>
-          <div class="rating-star-svg js-rating-star" data-rate="1"></div>
+        <div class="simple-rating">
+          <div class="rating-stars-list js-stars-list">
+            <input
+              class="rating-stars-item"
+              id="rating_5"
+              type="radio"
+              value="5"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_5" data-rate="5"></label>
+
+            <input
+              class="rating-stars-item"
+              id="rating_4"
+              type="radio"
+              value="4"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_4" data-rate="4"></label>
+            <input
+              class="rating-stars-item"
+              id="rating_3"
+              type="radio"
+              value="3"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_3" data-rate="3"></label>
+            <input
+              class="rating-stars-item"
+              id="rating_2"
+              type="radio"
+              value="2"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_2" data-rate="2"></label>
+            <input
+              class="rating-stars-item"
+              id="rating_1"
+              type="radio"
+              value="1"
+              name="rating"
+            />
+            <label class="rating-label" for="rating_1" data-rate="1"></label>
+          </div>
         </div>
       </div>
       <label>
@@ -767,41 +412,31 @@
   </div>
 </div>
 
-    <footer class="footer">
+    </main>
+    <footer>
+      <footer class="footer">
   <div class="container">
     <div class="footer-group">
       <a class="logo-footer link" href="./index.html">energi.flow</a>
       <ul class="social-list list">
         <li class="social-item-footer">
-          <a
-            class="social-link-footer"
-            href="https://www.facebook.com/goITclub/"
-            target="_blank"
-          >
+          <a class="social-link-footer" href="https://www.facebook.com/goITclub/" target="_blank">
             <svg class="social-icon" width="20" height="20">
-              <use href="/EnergyFlow/assets/sprite-e1d60398.svg#facebook"></use>
+              <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#facebook"></use>
             </svg>
           </a>
         </li>
         <li class="social-item-footer">
-          <a
-            class="social-link-footer"
-            href="https://www.instagram.com/goitclub/"
-            target="_blank"
-          >
+          <a class="social-link-footer" href="https://www.instagram.com/goitclub/" target="_blank">
             <svg class="social-icon" width="20" height="20">
-              <use href="/EnergyFlow/assets/sprite-e1d60398.svg#instagram"></use>
+              <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#instagram"></use>
             </svg>
           </a>
         </li>
         <li class="social-item-footer">
-          <a
-            class="social-link-footer"
-            href="https://www.youtube.com/c/GoIT"
-            target="_blank"
-          >
+          <a class="social-link-footer" href="https://www.youtube.com/c/GoIT" target="_blank">
             <svg class="social-icon" width="20" height="20">
-              <use href="/EnergyFlow/assets/sprite-e1d60398.svg#youtube"></use>
+              <use href="/EnergyFlow/assets/sprite-e6e8cf6a.svg#youtube"></use>
             </svg>
           </a>
         </li>
@@ -815,26 +450,155 @@
       <p class="footer-box-title">Subscribe and learn about new exercises!</p>
       <form class="footer-subscription">
         <label class="label-subscription" aria-label="email">
-          <input
-            type="email"
-            name="footer-email"
-            class="input-footer"
-            placeholder="Email"
-          />
+          <input type="email" name="footer-email" class="input-footer" placeholder="Email" />
         </label>
         <button type="submit" class="footer-button">Send</button>
       </form>
     </div>
     <div class="security">
       <p class="security-text first">Energy Flow. All rights reserved.</p>
-      <p class="security-text">Privacy Policy / Terms of Service</p>
+      <ul class="security-links">
+        <li>
+          <button class="footer-policy" type="button">Privacy Policy</button>
+        </li>
+        <li>
+          <button class="footer-service" type="button">Terms of Service</button>
+        </li>
+      </ul>/>
     </div>
   </div>
 </footer>
+      <div class="policy-modal-overlay">
+    <div class="policy">
+        <div class="policy__header">
+            <div class="policy__header-text">Privacy Policy</div>
+            <div class="policy__content">
+                <h4>
+                    Protection of Personal Data
+                </h4>
+                <p>
+                    Your personal information may only be disclosed by us in cases where it
+                    is necessary for: (a) compliance with legal requirements or court orders
+                    in relation to us; (b) the protection of our rights or property; (c)
+                    taking urgent measures to ensure the personal safety of our employees or
+                    service consumers provided by them, as well as ensuring public safety.
+                    Personal information obtained in our possession during registration may
+                    be transferred to third parties and individuals who are in partnership
+                    with us to improve the quality of services. This information will not be
+                    used for any other purpose than those mentioned above. The email address
+                    provided by you during registration may be used to send you messages or
+                    notifications about changes related to your application, as well as
+                    mailing notifications about events and changes happening in the company,
+                    important information about new products and services, etc. The option
+                    to unsubscribe from subscribing to these email notifications is
+                    provided.
+                </p>
+                <h4>
+                    Use of Cookies
+                </h4>
+                <p>
+                    When a user visits the website, a cookie is stored on their computer (if
+                    the user allows the acceptance of such files). If the user has
+                    previously visited this website, the cookie is read from the computer.
+                    One of the purposes of using cookies is associated with facilitating the
+                    collection of visit statistics. This information helps determine which
+                    information sent to customers may be of the greatest interest to them.
+                    Data collection is done in an aggregated form and is never associated
+                    with personal user information.
+                </p>
+                <p>
+                    Third parties, including Google, display advertisements for our company
+                    on Internet sites. Third parties, including Google, use cookies to
+                    display advertisements based on the previous visits of users to our
+                    websites and interests in web browsers. Users can prohibit Google from
+                    using cookies. To do this, you need to visit a special Google page at
+                    this address: http://www.google.com/privacy/ads/
+                </p>
+                <h4>
+                    Changes in the Privacy Policy Statement
+                </h4>
+                <p>
+                    The privacy policy statement is intended to be periodically updated. In
+                    this case, the date of the previous update, indicated at the beginning
+                    of the document, will change. Notices of changes in this statement will
+                    be posted prominently on our websites.
+                </p>
+                <p>
+                    Using our application, you agree to receive SMS notifications with
+                    advertising related to application updates, as well as promotional
+                    offers and news about upcoming events.
+                </p>
+                <h4>
+                    <span role="img" aria-label="Heart">❤️</span>
+                    Thank you for your
+                    interest in our system!
+                </h4>
 
+            </div>
+        </div>
+    </div>
+</div>
+      <div class="modal-overlay">
+    <div class="policy">
+        <div class="policy__header">
+            <div class="policy__header-text">Terms of Servise</div>
+        </div>
+        <div class="policy__content">
+            <p>
+                Welcome to our website/application for sports exercises! Before you
+                start using our resource, please carefully read our Terms of Service.
+            </p>
+            <h4>
+                Search and Categories:
+            </h4>
+            <p>
+                Our service allows you to search for exercises by categories or
+                keywords. The convenient filter enables you to quickly find the
+                exercises you need.
+            </p>
+            <h4>
+                Favorite Exercises List:
+            </h4>
+            <p>
+                You can create your own list of favorite exercises for easy access. Add
+                your favorite exercises and plan your workouts according to your
+                schedule.
+            </p>
+            <h4>
+                Newsletter Subscription:
+            </h4>
+            <p>
+                Subscribe to our newsletter and receive updates on new exercises,
+                helpful tips, and workout plans. Stay informed about all the latest
+                events!
+            </p>
+            <h4>
+                Ratings and Comments:
+            </h4>
+            <p>
+                Share your thoughts! Add ratings and comments to exercises so that other
+                users can find the best workouts.
+            </p>
+            <h4>
+                Motivational Quotes:
+            </h4>
+            <p>
+                On our website, you will find a section with motivational quotes that
+                will inspire you to achieve new heights in sports and life in general.
+            </p>
+            <h4>
+                <span role="img" aria-label="Heart">❤️</span>
+                Thank you for your
+                interest in our system!
+            </h4>
+
+        </div>
+    </div>
+
+</div>
+    </footer>
 
     <div class="backdrop"></div>
-
-    <!-- <script type="module" src="./index.js"></script> -->
+    
   </body>
 </html>
