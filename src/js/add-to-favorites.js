@@ -1,22 +1,18 @@
 import { getData } from './exercises-modal.js';
 const addToFavoritesBtn = document.querySelector('.modal-button-favorites');
-const favoritesList = document.querySelector('.favorites-list');
 
 addToFavoritesBtn.addEventListener('click', addToFavorites);
 
-async function addToFavorites() {
+const FAVORITES_ID = 'favoriteData';
+const inLocalStorage = JSON.parse(localStorage.getItem(FAVORITES_ID)) || [];
+
+async function addToFavorites(id) {
   try {
-    const itemId = await getData('64f389465ae26083f39b17cd');
-    console.log(itemId);
-    const data = itemId.data.data;
-    console.log(data);
-    const FAVORITES_ID = data._id;
-    console.log(FAVORITES_ID);
-    let inLocalStorage = JSON.parse(localStorage.getItem(FAVORITES_ID) || []);
-    console.log(inLocalStorage);
+    const itemId = await getData(id);
+    const data = itemId.data;
+
     inLocalStorage.push(data);
     localStorage.setItem(FAVORITES_ID, JSON.stringify(inLocalStorage));
-    // favoritesList.insertAdjacentHTML('beforeend', renderItem(data));
   } catch (error) {
     console.log(error.message);
   }
