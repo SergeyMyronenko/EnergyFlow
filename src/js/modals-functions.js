@@ -1,6 +1,5 @@
 import { getData, createMarkup } from './exercises-modal';
 
-let id;
 const refs = {
   ratingModal: document.querySelector('.js-backdrop-modal'),
   closeBtn: document.querySelector('.js-rating-close'),
@@ -18,7 +17,6 @@ const refs = {
 refs.openRatingBtn.addEventListener('click', openRatingModal);
 refs.openModalsBtn.forEach(btn => {
   btn.addEventListener('click', openExerciseModal);
-  id = refs.btn.dataset.id;
 });
 
 // ========= CLOSE LISTENERS =======//
@@ -30,7 +28,7 @@ refs.closeExerciseBtn.addEventListener('click', closeExerciseModalByBtn);
 // ========= MAIN FUNCTION =======//
 async function openExerciseModal(e) {
   try {
-    const response = await getData(id);
+    const response = await getData(e.currentTarget.dataset.id);
     refs.exsCont.innerHTML = createMarkup(response.data);
     refs.exerciseModal.classList.toggle('is-open');
     const ratingActive = document.querySelector('.ex-rating-active');
