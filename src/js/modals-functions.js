@@ -88,7 +88,6 @@ import { getData, createMarkup } from './exercises-modal';
 const refs = {
   ratingModal: document.querySelector('.js-backdrop-modal'),
   closeBtn: document.querySelector('.js-rating-close'),
-  form: document.querySelector('.js-rating-form'),
   rateStars: document.querySelector('.js-stars-list'),
   star: document.querySelectorAll('.js-rating-star'),
   openModalsBtn: document.querySelector('.exersizes-cards-container'),
@@ -142,6 +141,18 @@ function closeModalHandler(e) {
     refs.exerciseModal.classList.contains('is-open')
   ) {
     refs.exerciseModal.classList.remove('is-open');
+  } else if (
+    e.target.classList.contains('modal-button-close') ||
+    e.target.classList.contains('modal-button-close-icon') ||
+    e.target.classList.contains('modal-button-close-use')
+  ) {
+    refs.exerciseModal.classList.remove('is-open');
+  } else if (
+    e.target.classList.contains('rating-close') ||
+    e.target.classList.contains('rating-close-svg') ||
+    e.target.classList.contains('rating-close-use')
+  ) {
+    refs.ratingModal.classList.remove('is-open');
   }
 }
 
@@ -155,9 +166,3 @@ function closeModalByEsc(e) {
     refs.exerciseModal.classList.remove('is-open');
   }
 }
-
-// else if (e.target === refs.closeBtn) {
-//     refs.ratingModal.classList.remove('is-open');
-//   } else if (e.target === refs.closeExerciseBtn) {
-//     refs.exerciseModal.classList.remove('is-open');
-//   }
