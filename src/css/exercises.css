@@ -190,10 +190,6 @@ address {
 
 /* ======================================================== */
 
-.exersizes-cards-container + .first-filter:hover {
-  background-color: #eea10c;
-}
-
 /* ======================== UP button =========================== */
 html {
   scroll-behavior: smooth;
@@ -814,7 +810,6 @@ html {
     row-gap: 28px;
     column-gap: 20px;
     padding-top: 32px;
-    min-height: 715px;
   }
 
   .exersizes-cards-container {
