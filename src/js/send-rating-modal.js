@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { id } from './modals-functions';
 
 const refs = {
   modalBackdrop: document.querySelector('.js-backdrop-modal'),
@@ -6,9 +7,8 @@ const refs = {
   exerciseModal: document.querySelector('.modal'),
   rateValue: document.querySelector('.js-rating-data'),
   stars: document.querySelectorAll('.rating-label'),
+  openRatingBtn: document.querySelector('.modal-button-rating'),
 };
-// must to make dinamic id!!!!!!!
-const exerciseID = '64f389465ae26083f39b17a4';
 refs.form.addEventListener('submit', getData);
 refs.stars.forEach(star => {
   star.addEventListener('click', getRate);
@@ -20,7 +20,7 @@ async function getData(e) {
   e.preventDefault();
   try {
     const response = await axios.patch(
-      `https://energyflow.b.goit.study/api/exercises/${exerciseID}/rating`,
+      `https://energyflow.b.goit.study/api/exercises/${id}/rating`,
       {
         rate: parseInt(e.target.elements.rating.value),
         email: e.target.elements.email.value.trim(),
@@ -33,7 +33,6 @@ async function getData(e) {
     refs.modalBackdrop.classList.remove('is-open');
     refs.exerciseModal.classList.remove('is-open');
     e.target.reset();
-    refs.form.removeEventListener('submit', getData);
 
     refs.stars.forEach(star => {
       star.removeEventListener('click', getRate);
