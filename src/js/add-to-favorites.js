@@ -1,9 +1,9 @@
 import { getData } from './exercises-modal.js';
 const addToFavoritesBtn = document.querySelector('.modal-button-favorites');
 
-addToFavoritesBtn.addEventListener('click', addToFavorites);
+// addToFavoritesBtn.addEventListener('click', addToFavorites);
 
-const FAVORITES_ID = 'favoriteData';
+export const FAVORITES_ID = 'favoriteData';
 const inLocalStorage = JSON.parse(localStorage.getItem(FAVORITES_ID)) || [];
 
 async function addToFavorites(id) {
