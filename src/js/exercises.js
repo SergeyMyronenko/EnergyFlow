@@ -308,7 +308,8 @@ async function renderMessage(error) {
   paginationList.innerHTML = '';
 
   MESSAGE_CONTAINER.innerHTML = '';
-  const markupMessage = `<p class="noresult-message" >Unfortunately, <em class="span-strong">no results</em> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
+  const markupMessage =
+    '<p class="noresult-message" >Unfortunately, <em class="span-strong">no results</em> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>';
 
   MESSAGE_CONTAINER.insertAdjacentHTML('beforeend', markupMessage);
 }

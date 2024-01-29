@@ -14,7 +14,7 @@ const refs = {
 };
 
 // ========= OPEN LISTENERS =======//
-refs.openRatingBtn.addEventListener('click', openRatingModal);
+document.addEventListener('click', openRatingModal);
 document.addEventListener('click', openExerciseModal);
 
 // ========= CLOSE LISTENERS =======//
@@ -29,6 +29,7 @@ async function openExerciseModal(e) {
     if (e.target.classList.contains('exersizes-card-btn')) {
       const response = await getData(e.target.dataset.id);
       refs.exsCont.innerHTML = createMarkup(response.data);
+
       refs.exerciseModal.classList.toggle('is-open');
       const ratingActive = document.querySelector('.ex-rating-active');
       const ratingValue = document.querySelector('.modal-rating-value');
@@ -44,7 +45,7 @@ async function openExerciseModal(e) {
 // ========= OPEN/CLOSE FUNCTIONS =======//
 
 async function openRatingModal(e) {
-  if (e.currentTarget) {
+  if (e.target.classList.contains('modal-button-rating')) {
     refs.ratingModal.classList.toggle('is-open');
   }
 }
