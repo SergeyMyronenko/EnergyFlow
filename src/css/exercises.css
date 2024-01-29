@@ -199,18 +199,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.container {
-  width: 375px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 .up-link {
   display: none;
   position: fixed;
@@ -616,9 +604,6 @@ html {
   white-space: nowrap;
 }
 @media (min-width: 375px) {
-  .container {
-    width: 375px;
-  }
   .exersizes-input {
     width: 295px;
   }
@@ -632,12 +617,6 @@ html {
 
 @media screen and (min-width: 768px) {
   /* ==================================== Загальні контейнери карток та повідомлення ========================================= */
-
-  .container {
-    width: 768px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
 
   .loader {
     width: 48px;
@@ -826,10 +805,6 @@ html {
 /* ======================================= Адаптація під десктоп ========================================= */
 
 @media screen and (min-width: 1440px) {
-  .container {
-    width: 1440px;
-  }
-
   .exersizes-message-container {
     padding-top: 217px;
     height: 827px;
