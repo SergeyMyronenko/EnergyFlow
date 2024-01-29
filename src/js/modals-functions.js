@@ -1,5 +1,6 @@
 import { getData, createMarkup } from './exercises-modal';
 
+let id;
 const refs = {
   ratingModal: document.querySelector('.js-backdrop-modal'),
   closeBtn: document.querySelector('.js-rating-close'),
@@ -17,6 +18,7 @@ const refs = {
 refs.openRatingBtn.addEventListener('click', openRatingModal);
 refs.openModalsBtn.forEach(btn => {
   btn.addEventListener('click', openExerciseModal);
+  id = refs.btn.dataset.id;
 });
 
 // ========= CLOSE LISTENERS =======//
@@ -25,9 +27,10 @@ document.addEventListener('keydown', closeModalByEsc);
 refs.closeBtn.addEventListener('click', closeModalByBtn);
 refs.closeExerciseBtn.addEventListener('click', closeExerciseModalByBtn);
 
+// ========= MAIN FUNCTION =======//
 async function openExerciseModal(e) {
   try {
-    const response = await getData('64f389465ae26083f39b17cd');
+    const response = await getData(id);
     refs.exsCont.innerHTML = createMarkup(response.data);
     refs.exerciseModal.classList.toggle('is-open');
     const ratingActive = document.querySelector('.ex-rating-active');
@@ -39,6 +42,8 @@ async function openExerciseModal(e) {
     throw new Error(error.message);
   }
 }
+
+// ========= OPEN/CLOSE FUNCTIONS =======//
 
 async function openRatingModal(e) {
   if (e.currentTarget) {
