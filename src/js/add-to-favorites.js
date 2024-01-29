@@ -13,7 +13,7 @@ async function addToFavorites(e) {
     const data = itemId.data;
     const findCopy = inLocalStorage.some(item => item._id === data._id);
 
-    if (findCopy !== data._id) {
+    if (!findCopy) {
       inLocalStorage.push(data);
     } else {
       return;
