@@ -295,6 +295,9 @@
   .favorites-pagination-block {
     display: none;
   }
+  .pagination-favorites {
+    display: none;
+  }
 }
 /* ------------------DESKTOP----------------------- */
 @media (min-width: 1440px) {
