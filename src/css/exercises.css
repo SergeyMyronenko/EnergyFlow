@@ -228,6 +228,7 @@ html {
   margin: 0 auto;
   fill: #fafafa;
   opacity: 0.85;
+  z-index: 999999;
   transition: opacity 0.2s ease-in-out, scale 0.2s ease-in-out;
 }
 .up-svg:hover {
@@ -244,8 +245,6 @@ html {
   padding-right: 20px;
   background-color: var(--dark-white);
   border-radius: 30px;
-  margin-left: auto;
-  margin-right: auto;
   min-height: 760px;
 }
 
@@ -328,9 +327,7 @@ html {
 }
 .exersizes-input-btn {
   width: fit-content;
-  position: absolute;
-  right: 20px;
-  height: 18px;
+  position: relative;
   border: none;
   padding: 0;
   margin: 0;
@@ -344,15 +341,13 @@ html {
 }
 .exersizes-input-btn-s {
   width: fit-content;
-  position: absolute;
-  height: 45px;
-  width: 18px;
-  right: -4px;
+  position: relative;
+  width: fit-content;
   transform: translateY(6%);
   border: none;
   padding: 0;
   margin: 0;
-  z-index: 999;
+  z-index: 1;
   background-color: transparent;
   fill: transparent;
   stroke: var(--primary-color);
@@ -859,8 +854,7 @@ html {
     padding-right: 48px;
     background-color: var(--dark-white);
     border-radius: 30px;
-    margin-left: auto;
-    margin-right: auto;
     min-height: 827px;
+    width: 100%;
   }
 }
