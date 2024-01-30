@@ -32,7 +32,9 @@
 }
 
 .favorites-card-heder {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .favorites-oval {
@@ -73,16 +75,17 @@
   background: none;
   box-sizing: border-box;
   vertical-align: middle;
-  margin-left: 5px;
+  margin-left: 8px;
+  transition: transform 300ms ease-in-out;
 }
 
 .favorites-icon-svg:hover,
 .favorites-icon-svg:focus {
-  transform: scale(0.95);
+  transform: scale(1.09);
 }
 .favorites-list-button {
-  position: absolute;
   display: flex;
+  align-items: center;
   color: #1b1b1b;
   font-size: 14px;
   font-weight: 400;
@@ -90,16 +93,15 @@
   border: none;
   padding: 0;
   background: none;
-  margin-left: 109px;
+  transition: transform 300ms ease-in-out;
 }
 
 .favorites-list-button:hover,
 .favorites-list-button:focus {
-  transform: scale(0.95);
+  transform: scale(1.07);
 }
 
 .favorites-list-button-icon {
-  display: inline-block;
   margin-left: 8px;
 }
 
@@ -255,14 +257,13 @@
   }
 
   .favorites-list-item {
-    position: relative;
     width: calc((100% - 40px) / 3 - 20px);
-    box-sizing: border-box;
-    max-width: 424px;
-    height: 141px;
+    /* box-sizing: border-box; */
+    min-width: 424px;
     padding: 16px;
     background-color: #FFFFFF;
     border-radius: 15px;
+    transition: transform 300ms ease-in-out;
   }
 
   .favorites-list-item:hover,
@@ -339,14 +340,10 @@
 
   .favorites-card-text {
     margin-top: 8px;
-    margin-bottom: 16px;
   }
 
-  .favorites-list-button {
+  /* .favorites-list-button {
     margin-left: 220px;
-  }
+  } */
 
-  .favorites-icon-svg {
-    margin-left: 10px;
-  }
 }
