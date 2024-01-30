@@ -5,7 +5,7 @@ const modalWindow = document.querySelector('.modal');
 modalExercises.addEventListener('click', addToFavorites);
 
 export const LOCAL_STORAGE_KEY = 'favoriteData';
-export const inLocalStorage =
+export let inLocalStorage =
   JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
 
 async function addToFavorites(e) {
