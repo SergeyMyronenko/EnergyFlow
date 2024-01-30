@@ -85,6 +85,7 @@
 // }
 import { getData, createMarkup } from './exercises-modal';
 
+export let id;
 const refs = {
   ratingModal: document.querySelector('.js-backdrop-modal'),
   closeBtn: document.querySelector('.js-rating-close'),
@@ -114,6 +115,7 @@ async function openExerciseModal(e) {
     const response = await getData(e.target.dataset.id);
     refs.exsCont.innerHTML = createMarkup(response.data);
     refs.exerciseModal.classList.add('is-open');
+    id = e.target.dataset.id;
     updateRatingWidth();
   } catch (error) {
     throw new Error(error.message);
