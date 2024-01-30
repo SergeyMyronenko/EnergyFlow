@@ -89,4 +89,4 @@ quoteConfigs.forEach(config => {
 });
 
 // Експортуємо функцію displayQuote
-// export { displayQuote };
+export { displayQuote };

@@ -31,14 +31,6 @@
   margin-top: 20px;
 }
 
-.favorites-list-item {
-  width: 295px;
-  height: 165px;
-  border-radius: 15px;
-  background: #fff;
-  padding: 16px;
-}
-
 .favorites-card-heder {
   display: inline-block;
 }
@@ -89,6 +81,7 @@
   transform: scale(0.95);
 }
 .favorites-list-button {
+  position: absolute;
   display: flex;
   color: #1b1b1b;
   font-size: 14px;
@@ -262,12 +255,19 @@
   }
 
   .favorites-list-item {
-    width: 313px;
+    position: relative;
+    width: calc((100% - 40px) / 3 - 20px);
+    box-sizing: border-box;
+    max-width: 424px;
+    height: 141px;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
   }
 
   .favorites-list-item:hover,
   .favorites-list-item:focus {
-    transform: scale(0.95);
+    transform: scale(1.05);
   }
 
   .message-info {
@@ -335,13 +335,6 @@
   .message-info-block {
     margin-top: 146px;
     margin-bottom: 258px;
-  }
-
-  .favorites-list-item {
-    width: calc((100% - 40px) / 3 - 20px);
-    box-sizing: border-box;
-    max-width: 424px;
-    height: 141px;
   }
 
   .favorites-card-text {
