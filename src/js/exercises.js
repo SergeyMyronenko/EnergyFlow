@@ -308,7 +308,8 @@ async function renderMessage(error) {
   paginationList.innerHTML = '';
 
   MESSAGE_CONTAINER.innerHTML = '';
-  const markupMessage = `<p class="noresult-message" >Unfortunately, <em class="span-strong">no results</em> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>`;
+  const markupMessage =
+    '<p class="noresult-message" >Unfortunately, <em class="span-strong">no results</em> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>';
 
   MESSAGE_CONTAINER.insertAdjacentHTML('beforeend', markupMessage);
 }
@@ -359,6 +360,15 @@ function keyGen(filterType, filterSubType, page, searchQuery) {
   } else if (!filterType && !filterSubType) {
     config.filter = 'Muscles';
     return config;
+  } else if (
+    filterType &&
+    filterSubType &&
+    window.innerWidth >= 768 &&
+    window.innerWidth < 1440
+  ) {
+    config.limit = 8;
+  } else if (filterType && filterSubType && window.innerWidth >= 1440) {
+    config.limit = 9;
   }
 
   switch (filterType) {
@@ -375,7 +385,6 @@ function keyGen(filterType, filterSubType, page, searchQuery) {
 
   return config;
 }
-
 // =========================== Pagination ===========================
 
 async function pagination(resp, error) {
