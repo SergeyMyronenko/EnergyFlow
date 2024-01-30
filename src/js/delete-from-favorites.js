@@ -1,9 +1,17 @@
-import { FAVORITES_ID } from './add-to-favorites'
+import { LOCAL_STORAGE_KEY, inLocalStorage } from './add-to-favorites';
+import { renderFavorites } from './render';
 
 function removeFromFavotites(removedWorkoutID) {
 
-    const newFavoritesWorkouts = data.filter((workout) => workout._id !== removedWorkoutID);
+    const newFavoritesWorkouts = JSON.stringify(inLocalStorage.filter((workout) => workout._id !== removedWorkoutID));
+    localStorage.setItem(LOCAL_STORAGE_KEY, newFavoritesWorkouts);
+};
 
-    localStorage.setItem(FAVORITES_ID, newFavoritesWorkouts);
- 
-}
+const favoritesWotkoutContainer = document.querySelector(".favorites-contanier-block")
+
+favoritesWotkoutContainer.addEventListener("click", (e) => {
+    const workoutIdToDelete = e.target.dataset.id;
+    removeFromFavotites(workoutIdToDelete);
+    renderFavorites();
+})
+
