@@ -17,7 +17,9 @@ const MESSAGE_CONTAINER = document.querySelector(
 const PAGINATION_CONTAINER = document.querySelector(
   '.exersizes-pagination-container'
 );
-
+const inputContainer = document.querySelector('.exersizes-input-container');
+const clearBtn = document.querySelector('.exersizes-input-btn');
+const searchBtn = document.querySelector('.exersizes-input-btn-s');
 const dash = document.querySelector('.dash');
 const exerciseName = document.querySelector('.exercise-name');
 
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', filterFetch());
 // ============ Запуск фільтрації при кліку на кнопку ============
 
 filterListener.addEventListener('click', e => {
+  console.log(isNaN(parseInt(e.target.textContent.trim())));
   e.preventDefault();
   addLoading();
   if (e.target.nodeName !== 'BUTTON') {
@@ -53,7 +56,9 @@ filterListener.addEventListener('click', e => {
 
 // ============ Запуск фільтрації при кліку на загальну картку ============
 
-FILTER_IMG_CONTAINER.addEventListener('click', e => {
+FILTER_IMG_CONTAINER.addEventListener('click', choseFilterCard);
+// ================= Функція запуску фільтрації при кліку на картку вправи =================
+function choseFilterCard(e) {
   e.preventDefault();
   addLoading();
   if (
@@ -73,7 +78,7 @@ FILTER_IMG_CONTAINER.addEventListener('click', e => {
   removeLoading();
   sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
   sessionStorage.setItem('filterType', JSON.stringify(filterType));
-});
+}
 
 // ============ Запуск фільтрації при кліку на пагінацію ============
 
@@ -83,14 +88,14 @@ PAGINATION_CONTAINER.addEventListener('click', e => {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
-    const filterType = sessionStorage.getItem('filterType').slice(1, -1);
+    const filterType = JSON.parse(sessionStorage.getItem('filterType'));
     const page = e.target.textContent.trim();
     let filterSubType;
 
     if (sessionStorage.getItem(`filterSubType`)) {
-      filterSubType = sessionStorage.getItem('filterSubType').slice(1, -1);
+      filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
     } else {
-      filterSubType = sessionStorage.getItem('filterSubType');
+      // filterSubType = sessionStorage.getItem('filterSubType');
     }
 
     paginationFetch(filterType, filterSubType, page);
@@ -138,15 +143,31 @@ async function fetchExersizes(filterType, filterSubType, page) {
   }
 }
 
+// =============== Для пагінації============
+async function filterFetchPag(filterType, filterSubType, page) {
+  const response = await axios.get('/filters', {
+    params: keyGen(filterType, filterSubType, page),
+  });
+
+  try {
+    if (response.data.results.length === 0) {
+      throw new Error('No results found...');
+    }
+    filterType = response.data.results[0].filter;
+    renderFilterImg(response);
+  } catch (error) {
+    renderMessage();
+  }
+}
 // =========================== Запит вправ по пагінації ===========================
 
 async function paginationFetch(filterType, filterSubType, page) {
-  let response = null;
+  let response;
 
   if (filterSubType) {
     response = await fetchExersizes(filterType, filterSubType, page);
   } else {
-    response = await filterFetch(filterType, filterSubType, page);
+    response = await filterFetchPag(filterType, filterSubType, page);
   }
 }
 
@@ -162,13 +183,11 @@ async function searchByName(e) {
     .value.trim()
     .toLowerCase();
 
-  const filterType = sessionStorage.getItem('filterType').slice(1, -1);
-  const filterSubType = sessionStorage.getItem('filterSubType').slice(1, -1);
+  const filterType = JSON.parse(sessionStorage.getItem('filterType'));
+  const filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
 
   try {
-    if (searchQuery.length === 0) {
-      throw new Error('Nthing to search...');
-    } else {
+    if (searchQuery.length !== 0) {
       const response = await axios.get('/exercises', {
         params: keyGen(filterType, filterSubType, page, searchQuery),
       });
@@ -178,21 +197,22 @@ async function searchByName(e) {
       simpleInputCleaning();
       renderExersizesCard(response);
       pagination(response);
-      removeLoading();
     }
   } catch (error) {
     console.log(error);
     renderMessage();
   }
+  removeLoading();
 }
 
 //  ===================== Вставлення карток по фільтру =====================
 
 async function renderFilterImg(resp) {
   const results = resp.data.results;
-  FILTER_IMG_CONTAINER.classList.remove('visually-hidden');
-  EXERCISES_CARD_CONTAINER.classList.add('visually-hidden');
-  MESSAGE_CONTAINER.classList.add('visually-hidden');
+  FILTER_IMG_CONTAINER.classList.remove('hidden');
+  EXERCISES_CARD_CONTAINER.classList.add('hidden');
+  MESSAGE_CONTAINER.classList.add('hidden');
+
   FILTER_IMG_CONTAINER.innerHTML = '';
   const markup = results
     .map(el => {
@@ -215,15 +235,24 @@ async function renderFilterImg(resp) {
     })
     .join('');
   FILTER_IMG_CONTAINER.insertAdjacentHTML('beforeend', markup);
+  FILTER_IMG_CONTAINER.addEventListener('keyup', choseByEnter);
 }
+// ======================== Функція відкривання картки вправи по Enter ========================
 
+function choseByEnter(e) {
+  if (e.keyCode === 13) {
+    choseFilterCard(e);
+  }
+}
 // ======================== Вставлення карток вправ ========================
 
 function renderExersizesCard(resp) {
   const results = resp.data.results;
-  EXERCISES_CARD_CONTAINER.classList.remove('visually-hidden');
-  FILTER_IMG_CONTAINER.classList.add('visually-hidden');
-  MESSAGE_CONTAINER.classList.add('visually-hidden');
+  FILTER_IMG_CONTAINER.removeEventListener('keyup', choseByEnter);
+  EXERCISES_CARD_CONTAINER.classList.remove('hidden');
+  FILTER_IMG_CONTAINER.classList.add('hidden');
+  MESSAGE_CONTAINER.classList.add('hidden');
+  FILTER_IMG_CONTAINER.removeEventListener('keyup', choseByEnter);
   EXERCISES_CARD_CONTAINER.innerHTML = '';
   let id;
   const markup = results
@@ -296,14 +325,15 @@ function renderExersizesCard(resp) {
     })
     .join('');
   EXERCISES_CARD_CONTAINER.insertAdjacentHTML('beforeend', markup);
+  EXERCISES_CARD_CONTAINER.addEventListener('keyup', choseByEnter);
 }
 
 // =========================== Виведення повідомлення ===========================
 
 async function renderMessage(error) {
-  FILTER_IMG_CONTAINER.classList.add('visually-hidden');
-  EXERCISES_CARD_CONTAINER.classList.add('visually-hidden');
-  MESSAGE_CONTAINER.classList.remove('visually-hidden');
+  FILTER_IMG_CONTAINER.classList.add('hidden');
+  EXERCISES_CARD_CONTAINER.classList.add('hidden');
+  MESSAGE_CONTAINER.classList.remove('hidden');
   const paginationList = document.querySelector('.exersizes-pagination-list');
   paginationList.innerHTML = '';
 
@@ -316,12 +346,12 @@ async function renderMessage(error) {
 
 // =========================== Зміна стилю активної фільтр-кнопки ===========================
 
-function changeFilterBtnStyle(event) {
+function changeFilterBtnStyle(e) {
   const filterBtns = document.querySelectorAll('.exersizes-menu-btn');
   filterBtns.forEach(el => {
     el.classList.remove('exersizes-menu-btn-active');
   });
-  const activeBtn = event.target;
+  const activeBtn = e.target;
   activeBtn.classList.add('exersizes-menu-btn-active');
 }
 
@@ -385,6 +415,7 @@ function keyGen(filterType, filterSubType, page, searchQuery) {
 
   return config;
 }
+
 // =========================== Pagination ===========================
 
 async function pagination(resp, error) {
@@ -440,8 +471,8 @@ function changingPaginationBtnStyle(e) {
   const previousActiveBtn = document.querySelector(
     '.exersizes-pagination-item-active'
   );
-  previousActiveBtn.classList.remove('exersizes-pagination-item-active');
   const currentActiveBtn = e.target;
+  previousActiveBtn.classList.remove('exersizes-pagination-item-active');
   currentActiveBtn.classList.add('exersizes-pagination-item-active');
 }
 
@@ -460,38 +491,33 @@ function scrollToTopShowOrHide() {
 function inputVisualisationAddListeners() {
   // const divLister = document.querySelector('.exersizes-input-container');
   const searchInput = document.querySelector('.exersizes-input');
-  const searchBtn = document.querySelector('.exersizes-input-btn-s');
-  const inputContainer = document.querySelector('.exersizes-input-container');
-  const clearBtn = document.querySelector('.exersizes-input-btn');
-  inputContainer.classList.remove('visually-hidden');
+  inputContainer.classList.remove('hidden');
   searchInput.addEventListener('keyup', submitShowHideClean);
   searchBtn.addEventListener('click', searchByName);
 }
 
 // =================== Відправка за Ентером, показ/ховання хрестика та  чищення ===================
 function submitShowHideClean(e) {
-  const clearBtn = document.querySelector('.exersizes-input-btn');
-  clearBtn.classList.remove('visually-hidden');
+  clearBtn.classList.remove('hidden');
   if (e.target.value.trim().length > 0) {
-    clearBtn.classList.remove('visually-hidden');
+    clearBtn.classList.remove('hidden');
     clearBtn.addEventListener('click', simpleInputCleaning);
   }
   if (e.keyCode === 13) {
     searchByName(e);
     simpleInputCleaning();
-    clearBtn.classList.add('visually-hidden');
+    clearBtn.classList.add('hidden');
   }
 }
 
 // =================== Функція очищення пошуку  Функція зверху замінює ===================
 
 function showClearBtnAndCleaning() {
-  const clearBtn = document.querySelector('.exersizes-input-btn');
-  clearBtn.classList.remove('visually-hidden');
+  clearBtn.classList.remove('hidden');
   const cleaning = e => {
     e.preventDefault();
     simpleInputCleaning();
-    clearBtn.classList.add('visually-hidden');
+    clearBtn.classList.add('hidden');
   };
   clearBtn.addEventListener('click', cleaning);
 }
@@ -500,24 +526,18 @@ function showClearBtnAndCleaning() {
 
 function inputHidingAndRemoveListeners() {
   const searchInput = document.querySelector('.exersizes-input');
-  const searchBtn = document.querySelector('.exersizes-input-btn-s');
-  const inputContainer = document.querySelector('.exersizes-input-container');
-  const clearBtn = document.querySelector('.exersizes-input-btn');
-
   searchInput.removeEventListener('input', showClearBtnAndCleaning);
   searchInput.removeEventListener('click', searchByName);
-  // searchBtn.removeEventListener('click', searchByName);
-  inputContainer.classList.add('visually-hidden');
-  clearBtn.classList.add('visually-hidden');
+  inputContainer.classList.add('hidden');
+  clearBtn.classList.add('hidden');
 }
 
 // =================== Функція, що очищує інпут =========
 
 function simpleInputCleaning() {
   const searchInput = document.querySelector('.exersizes-input');
-  const clearBtn = document.querySelector('.exersizes-input-btn');
   searchInput.value = '';
-  clearBtn.classList.add('visually-hidden');
+  clearBtn.classList.add('hidden');
   clearBtn.removeEventListener('click', simpleInputCleaning);
 }
 // =================== Функція додавання спінера, стилю search-btn-disabled, змінення стану кнопки на відключено ===================

@@ -8,11 +8,10 @@
   border-radius: 30px;
   width: 335px;
   height: 471px;
+  margin-top: 10px;
 }
 
-@media (min-device-pixel-ratio: 2),
-(min-resolution: 192dpi),
-(min-resolution: 2dppx) {
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .footer {
     background-image: url(../img/Footer/m-f-img/mob-foot-2x.jpg);
   }
@@ -173,9 +172,7 @@
     height: 576px;
   }
 
-  @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .footer {
       background-image: url(../img/Footer/t-f-img/tab-foot-2x.jpg);
     }
@@ -269,9 +266,7 @@
     height: 454px;
   }
 
-  @media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .footer {
       background-image: url(../img/Footer/d-f-img/desk-foot-2x.jpg);
     }
