@@ -3,7 +3,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  border-radius: 50px;
+  border-radius: 30px;
   background: var(--grey);
   width: 335px;
   height: 272px;
