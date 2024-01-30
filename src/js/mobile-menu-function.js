@@ -26,6 +26,6 @@ homeButton.addEventListener('click', () => {
 });
 
 favoritesButton.addEventListener('click', () => {
-  window.location.href = "favorites-exercises.html";
+  window.location.href = "favorites.html";
 });
 
