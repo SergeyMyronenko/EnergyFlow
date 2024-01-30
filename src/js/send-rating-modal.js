@@ -6,18 +6,21 @@ const refs = {
   form: document.querySelector('.js-rating-form'),
   exerciseModal: document.querySelector('.modal'),
   rateValue: document.querySelector('.js-rating-data'),
-  stars: document.querySelectorAll('.rating-label'),
-  openRatingBtn: document.querySelector('.modal-button-rating'),
+  starsContainer: document.querySelector('.js-stars-list'),
 };
-refs.form.addEventListener('submit', getData);
-refs.stars.forEach(star => {
-  star.addEventListener('click', getRate);
-});
-function getRate(e) {
-  refs.rateValue.textContent = `${e.target.dataset.rate}.0`;
+
+refs.form.addEventListener('submit', handleSubmit);
+refs.starsContainer.addEventListener('click', handleStarClick);
+
+function handleStarClick(e) {
+  if (e.target.classList.contains('rating-label')) {
+    refs.rateValue.textContent = `${e.target.dataset.rate}.0`;
+  }
 }
-async function getData(e) {
+
+async function handleSubmit(e) {
   e.preventDefault();
+
   try {
     const response = await axios.patch(
       `https://energyflow.b.goit.study/api/exercises/${id}/rating`,
@@ -30,12 +33,13 @@ async function getData(e) {
   } catch (error) {
     throw new Error(error.message);
   } finally {
-    refs.modalBackdrop.classList.remove('is-open');
-    refs.exerciseModal.classList.remove('is-open');
-    e.target.reset();
-
-    refs.stars.forEach(star => {
-      star.removeEventListener('click', getRate);
-    });
+    resetForm();
   }
+}
+
+function resetForm() {
+  refs.modalBackdrop.classList.remove('is-open');
+  refs.exerciseModal.classList.remove('is-open');
+  refs.rateValue.textContent = '0.0';
+  refs.form.reset();
 }
