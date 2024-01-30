@@ -40,7 +40,7 @@
       rgba(27, 27, 27, 0.2) 100%
     ),
     url();
-  width: 270px;
+  width: 295px;
   height: 258px;
   border-radius: 12px;
 }
@@ -215,7 +215,7 @@
 
 .modal-button-rating {
   display: block;
-  padding: 12px 106px;
+  padding: 12px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
