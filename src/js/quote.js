@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export async function getQuote() {
   // Проверяем, доступно ли localStorage и есть ли в нем данные, а также проверяем, совпадает ли timestamp
   const quoteData =
