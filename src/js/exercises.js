@@ -215,6 +215,15 @@ async function renderFilterImg(resp) {
     })
     .join('');
   FILTER_IMG_CONTAINER.insertAdjacentHTML('beforeend', markup);
+  FILTER_IMG_CONTAINER.addEventListener('keyup', choseByEnter);
+}
+
+// ======================== Вибір типу за Enter ========================
+
+function choseByEnter(e) {
+  if (e.keyCode === 13) {
+    choseFilterCard(e);
+  }
 }
 
 // ======================== Вставлення карток вправ ========================
