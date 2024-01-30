@@ -1,5 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+input {
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
 .link {
   text-decoration: none;
 }
@@ -8,19 +48,204 @@
   list-style-type: none;
 }
 
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+address {
+  font-style: normal;
+}
+
+.link {
+  text-decoration: none;
+}
+
 .hidden {
   display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* ======================= Effects first ============================== */
+
+.first-filter {
+  position: relative;
+  border-radius: 12px;
+  transition: opacity 0.2s ease-in-out, scale 0.2s ease-in-out;
+}
+
+.exersizes-card-bytype:hover,
+.exersizes-card-bytype:focus {
+  scale: 1.03;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25), 0px 4px 10px rgba(0, 0, 0, 0.25),
+    0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.exersizes-card-bytype {
+  transition: scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: absolute;
+  /* left: 50%;
+  top: 50%;
+  transform: translate(-50%, 265%); */
+}
+.loader::after,
+.loader::before {
+  content: '';
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animloader 2s linear infinite;
+}
+.loader::after {
+  animation-delay: 1s;
+}
+.exersizes-header {
+  position: relative;
+}
+
+@keyframes animloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ======================== Effects second ==================== */
+.second-filter {
+  position: relative;
+  border-radius: 12px;
+  transition: opacity 0.5s ease-in-out, scale 0.5s ease-in-out;
+}
+
+.second-filter:hover,
+.second-filter:focus {
+  scale: 1.05;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.exersizes-menu-btn {
+  transition: box-shadow 0.3s ease-in-out;
+}
+.exercise-name {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: capitalize;
+  color: rgba(27, 27, 27, 0.5);
+}
+
+.exersizes-menu-btn:hover,
+.exersizes-menu-btn:focus {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.exersizes-input {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.exersizes-input:hover,
+.exersizes-input:focus {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.exersizes-card-btn {
+  transition: scale 0.3s ease-in-out;
+}
+
+.exersizes-card-btn:hover,
+.exersizes-card-btn:focus {
+  scale: 1.05;
+}
+.exersizes-input-btn-s {
+  transition: scale 0.3s ease-in-out;
+}
+.exersizes-input-btn-s:hover,
+.exersizes-input-btn-s:focus {
+  scale: 1.1;
+}
+
+/* ======================================================== */
+
+/* ======================== UP button =========================== */
+html {
+  scroll-behavior: smooth;
+}
+
+.up-link {
+  display: none;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  right: 16px;
+  bottom: 16px;
+  width: fit-content;
+  border-radius: 50%;
+  opacity: 0.6;
+  background-color: var(--grey);
+  box-shadow: 1px 2px 10px 2px var(--dark-grey);
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    scale 0.2s ease-in-out;
+}
+.up-link.show {
+  display: block;
+}
+.up-link:hover {
+  scale: 1.15;
+  opacity: 1;
+}
+.up-link:active {
+  background-color: var(--dark-grey);
+}
+.up-svg {
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  margin: 0 auto;
+  fill: #fafafa;
+  opacity: 0.85;
+  z-index: 999999;
+  transition: opacity 0.2s ease-in-out, scale 0.2s ease-in-out;
+}
+.up-svg:hover {
+  opacity: 1;
+  scale: 1.15;
 }
 
 /* ==================================== Стилі для РОБОЧОГО контейнера ========================================= */
 
 .exersizes-container {
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 20px;
   padding-right: 20px;
   background-color: var(--dark-white);
   border-radius: 30px;
+  min-height: 760px;
 }
 
 .exersizes-header {
@@ -31,23 +256,41 @@
   color: var(--primary-color);
 }
 
-.category {
-  font-size: 20px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  text-transform: capitalize;
-  color: rgba(27, 27, 27, 0.5);
-}
-
 .exersizes-header-filter-cont {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   padding-top: 20px;
-  /* padding-bottom: 40px; */
+}
+.exersizes-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.exersizes-list-item {
+  width: fit-content;
+  border-radius: 30px;
+}
+.exersizes-menu-btn {
+  font-size: 14px;
+  line-height: 1.28;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 30px;
+  border: none;
+  white-space: nowrap;
+}
+
+.exersizes-menu-btn-active {
+  background-color: #7e847f;
+  color: var(--secondary-color);
 }
 
 .exersizes-input-container {
@@ -55,7 +298,7 @@
   width: fit-content;
 }
 .exersizes-input {
-  width: 295px;
+  max-width: 295px;
   height: 42px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -70,6 +313,7 @@
   line-height: 1.28;
   color: var(--primary-color);
 }
+
 .exersizes-input-btn-container {
   position: absolute;
   display: flex;
@@ -79,10 +323,11 @@
   column-gap: 5px;
   align-items: center;
   justify-content: center;
+  width: fit-content;
 }
 .exersizes-input-btn {
   width: fit-content;
-  height: 18px;
+  position: relative;
   border: none;
   padding: 0;
   margin: 0;
@@ -90,53 +335,22 @@
   fill: transparent;
   stroke: var(--primary-color);
 }
-
-.exersizes-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 6px;
+.exersizes-input-icon {
+  position: relative;
+  z-index: -1;
 }
-
-.exersizes-list-item {
+.exersizes-input-btn-s {
   width: fit-content;
-  border-radius: 30px;
-}
-
-.exersizes-menu-btn {
-  font-size: 14px;
-  line-height: 1.28;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 14px;
-  padding-right: 14px;
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  border-radius: 30px;
+  position: relative;
+  width: fit-content;
+  transform: translateY(6%);
   border: none;
-}
-
-/* ==================================== Стиль активної кнопки ================================ */
-
-.exersizes-menu-btn-active {
-  background-color: #7e847f;
-  color: var(--secondary-color);
-}
-
-/* ==================================== Контейнери карток та повідомлення ========================================= */
-
-.exersizes-message-container {
-  padding-top: 164px;
-  height: 760px;
-}
-
-.exersizes-result-card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: 20px;
-  padding-top: 40px;
+  padding: 0;
+  margin: 0;
+  z-index: 1;
+  background-color: transparent;
+  fill: transparent;
+  stroke: var(--primary-color);
 }
 
 .exersizes-cards-container {
@@ -147,7 +361,6 @@
   row-gap: 20px;
   padding-top: 40px;
 }
-/* ==================================== Стилі картки першої сторінки ============================== */
 
 .exersizes-card-bytype {
   display: flex;
@@ -161,11 +374,10 @@
   border: 1px solid rgba(246, 246, 246, 0.3);
 
   background: linear-gradient(
-      0deg,
-      rgba(16, 16, 16, 0.7) 0%,
-      rgba(16, 16, 16, 0.7) 100%
-    ),
-    url(./img/1.jpg);
+    0deg,
+    rgba(16, 16, 16, 0.7) 0%,
+    rgba(16, 16, 16, 0.7) 100%
+  );
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -174,7 +386,6 @@
 .exersizes-card-bytype-header {
   font-size: 20px;
   font-weight: 400;
-  line-height: 1;
   color: var(--secondary-color);
 }
 
@@ -184,14 +395,49 @@
   color: rgba(246, 246, 246, 0.4);
 }
 
-/* =========================================== Пагінація ==================================== */
+.exersizes-result-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
+  padding-top: 40px;
+}
+.exersizes-message-container {
+  padding-top: 164px;
+  height: 760px;
+}
 
-.exersizes-paginftion-container {
+.noresult-message {
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--primary-color);
+}
+
+.span-strong {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+  font-style: normal;
+  color: var(--grey);
+}
+
+.exersizes-pagination-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  min-height: 32px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 20px;
   column-gap: 20px;
+  row-gap: 10px;
 }
 
 .exersizes-pagination-btn {
@@ -208,17 +454,21 @@
   border: none;
   border-radius: 18px;
   padding: 0;
-
-  position: relative;
 }
 
-.exersizes-paginftion-list {
+.exersizes-pagination-list {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 3px;
+  row-gap: 5px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.exersizes-paginftion-item-active {
+.exersizes-pagination-item-active {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,13 +477,9 @@
   border-radius: 18px;
 }
 
-.exersizes-paginftion-item-active > .exersizes-pagination-btn {
+.exersizes-pagination-item-active > .exersizes-pagination-btn {
   color: var(--primary-color);
 }
-
-/* =========================================== Друга частина ================================== */
-
-/* =========================================== Картка ================================== */
 
 .exersizes-card {
   width: 295px;
@@ -348,27 +594,14 @@
   color: var(--primary-color);
   white-space: nowrap;
 }
+@media (min-width: 375px) {
+  .exersizes-input {
+    width: 295px;
+  }
 
-/* ======================================= Повідомлення про відсутність результату пошуку =============== */
-
-.noresult-message {
-  max-width: 295px;
-  font-size: 14px;
-  line-height: 1.28;
-  letter-spacing: -0.01em;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--primary-color);
-}
-
-.span-strong {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.28;
-  letter-spacing: -0.01em;
-  font-style: normal;
-  color: var(--grey);
+  .exersizes-list {
+    column-gap: 6px;
+  }
 }
 
 /* ======================================= Адаптація під планшет ========================================= */
@@ -376,11 +609,37 @@
 @media screen and (min-width: 768px) {
   /* ==================================== Загальні контейнери карток та повідомлення ========================================= */
 
+  .loader {
+    width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .loader::after,
+  .loader::before {
+    content: '';
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation: animloader 2s linear infinite;
+  }
+  .loader::after {
+    animation-delay: 1s;
+  }
+  /* ======================= */
   .exersizes-header-filter-cont {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
-    margin-top: 32px;
+    padding-top: 32px;
   }
 
   .exersizes-message-container {
@@ -391,6 +650,7 @@
   .exersizes-result-card-container {
     flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     row-gap: 20px;
     column-gap: 14px;
@@ -423,10 +683,11 @@
 
   .exersizes-container {
     padding-top: 64px;
-    padding-bottom: 64px;
     padding-left: 48px;
     padding-right: 48px;
+    padding-bottom: 64px;
     border-radius: 50px;
+    min-height: 1091px;
   }
 
   .exersizes-header {
@@ -476,7 +737,7 @@
 
   /* ============================================ Пагінація =========================== */
 
-  .exersizes-paginftion-container {
+  .exersizes-pagination-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -491,7 +752,7 @@
     letter-spacing: 0.04em;
   }
 
-  .exersizes-paginftion-list {
+  .exersizes-pagination-list {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -571,12 +832,29 @@
   }
 
   .exersizes-card-info-list {
-    column-gap: 16px;
     row-gap: 16px;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
   .noresult-message {
     max-width: 684px;
+  }
+  .up-link {
+    width: 100px;
+    height: 100px;
+  }
+  .up-svg {
+    width: 80px;
+    height: 80px;
+  }
+  .exersizes-container {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    padding-left: 48px;
+    padding-right: 48px;
+    background-color: var(--dark-white);
+    border-radius: 30px;
+    min-height: 827px;
+    width: 100%;
   }
 }
