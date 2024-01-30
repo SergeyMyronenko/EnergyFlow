@@ -2,19 +2,20 @@
 
 // import { FAVORITES_ID } from "./add-to-favorites";
 
-const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
+
 
 // const inLocalStorage = storedData ? Object.values(storedData) : []; 
 
-console.log(storedData);
+// console.log(storedData);
 
-function renderFavorites() {
+export function renderFavorites() {
+  const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
     const favoritesContainer = document.querySelector('.favorites-contanier-block');
 
     favoritesContainer.innerHTML = '';
 
     if(storedData.length === 0) {
-        
+   
         favoritesContainer.innerHTML = `
         <img class="message-info-svg" src="./img/dumbbell.png" alt="dumbbell" />
       <p class="message-info-text">
@@ -33,7 +34,7 @@ function renderFavorites() {
           <div class="favorites-card-heder">
             <div class="favorites-oval">
               <span>WORKOUT</span>
-              <button class="favorites-icon-svg">
+              <button class="favorites-icon-svg" data-id="${item._id}">
                 <svg width="16" height="16" fill="none">
                   <use href="./img/sprite.svg#trash"></use>
                 </svg>
