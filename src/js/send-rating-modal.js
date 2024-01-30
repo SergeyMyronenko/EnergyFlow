@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { id } from './modals-functions';
+import { operationSuccess } from './izitoasts';
 
 const refs = {
   modalBackdrop: document.querySelector('.js-backdrop-modal'),
@@ -27,6 +28,7 @@ async function getData(e) {
         review: e.target.elements.comment.value.trim(),
       }
     );
+    operationSuccess();
   } catch (error) {
     throw new Error(error.message);
   } finally {
