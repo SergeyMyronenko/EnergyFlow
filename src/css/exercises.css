@@ -61,10 +61,6 @@ address {
   text-decoration: none;
 }
 
-.hidden {
-  display: none;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -862,4 +858,7 @@ html {
     min-height: 827px;
     width: 100%;
   }
+}
+.hidden {
+  display: none;
 }
