@@ -7,6 +7,7 @@ const refs = {
   rateValue: document.querySelector('.js-rating-data'),
   stars: document.querySelectorAll('.rating-label'),
 };
+// must to make dinamic id!!!!!!!
 const exerciseID = '64f389465ae26083f39b17a4';
 refs.form.addEventListener('submit', getData);
 refs.stars.forEach(star => {
