@@ -6,18 +6,24 @@ export function removeFromFavotites(removedWorkoutID) {
     const newFavoritesWorkouts = JSON.stringify(favoritesWorkout.filter((workout) => workout._id !== removedWorkoutID));
     localStorage.setItem(LOCAL_STORAGE_KEY, newFavoritesWorkouts);
 };
+function animationOfDisapiaring(deletedElement) {
+        deletedElement.style.animation = "opacity-animation 1s ease-out";
 
+    setTimeout(() => {
+        deletedElement.style.transform = "translateX(-200%)";
+    }, 150);
+
+    setTimeout(() => {
+        deletedElement.style.position = "absolute";
+        deletedElement.style.top = "0px";
+        deletedElement.style.left = "0px";
+    }, 450);
+    
+    setTimeout(() => deletedElement.remove(), 1000);
+};
 function removeWorkoutCard(removedWorkoutID) {
     const deletedWorkoutCard = document.querySelector(`[data-id="${removedWorkoutID}"]`).parentElement.parentElement.parentElement;
-
-    // deletedWorkoutCard.style.transform = "translateX(-200%)"
-    // setTimeout(() => {
-    // deletedWorkoutCard.style.position = "absolute";
-    // deletedWorkoutCard.style.top = "0px";
-    // deletedWorkoutCard.style.left = "0px";
-    // },300)
-    
-    // setTimeout(() => deletedWorkoutCard.remove(),500)
+    animationOfDisapiaring(deletedWorkoutCard);
 };
 
 const favoritesWotkoutContainer = document.querySelector(".favorites-contanier-block")
@@ -25,7 +31,7 @@ const favoritesWotkoutContainer = document.querySelector(".favorites-contanier-b
 favoritesWotkoutContainer.addEventListener("click", (e) => {
     if (e.target.dataset.id) {
         const workoutIdToDelete = e.target.dataset.id;
-        removeFromFavotites(e.target.dataset.id);
+        removeFromFavotites(workoutIdToDelete);
         removeWorkoutCard(workoutIdToDelete);
         }
     return;
