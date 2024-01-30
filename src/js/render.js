@@ -30,7 +30,7 @@ export function renderFavorites() {
   const favoritesHTML = storedData
     .map(
       item => `
-    <li class="favorites-list-item">
+    <li class="favorites-list-item" >
           <div class="favorites-card-heder">
             <div class="favorites-oval">
               <span>WORKOUT</span>

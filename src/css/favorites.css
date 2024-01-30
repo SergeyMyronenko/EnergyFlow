@@ -37,6 +37,7 @@
   border-radius: 15px;
   background: #fff;
   padding: 16px;
+  transition: 1.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .favorites-card-heder {
