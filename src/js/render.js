@@ -11,6 +11,7 @@ export function renderFavorites() {
   const favoritesContainer = document.querySelector(
     '.favorites-contanier-block'
   );
+  const mobilePagination = document.querySelector('.pagination-mobile-list');
 
   favoritesContainer.innerHTML = '';
 
@@ -21,6 +22,8 @@ export function renderFavorites() {
         To get started, you can add exercises that you like to your favorites
         for easier access in the future.
       </p>`;
+
+      mobilePagination.style.display = 'none'; 
   }
 
   const favoritesList = document.createElement('ul');
@@ -30,7 +33,8 @@ export function renderFavorites() {
   const favoritesHTML = storedData
     .map(
       item => `
-    <li class="favorites-list-item" >
+
+    <li class="favorites-list-item" tabindex="0">
           <div class="favorites-card-heder">
             <div class="favorites-oval">
               <span>WORKOUT</span>

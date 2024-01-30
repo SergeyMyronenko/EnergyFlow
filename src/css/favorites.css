@@ -1,18 +1,52 @@
+.favorites-list-item {
+  width: 295px;
+  background-color: #FFFFFF;
+  padding: 16px;
+  border-radius: 15px;
+}
+
+.favorites-contanier-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-info-svg {
+  width: 85px;
+  height: 52px;
+  margin-top: 80px;
+}
+
+.message-info-text {
+  font-family: 'DM Sans';
+  width: 247px;
+  height: 90px;
+  color: #1b1b1b;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  margin-top: 28px;
+  margin-bottom: 128px;
+}
+
 .favorites-card {
+  margin: auto;
   border-radius: 30px;
   background: #e8e8e8;
   flex-shrink: 0;
   width: 335px;
-  padding-top: 40px;
+  padding: 40px 20px;
 }
 
 .favorites-title {
+  font-family: 'DM Sans';
   color: #1b1b1b;
   font-size: 32px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
-  padding-top: 40px;
 }
 
 .favorites-container-block {
@@ -31,17 +65,10 @@
   margin-top: 20px;
 }
 
-.favorites-list-item {
-  width: 295px;
-  height: 165px;
-  border-radius: 15px;
-  background: #fff;
-  padding: 16px;
-  transition: 1.5s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
 .favorites-card-heder {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .favorites-oval {
@@ -82,15 +109,17 @@
   background: none;
   box-sizing: border-box;
   vertical-align: middle;
-  margin-left: 5px;
+  margin-left: 8px;
+  transition: transform 300ms ease-in-out;
 }
 
 .favorites-icon-svg:hover,
 .favorites-icon-svg:focus {
-  transform: scale(0.95);
+  transform: scale(1.09);
 }
 .favorites-list-button {
   display: flex;
+  align-items: center;
   color: #1b1b1b;
   font-size: 14px;
   font-weight: 400;
@@ -98,16 +127,15 @@
   border: none;
   padding: 0;
   background: none;
-  margin-left: 109px;
+  transition: transform 300ms ease-in-out;
 }
 
 .favorites-list-button:hover,
 .favorites-list-button:focus {
-  transform: scale(0.95);
+  transform: scale(1.07);
 }
 
 .favorites-list-button-icon {
-  display: inline-block;
   margin-left: 8px;
 }
 
@@ -122,6 +150,7 @@
 }
 
 .favorites-list-text {
+  font-family: 'DM Sans';
   color: #1b1b1b;
   font-feature-settings: 'clig' off, 'liga' off;
   font-size: 20px;
@@ -173,9 +202,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 80px;
+  /* margin-top: 80px;
   gap: 28px;
-  margin-bottom: 128px;
+  margin-bottom: 128px; */
 }
 
 .message-info {
@@ -186,20 +215,6 @@
   width: 335px;
 }
 
-.message-info-svg {
-  width: 85px;
-  height: 52px;
-}
-
-.message-info-text {
-  width: 247px;
-  height: 90px;
-  color: #1b1b1b;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.28;
-}
 /*----------PAGINATOR MOBILE ---------*/
 .favorites-pagination-block {
   display: flex;
@@ -238,6 +253,7 @@
 
 @media (min-width: 768px) {
   .favorites-card {
+    padding: 64px 48px;
     width: 736px;
     height: auto;
   }
@@ -246,9 +262,14 @@
     display: flex;
     margin-top: 32px;
   }
+
   .favorites-title {
-    padding-top: 64px;
-    margin-bottom: 0px;
+    font-family: 'DM Sans';
+    color: #1b1b1b;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.09;
+    letter-spacing: 0.02em;
   }
 
   .favorites-list {
@@ -263,34 +284,50 @@
   }
 
   .favorites-list-item {
-    width: 313px;
+    width: calc((100% - 40px) / 3 - 20px);
+    /* box-sizing: border-box; */
+    width: 424px;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    transition: transform 300ms ease-in-out;
   }
 
   .favorites-list-item:hover,
   .favorites-list-item:focus {
-    transform: scale(0.95);
+    transform: scale(1.05);
   }
 
   .message-info {
     width: 736px;
   }
 
-  .message-info-block {
-    margin-top: 208px;
-    margin-bottom: 437px;
-  }
-
   .message-info-svg {
-    text-align: center;
+    margin-top: 208px;
     width: 115px;
     height: 71px;
   }
 
   .message-info-text {
+    font-family: 'DM Sans';
     width: 554px;
-    height: 72px;
     font-size: 18px;
     line-height: 1.33;
+    margin-bottom: 437px;
+  }
+
+  .favorites-list-text {
+    font-family: 'DM Sans';
+    color: #1b1b1b;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.33;
+  }
+
+  .message-info-block {
+    margin-top: 208px;
+    margin-bottom: 437px;
   }
 
   .favorites-pagination-block {
@@ -303,22 +340,19 @@
 /* ------------------DESKTOP----------------------- */
 @media (min-width: 1440px) {
   .favorites-card {
+    padding: 64px 48px;
     width: 1408px;
     display: flex;
     flex-direction: column;
   }
 
-  .favorites-title {
-    margin-bottom: 0px;
-  }
-
   .favorites-contanier-block {
     display: flex;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 32px;
+    padding: 64px 48px;
   }
 
   .favorites-list {
@@ -338,25 +372,29 @@
     margin-bottom: 258px;
   }
 
-  .favorites-list-item {
-    width: calc((100% - 40px) / 3 - 20px);
-    box-sizing: border-box;
-    max-width: 424px;
-    height: 141px;
-  }
-
   .favorites-card-text {
     margin-top: 8px;
-    margin-bottom: 16px;
   }
 
-  .favorites-list-button {
+  .message-info-svg {
+    margin-top: 146px;
+    text-align: center;
+    width: 115px;
+    height: 71px;
+  }
+
+  .message-info-text {
+    width: 554px;
+    height: 72px;
+    font-size: 18px;
+    line-height: 1.33;
+    margin-bottom: 258px;
+  }
+
+  /* .favorites-list-button {
     margin-left: 220px;
-  }
+  } */
 
-  .favorites-icon-svg {
-    margin-left: 10px;
-  }
 }
 
 /* Delete button Z-index */

@@ -25,5 +25,7 @@ async function addToFavorites(e) {
     }
   } catch (error) {
     console.log(error.message);
+  } finally {
+    addToFavoritesBtn.removeEventListener('click', addToFavorites);
   }
 }
