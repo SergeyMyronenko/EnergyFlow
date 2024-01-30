@@ -1,6 +1,6 @@
 .favorites-list-item {
   width: 295px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 16px;
   border-radius: 15px;
 }
@@ -288,7 +288,7 @@
     /* box-sizing: border-box; */
     width: 424px;
     padding: 16px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 15px;
     transition: transform 300ms ease-in-out;
   }
@@ -394,7 +394,6 @@
   /* .favorites-list-button {
     margin-left: 220px;
   } */
-
 }
 
 /* Delete button Z-index */
@@ -411,4 +410,16 @@
 .favorites-icon-svg > use {
   position: relative;
   z-index: -1;
+}
+/* Animation */
+@keyframes opacity-animation {
+  100% {
+    opacity: 0;
+  }
+}
+.favorites-list {
+  position: relative;
+}
+.favorites-list-item {
+  transition: transform 1s ease-in-out;
 }
