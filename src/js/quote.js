@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export async function getQuote() {
   // Проверяем, доступно ли localStorage и есть ли в нем данные, а также проверяем, совпадает ли timestamp
   const quoteData =
@@ -40,7 +39,7 @@ async function fetchNewQuote() {
 }
 
 // Асинхронна функція для відображення цитати
-async function displayQuote(config) {
+export async function displayQuote(config) {
   try {
     // Отримуємо дані цитати
     const quoteData = await getQuote();

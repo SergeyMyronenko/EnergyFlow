@@ -347,3 +347,19 @@
   } */
 
 }
+
+/* Delete button Z-index */
+.favorites-icon-svg {
+  position: relative;
+  z-index: 999;
+  background: transparent;
+}
+
+.favorites-icon-svg > svg {
+  position: relative;
+  z-index: -1;
+}
+.favorites-icon-svg > use {
+  position: relative;
+  z-index: -1;
+}

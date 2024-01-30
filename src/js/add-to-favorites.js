@@ -3,8 +3,9 @@ const addToFavoritesBtn = document.querySelector('.modal-button-favorites');
 const modalWindow = document.querySelector('.modal');
 document.addEventListener('click', addToFavorites);
 
-export let FAVORITES_ID = 'favoriteData';
-const inLocalStorage = JSON.parse(localStorage.getItem(FAVORITES_ID)) || [];
+export const LOCAL_STORAGE_KEY = 'favoriteData';
+export const inLocalStorage =
+  JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
 
 async function addToFavorites(e) {
   try {
@@ -19,7 +20,7 @@ async function addToFavorites(e) {
       } else {
         return;
       }
-      localStorage.setItem(FAVORITES_ID, JSON.stringify(inLocalStorage));
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inLocalStorage));
       modalWindow.classList.remove('is-open');
     }
   } catch (error) {
