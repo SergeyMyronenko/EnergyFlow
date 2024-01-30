@@ -40,7 +40,7 @@ async function fetchNewQuote() {
 }
 
 // Асинхронна функція для відображення цитати
-async function displayQuote(config) {
+export async function displayQuote(config) {
   try {
     // Отримуємо дані цитати
     const quoteData = await getQuote();

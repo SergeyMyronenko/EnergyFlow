@@ -1,34 +1,37 @@
-'use strict'
+'use strict';
 
 // import { FAVORITES_ID } from "./add-to-favorites";
 
 const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
 
-// const inLocalStorage = storedData ? Object.values(storedData) : []; 
+// const inLocalStorage = storedData ? Object.values(storedData) : [];
 
-console.log(storedData);
+// console.log(storedData);
 
 function renderFavorites() {
-    const favoritesContainer = document.querySelector('.favorites-contanier-block');
+  const favoritesContainer = document.querySelector(
+    '.favorites-contanier-block'
+  );
 
-    favoritesContainer.innerHTML = '';
+  favoritesContainer.innerHTML = '';
 
-    if(storedData.length === 0) {
-        
-        favoritesContainer.innerHTML = `
+  if (storedData.length === 0) {
+    favoritesContainer.innerHTML = `
         <img class="message-info-svg" src="./img/dumbbell.png" alt="dumbbell" />
       <p class="message-info-text">
         It appears that you haven't added any exercises to your favorites yet.
         To get started, you can add exercises that you like to your favorites
         for easier access in the future.
-      </p>`
-    }
+      </p>`;
+  }
 
-    const favoritesList = document.createElement('ul');
-    favoritesList.classList.add('favorites-list');
-    favoritesContainer.appendChild(favoritesList);
+  const favoritesList = document.createElement('ul');
+  favoritesList.classList.add('favorites-list');
+  favoritesContainer.appendChild(favoritesList);
 
-    const favoritesHTML = storedData.map(item => `
+  const favoritesHTML = storedData
+    .map(
+      item => `
     <li class="favorites-list-item">
           <div class="favorites-card-heder">
             <div class="favorites-oval">
@@ -76,10 +79,11 @@ function renderFavorites() {
             </ul>
           </div>
         </li>
-    `).join('');
+    `
+    )
+    .join('');
 
-    favoritesList.innerHTML = favoritesHTML;
+  favoritesList.innerHTML = favoritesHTML;
 }
 
 document.addEventListener('DOMContentLoaded', renderFavorites);
-
