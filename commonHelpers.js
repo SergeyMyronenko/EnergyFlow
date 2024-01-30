@@ -1,10 +1,10 @@
-import"./assets/add-to-favorites-53a5c8b0.js";import"./assets/vendor-20b07447.js";let d,r;const c=6;window.location.pathname==="/page-2.html"&&(d=document.querySelector(".favorites-list"),r=document.querySelectorAll(".favorites-pagination-block button"),n(1),r.forEach(t=>{t.addEventListener("click",()=>{const e=parseInt(t.textContent);n(e)})}));function n(t){const e=(t-1)*c,i=e+c;d.querySelectorAll(".favorites-list-item").forEach((s,l)=>{l>=e&&l<i?s.style.display="block":s.style.display="none"}),r.forEach(s=>{parseInt(s.textContent)===t?s.classList.add("active-btn"):s.classList.remove("active-btn")})}const o=JSON.parse(localStorage.getItem("favoriteData"))||[];console.log(o);function v(){const t=document.querySelector(".favorites-contanier-block");t.innerHTML="",o.length===0&&(t.innerHTML=`
+import{g as f,c as u}from"./assets/add-to-favorites-e5a731e0.js";import"./assets/vendor-20b07447.js";let v,r;const n=6;window.location.pathname==="/page-2.html"&&(v=document.querySelector(".favorites-list"),r=document.querySelectorAll(".favorites-pagination-block button"),l(1),r.forEach(e=>{e.addEventListener("click",()=>{const t=parseInt(e.textContent);l(t)})}));function l(e){const t=(e-1)*n,i=t+n;v.querySelectorAll(".favorites-list-item").forEach((a,c)=>{c>=t&&c<i?a.style.display="block":a.style.display="none"}),r.forEach(a=>{parseInt(a.textContent)===e?a.classList.add("active-btn"):a.classList.remove("active-btn")})}const d={exerciseModal:document.querySelector(".modal"),exsCont:document.querySelector(".exs-container")};document.addEventListener("click",g);async function g(e){try{if(e.target.classList.contains("favorites-list-button")){const t=await f("64f389465ae26083f39b18d0");d.exsCont.innerHTML=u(t.data),d.exerciseModal.classList.toggle("is-open");const i=document.querySelector(".ex-rating-active"),s=document.querySelector(".modal-rating-value");i.style.width=await`${parseInt(s.textContent)/.05}%`}}catch(t){throw new Error(t.message)}}const o=JSON.parse(localStorage.getItem("favoriteData"))||[];console.log(o);function p(){const e=document.querySelector(".favorites-contanier-block");e.innerHTML="",o.length===0&&(e.innerHTML=`
         <img class="message-info-svg" src="./img/dumbbell.png" alt="dumbbell" />
       <p class="message-info-text">
         It appears that you haven't added any exercises to your favorites yet.
         To get started, you can add exercises that you like to your favorites
         for easier access in the future.
-      </p>`);const e=document.createElement("ul");e.classList.add("favorites-list"),t.appendChild(e);const i=o.map(a=>`
+      </p>`);const t=document.createElement("ul");t.classList.add("favorites-list"),e.appendChild(t);const i=o.map(s=>`
     <li class="favorites-list-item">
           <div class="favorites-card-heder">
             <div class="favorites-oval">
@@ -31,26 +31,26 @@ import"./assets/add-to-favorites-53a5c8b0.js";import"./assets/vendor-20b07447.js
             <svg class="favorite-list-svg" width="24" height="24">
               <use href="./img/sprite.svg#dude"></use>
             </svg>
-            <h3 class="favorites-list-text">${a.name}</h3>
+            <h3 class="favorites-list-text">${s.name}</h3>
           </div>
           <div class="favorites-card-text">
             <ul class="favorites-card-text-list">
               <li class="favorites-card-text-item">
                 <div class="favorites-card-text-wrapper">
                   <h4 class="favorites-card-text-title">Burned calories:</h4>
-                  <p class="favorites-card-text-block">${a.burnedCalories}</p>
+                  <p class="favorites-card-text-block">${s.burnedCalories}</p>
                 </div>
                 <div class="favorites-card-text-wrapper">
                   <h4 class="favorites-card-text-title">Body part:</h4>
-                  <p class="favorites-card-text-block">${a.bodyPart}</p>
+                  <p class="favorites-card-text-block">${s.bodyPart}</p>
                 </div>
                 <div class="favorites-card-text-wrapper">
                   <h4 class="favorites-card-text-title">Target:</h4>
-                  <p class="favorites-card-text-block">${a.target}</p>
+                  <p class="favorites-card-text-block">${s.target}</p>
                 </div>
               </li>
             </ul>
           </div>
         </li>
-    `).join("");e.innerHTML=i}document.addEventListener("DOMContentLoaded",v);
+    `).join("");t.innerHTML=i}document.addEventListener("DOMContentLoaded",p);
 //# sourceMappingURL=commonHelpers.js.map
