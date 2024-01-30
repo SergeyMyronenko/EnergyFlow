@@ -1,4 +1,5 @@
 import { getData } from './exercises-modal.js';
+const addToFavoritesBtn = document.querySelector('.modal-button-favorites');
 const modalWindow = document.querySelector('.modal');
 document.addEventListener('click', addToFavorites);
 
