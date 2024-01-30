@@ -6,37 +6,36 @@ import{a as c}from"./vendor-20b07447.js";(function(){const t=document.createElem
           <h4 class="modal-title">${e.name}</h4>
 
           <div class="modal-rating">
-            <p class="modal-rating-value">${e.rating}</p>
-
-       <div class="ex-rating">
-                <div class="ex-rating-body">
-                  <div class="ex-rating-active"></div>
-                  <div class="ex-rating-items">
-                    <input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="1"
-                      name="exrating"
-                    /><input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="2"
-                      name="exrating"
-                    /><input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="3"
-                      name="exrating"
-                    /><input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="4"
-                      name="exrating"
-                    /><input type="radio" class="ex-rating-item" value="5" name="exrating" />
+            <p class="modal-rating-value">${parseFloat(e.rating)}</p>
+          <div class="ex-rating">
+                    <div class="ex-rating-body">
+                      <div class="ex-rating-active"></div>
+                      <div class="ex-rating-items">
+                        <input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="1"
+                          name="exrating"
+                        /><input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="2"
+                          name="exrating"
+                        /><input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="3"
+                          name="exrating"
+                        /><input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="4"
+                          name="exrating"
+                        /><input type="radio" class="ex-rating-item" value="5" name="exrating" />
+                      </div>
+                    </div>
                   </div>
-                </div>
               </div>
-          </div>
 
           <ul class="modal-list">
             <li class="modal-list-item">
@@ -81,5 +80,5 @@ import{a as c}from"./vendor-20b07447.js";(function(){const t=document.createElem
 
         <button class="modal-button-rating">Give a rating</button>
       </div>
-  `}let E;const a={ratingModal:document.querySelector(".js-backdrop-modal"),closeBtn:document.querySelector(".js-rating-close"),rateStars:document.querySelector(".js-stars-list"),star:document.querySelectorAll(".js-rating-star"),openModalsBtn:document.querySelector(".exersizes-cards-container"),openRatingBtn:document.querySelector(".modal-button-rating"),exerciseModal:document.querySelector(".modal"),closeExerciseBtn:document.querySelector(".modal-button-close"),exsCont:document.querySelector(".exs-container")};document.addEventListener("click",w);document.addEventListener("click",T);document.addEventListener("keydown",$);function w(e){e.target.classList.contains("exersizes-card-btn")?B(e):e.target.classList.contains("modal-button-rating")&&D()}async function B(e){try{const t=await u(e.target.dataset.id);a.exsCont.innerHTML=M(t.data),a.exerciseModal.classList.add("is-open"),E=e.target.dataset.id,O()}catch(t){throw new Error(t.message)}}function D(e){a.ratingModal.classList.toggle("is-open")}function O(){const e=document.querySelector(".ex-rating-active"),t=document.querySelector(".modal-rating-value");e.style.width=`${parseInt(t.textContent)/.05}%`}function T(e){e.target.classList.contains("backdrop")&&a.ratingModal.classList.contains("is-open")?a.ratingModal.classList.remove("is-open"):e.target.classList.contains("backdrop")&&a.exerciseModal.classList.contains("is-open")||e.target.classList.contains("modal-button-close")||e.target.classList.contains("modal-button-close-icon")||e.target.classList.contains("modal-button-close-use")?a.exerciseModal.classList.remove("is-open"):(e.target.classList.contains("rating-close")||e.target.classList.contains("rating-close-svg")||e.target.classList.contains("rating-close-use"))&&a.ratingModal.classList.remove("is-open")}function $(e){e.code==="Escape"&&a.ratingModal.classList.contains("is-open")?a.ratingModal.classList.remove("is-open"):e.code==="Escape"&&a.exerciseModal.classList.contains("is-open")&&a.exerciseModal.classList.remove("is-open")}const A=document.querySelector(".modal-button-favorites"),C=document.querySelector(".modal"),k=document.querySelector(".modal");C.addEventListener("click",p);const m="favoriteData";let l=JSON.parse(localStorage.getItem(m))||[];async function p(e){try{if(e.target.classList.contains("modal-button-favorites")){const i=(await u(e.target.dataset.id)).data;if(!l.some(o=>o._id===i._id))l.push(i);else return;localStorage.setItem(m,JSON.stringify(l)),k.classList.remove("is-open")}}catch(t){console.log(t.message)}finally{A.removeEventListener("click",p)}}export{m as L,M as c,u as g,E as i};
-//# sourceMappingURL=add-to-favorites-1f06bf0d.js.map
+  `}let E;const a={ratingModal:document.querySelector(".js-backdrop-modal"),closeBtn:document.querySelector(".js-rating-close"),rateStars:document.querySelector(".js-stars-list"),star:document.querySelectorAll(".js-rating-star"),openModalsBtn:document.querySelector(".exersizes-cards-container"),openRatingBtn:document.querySelector(".modal-button-rating"),exerciseModal:document.querySelector(".modal"),closeExerciseBtn:document.querySelector(".modal-button-close"),exsCont:document.querySelector(".exs-container")};document.addEventListener("click",w);document.addEventListener("click",T);document.addEventListener("keydown",$);function w(e){e.target.classList.contains("exersizes-card-btn")?B(e):e.target.classList.contains("modal-button-rating")&&D()}async function B(e){try{const t=await u(e.target.dataset.id);a.exsCont.innerHTML=M(t.data),a.exerciseModal.classList.add("is-open"),E=e.target.dataset.id,O()}catch(t){throw new Error(t.message)}}function D(e){a.ratingModal.classList.toggle("is-open")}function O(){const e=document.querySelector(".ex-rating-active"),t=document.querySelector(".modal-rating-value");e.style.width=`${parseFloat(t.textContent)/.05}%`}function T(e){e.target.classList.contains("backdrop")&&a.ratingModal.classList.contains("is-open")?a.ratingModal.classList.remove("is-open"):e.target.classList.contains("backdrop")&&a.exerciseModal.classList.contains("is-open")||e.target.classList.contains("modal-button-close")||e.target.classList.contains("modal-button-close-icon")||e.target.classList.contains("modal-button-close-use")?a.exerciseModal.classList.remove("is-open"):(e.target.classList.contains("rating-close")||e.target.classList.contains("rating-close-svg")||e.target.classList.contains("rating-close-use"))&&a.ratingModal.classList.remove("is-open")}function $(e){e.code==="Escape"&&a.ratingModal.classList.contains("is-open")?a.ratingModal.classList.remove("is-open"):e.code==="Escape"&&a.exerciseModal.classList.contains("is-open")&&a.exerciseModal.classList.remove("is-open")}const A=document.querySelector(".modal-button-favorites"),C=document.querySelector(".modal"),k=document.querySelector(".modal");C.addEventListener("click",p);const m="favoriteData";let l=JSON.parse(localStorage.getItem(m))||[];async function p(e){try{if(e.target.classList.contains("modal-button-favorites")){const i=(await u(e.target.dataset.id)).data;if(!l.some(o=>o._id===i._id))l.push(i);else return;localStorage.setItem(m,JSON.stringify(l)),k.classList.remove("is-open")}}catch(t){console.log(t.message)}finally{A.removeEventListener("click",p)}}export{m as L,M as c,u as g,E as i};
+//# sourceMappingURL=add-to-favorites-0418ab5c.js.map
