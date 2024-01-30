@@ -65,21 +65,28 @@ async function displayQuote(config) {
     console.error('Сталася помилка при відображенні цитати:', error);
   }
 }
-
-// Об'єкт конфігурації для цитат на сторінці
-const pageQuoteConfig = {
-  quoteTextSelector: '.quote-text', // Селектор для тексту цитати
-  quoteAuthorSelector: '.quote-author', // Селектор для автора цитати
-};
+// Об'єкти конфігурації для цитат на сторінці
+const quoteConfigs = [
+  {
+    quoteTextSelector: '.quote-text', // Селектор для тексту цитати на сторінці home
+    quoteAuthorSelector: '.quote-author', // Селектор для автора цитати на сторінці home
+  },
+  {
+    quoteTextSelector: '.quoote-text', // Селектор для тексту цитати  на сторінці favorites
+    quoteAuthorSelector: '.quote-autor', // Селектор для автора цитати на сторінці favorites
+  },
+];
 
 // Перевіряємо, чи є на сторінці елементи для тексту та автора цитати
-if (
-  document.querySelector(pageQuoteConfig.quoteTextSelector) &&
-  document.querySelector(pageQuoteConfig.quoteAuthorSelector)
-) {
-  // Якщо елементи є, відображаємо цитату
-  displayQuote(pageQuoteConfig);
-}
+quoteConfigs.forEach(config => {
+  if (
+    document.querySelector(config.quoteTextSelector) &&
+    document.querySelector(config.quoteAuthorSelector)
+  ) {
+    // Якщо елементи є, відображаємо цитату
+    displayQuote(config);
+  }
+});
 
 // Експортуємо функцію displayQuote
-export { displayQuote };
+// export { displayQuote };
