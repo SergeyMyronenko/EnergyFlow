@@ -1,16 +1,6 @@
-'use strict';
-
-// import { FAVORITES_ID } from "./add-to-favorites";
-
-// const inLocalStorage = storedData ? Object.values(storedData) : [];
-
-// console.log(storedData);
-
 export function renderFavorites() {
   const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
-  const favoritesContainer = document.querySelector(
-    '.favorites-contanier-block'
-  );
+  const favoritesContainer = document.querySelector('.favorites-contanier-block');
   const mobilePagination = document.querySelector('.pagination-mobile-list');
 
   favoritesContainer.innerHTML = '';
@@ -23,7 +13,7 @@ export function renderFavorites() {
         for easier access in the future.
       </p>`;
 
-      mobilePagination.style.display = 'none'; 
+    mobilePagination.style.display = 'none';
   }
 
   const favoritesList = document.createElement('ul');
