@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', filterFetch());
 // ============ Запуск фільтрації при кліку на кнопку ============
 
 filterListener.addEventListener('click', e => {
-  console.log(isNaN(parseInt(e.target.textContent.trim())));
   e.preventDefault();
   addLoading();
   if (e.target.nodeName !== 'BUTTON') {
@@ -210,7 +209,22 @@ async function searchByName(e) {
 async function renderFilterImg(resp) {
   const results = resp.data.results;
   FILTER_IMG_CONTAINER.classList.remove('hidden');
+
+  // ====================== Test=====================
+
+  document
+    .querySelector('.exersizes-cards-container-wrapper')
+    .classList.remove('hidden');
+
+  // =================================================
+
   EXERCISES_CARD_CONTAINER.classList.add('hidden');
+  // ====================== Test=====================
+
+  document
+    .querySelector('.exersizes-result-card-container-wrapper')
+    .classList.add('hidden');
+  // =================================================
   MESSAGE_CONTAINER.classList.add('hidden');
 
   FILTER_IMG_CONTAINER.innerHTML = '';
@@ -250,6 +264,21 @@ function renderExersizesCard(resp) {
   const results = resp.data.results;
   FILTER_IMG_CONTAINER.removeEventListener('keyup', choseByEnter);
   EXERCISES_CARD_CONTAINER.classList.remove('hidden');
+  document;
+
+  // ====================== Test=====================
+
+  document
+    .querySelector('.exersizes-cards-container-wrapper')
+    .classList.add('hidden');
+
+  // =================================================
+
+  // ====================== Test=====================
+  document
+    .querySelector('.exersizes-result-card-container-wrapper')
+    .classList.remove('hidden');
+  // =================================================
   FILTER_IMG_CONTAINER.classList.add('hidden');
   MESSAGE_CONTAINER.classList.add('hidden');
   FILTER_IMG_CONTAINER.removeEventListener('keyup', choseByEnter);
@@ -332,7 +361,18 @@ function renderExersizesCard(resp) {
 
 async function renderMessage(error) {
   FILTER_IMG_CONTAINER.classList.add('hidden');
+
+  // ====================== Test=====================
+  document
+    .querySelector('.exersizes-cards-container-wrapper')
+    .classList.add('hidden');
+
   EXERCISES_CARD_CONTAINER.classList.add('hidden');
+  // ====================== Test=====================
+  document
+    .querySelector('.exersizes-result-card-container-wrapper')
+    .classList.add('hidden');
+  // =================================================
   MESSAGE_CONTAINER.classList.remove('hidden');
   const paginationList = document.querySelector('.exersizes-pagination-list');
   paginationList.innerHTML = '';
