@@ -316,7 +316,7 @@ function renderExersizesCard(resp) {
 
     <div class="exersizes-card-workout-title-cont">
 <svg class="exersizes-card-title-icon" width="24" height="24" aria-label="Runner icon">
-                    <use href="./img/sprite.svg#runner"></use>
+                    <use href="./img/sprite.svg#dude"></use>
                 </svg>
                 <h3 class="exersizes-card-title-h" aria-description="${
                   el.name
