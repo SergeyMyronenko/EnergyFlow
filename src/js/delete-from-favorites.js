@@ -17,7 +17,7 @@ function animationOfDisapiaring(deletedElement) {
         deletedElement.style.position = "absolute";
         deletedElement.style.top = "0px";
         deletedElement.style.left = "0px";
-    }, 450);
+    }, 350);
     
     setTimeout(() => deletedElement.remove(), 1000);
 };
