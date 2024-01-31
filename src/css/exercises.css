@@ -61,10 +61,6 @@ address {
   text-decoration: none;
 }
 
-.hidden {
-  display: none;
-}
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -82,18 +78,18 @@ address {
 .first-filter {
   position: relative;
   border-radius: 12px;
-  transition: opacity 0.2s ease-in-out, scale 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .exersizes-card-bytype:hover,
 .exersizes-card-bytype:focus {
-  scale: 1.03;
+  transform: scale(1.03);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25), 0px 4px 10px rgba(0, 0, 0, 0.25),
     0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 .exersizes-card-bytype {
-  transition: scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .loader {
   width: 48px;
@@ -139,12 +135,12 @@ address {
 .second-filter {
   position: relative;
   border-radius: 12px;
-  transition: opacity 0.5s ease-in-out, scale 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .second-filter:hover,
 .second-filter:focus {
-  scale: 1.05;
+  transform: scale(1.05);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -173,26 +169,28 @@ address {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 .exersizes-card-btn {
-  transition: scale 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease-in-out;
+}
+.arrow-icon {
+  position: absolute;
+  z-index: -1;
 }
 
 .exersizes-card-btn:hover,
 .exersizes-card-btn:focus {
-  scale: 1.05;
+  transform: scale(1.05);
 }
 .exersizes-input-btn-s {
-  transition: scale 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 .exersizes-input-btn-s:hover,
 .exersizes-input-btn-s:focus {
-  scale: 1.1;
+  transform: scale(1.1);
 }
 
 /* ======================================================== */
-
-.exersizes-cards-container + .first-filter:hover {
-  background-color: #eea10c;
-}
 
 /* ======================== UP button =========================== */
 html {
@@ -212,13 +210,13 @@ html {
   background-color: var(--grey);
   box-shadow: 1px 2px 10px 2px var(--dark-grey);
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
-    scale 0.2s ease-in-out;
+    transform 0.2s ease-in-out;
 }
 .up-link.show {
   display: block;
 }
 .up-link:hover {
-  scale: 1.15;
+  transform: scale(1.15);
   opacity: 1;
 }
 .up-link:active {
@@ -232,11 +230,12 @@ html {
   margin: 0 auto;
   fill: #fafafa;
   opacity: 0.85;
-  transition: opacity 0.2s ease-in-out, scale 0.2s ease-in-out;
+  z-index: 999999;
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .up-svg:hover {
   opacity: 1;
-  scale: 1.15;
+  transform: scale(1.15);
 }
 
 /* ==================================== Стилі для РОБОЧОГО контейнера ========================================= */
@@ -248,8 +247,6 @@ html {
   padding-right: 20px;
   background-color: var(--dark-white);
   border-radius: 30px;
-  margin-left: auto;
-  margin-right: auto;
   min-height: 760px;
 }
 
@@ -332,9 +329,7 @@ html {
 }
 .exersizes-input-btn {
   width: fit-content;
-  position: absolute;
-  right: 20px;
-  height: 18px;
+  position: relative;
   border: none;
   padding: 0;
   margin: 0;
@@ -348,15 +343,13 @@ html {
 }
 .exersizes-input-btn-s {
   width: fit-content;
-  position: absolute;
-  height: 45px;
-  width: 18px;
-  right: -4px;
+  position: relative;
+  width: fit-content;
   transform: translateY(6%);
   border: none;
   padding: 0;
   margin: 0;
-  z-index: 999;
+  z-index: 1;
   background-color: transparent;
   fill: transparent;
   stroke: var(--primary-color);
@@ -408,7 +401,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   row-gap: 20px;
   padding-top: 40px;
 }
@@ -560,6 +553,8 @@ html {
 
 .exersizes-card-btn-icon {
   stroke: var(--primary-color);
+  position: relative;
+  z-index: -1;
 }
 
 .exersizes-card-workout-title-cont {
@@ -644,6 +639,18 @@ html {
     animation-delay: 1s;
   }
   /* ======================= */
+
+  /* ================================NB================ */
+  .exersizes-result-card-container-wrapper {
+    min-height: 775px;
+  }
+
+  /* ================================================= */
+  .exersizes-cards-container-wrapper {
+    min-height: 1061px;
+  }
+  /* ================================================= */
+
   .exersizes-header-filter-cont {
     flex-direction: row;
     justify-content: space-between;
@@ -653,12 +660,12 @@ html {
 
   .exersizes-message-container {
     padding-top: 222px;
-    height: 1091px;
+    height: 775px;
   }
 
   .exersizes-result-card-container {
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
     row-gap: 20px;
@@ -697,6 +704,7 @@ html {
     padding-bottom: 64px;
     border-radius: 50px;
     min-height: 1091px;
+    /* width: 100%; */
   }
 
   .exersizes-header {
@@ -807,15 +815,24 @@ html {
 @media screen and (min-width: 1440px) {
   .exersizes-message-container {
     padding-top: 217px;
-    height: 827px;
+    height: 511px;
   }
 
   .exersizes-result-card-container {
     row-gap: 28px;
     column-gap: 20px;
     padding-top: 32px;
-    min-height: 715px;
   }
+
+  /* ===========================NB=================== */
+  .exersizes-result-card-container-wrapper {
+    min-height: 511px;
+  }
+
+  .exersizes-cards-container-wrapper {
+    min-height: 862px;
+  }
+  /* ================================================= */
 
   .exersizes-cards-container {
     row-gap: 40px;
@@ -842,20 +859,20 @@ html {
   }
 
   .exersizes-card-info-list {
-    row-gap: 16px;
-    justify-content: space-between;
+    column-gap: 16px;
+    justify-content: flex-start;
   }
 
   .noresult-message {
     max-width: 684px;
   }
   .up-link {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
   .up-svg {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
   }
   .exersizes-container {
     padding-top: 64px;
@@ -864,8 +881,10 @@ html {
     padding-right: 48px;
     background-color: var(--dark-white);
     border-radius: 30px;
-    margin-left: auto;
-    margin-right: auto;
     min-height: 827px;
+    width: 100%;
   }
+}
+.hidden {
+  display: none;
 }
