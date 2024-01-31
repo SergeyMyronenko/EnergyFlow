@@ -52,7 +52,7 @@ const validityСheck = async (event) => {
             operationSuccess('Successful subscription!');
         } catch (error) {
             // displayErrorMessage('Error subscribing: ' + error.message);
-          operationWrong('Error subscribing: ' + error.message);
+          operationWrong('There is already a user with this email!');
         }
         localStorage.removeItem(feedbackFormData);
         form.reset();
