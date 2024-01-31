@@ -22,6 +22,7 @@ function animationOfDisapiaring(deletedElement) {
 
   setTimeout(() => deletedElement.remove(), 1000);
 }
+
 function removeWorkoutCard(removedWorkoutID) {
   const deletedWorkoutCard = document.querySelector(`[data-id="${removedWorkoutID}"]`).parentElement
     .parentElement.parentElement;
