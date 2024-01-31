@@ -11,16 +11,14 @@ const refs = {
 document.addEventListener('click', openExerciseModal);
 
 async function openExerciseModal(e) {
-  const buttonStart = document.querySelector('.favorites-icon-svg');
   try {
-    if (e.target.classList.contains('favorites-list-button') && e.target === 'BUTTON') {
+    if (e.target.classList.contains('favorites-list-button')) {
       const response = await getData(e.target.dataset.id);
       refs.exsCont.innerHTML = createMarkup(response.data);
       refs.exerciseModal.classList.toggle('is-open');
       updateRatingWidth();
       refs.body.classList.add('body-modal');
     }
-    console.log(e.target);
   } catch (error) {
     throw new Error(error.message);
   }
