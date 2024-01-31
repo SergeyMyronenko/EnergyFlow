@@ -6,4 +6,3 @@ import './js/send-rating-modal';
 import './js/quote';
 import './js/add-to-favorites';
 import './js/exercises';
-import './js/policy';
