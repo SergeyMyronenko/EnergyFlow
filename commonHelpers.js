@@ -1,15 +1,15 @@
-import{L as d,g,c as m}from"./assets/modals-functions-a3f6c7fe.js";import"./assets/vendor-8cce9181.js";let p,l;const v=6;window.location.pathname==="/page-2.html"&&(p=document.querySelector(".favorites-list"),l=document.querySelectorAll(".favorites-pagination-block button"),u(1),l.forEach(t=>{t.addEventListener("click",()=>{const e=parseInt(t.textContent);u(e)})}));function u(t){const e=(t-1)*v,i=e+v;p.querySelectorAll(".favorites-list-item").forEach((o,s)=>{s>=e&&s<i?o.style.display="block":o.style.display="none"}),l.forEach(o=>{parseInt(o.textContent)===t?o.classList.add("active-btn"):o.classList.remove("active-btn")})}function h(t){const e=JSON.parse(localStorage.getItem(d)),i=JSON.stringify(e.filter(a=>a._id!==t));localStorage.setItem(d,i)}function y(t){t.style.animation="opacity-animation 1s ease-out",setTimeout(()=>{t.style.transform="translateX(-200%)"},100),setTimeout(()=>{t.style.position="absolute",t.style.top="0px",t.style.left="0px"},450),setTimeout(()=>t.remove(),1e3)}function x(t){const e=document.querySelector(`[data-id="${t}"]`).parentElement.parentElement.parentElement;y(e)}const b=document.querySelector(".favorites-contanier-block");b.addEventListener("click",t=>{if(t.target.dataset.id){const e=t.target.dataset.id;h(e),x(e)}});function w(){const t=JSON.parse(localStorage.getItem("favoriteData"))||[],e=document.querySelector(".favorites-contanier-block"),i=document.querySelector(".pagination-mobile-list");e.innerHTML="",t.length===0&&(e.innerHTML=`<img class="message-info-svg" src="./img/dumbbell.png" alt="dumbbell" />
+import{L as f,i as l,g as m,c as h,u as y}from"./assets/modals-functions-7f0c1471.js";import"./assets/vendor-8cce9181.js";let g,v;const u=6;window.location.pathname==="/page-2.html"&&(g=document.querySelector(".favorites-list"),v=document.querySelectorAll(".favorites-pagination-block button"),p(1),v.forEach(t=>{t.addEventListener("click",()=>{const e=parseInt(t.textContent);p(e)})}));function p(t){const e=(t-1)*u,r=e+u;g.querySelectorAll(".favorites-list-item").forEach((a,s)=>{s>=e&&s<r?a.style.display="block":a.style.display="none"}),v.forEach(a=>{parseInt(a.textContent)===t?a.classList.add("active-btn"):a.classList.remove("active-btn")})}function x(t){const e=JSON.parse(localStorage.getItem(f)),r=JSON.stringify(e.filter(o=>o._id!==t));localStorage.setItem(f,r)}function b(t){t.style.animation="opacity-animation 1s ease-out",setTimeout(()=>{t.style.transform="translateX(-200%)"},100),setTimeout(()=>{t.style.position="absolute",t.style.top="0px",t.style.left="0px"},450),setTimeout(()=>t.remove(),1e3)}function L(t){const e=document.querySelector(`[data-id="${t}"]`).parentElement.parentElement.parentElement;b(e)}const k=document.querySelector(".favorites-contanier-block");k.addEventListener("click",t=>{if(t.target.classList.contains("favorites-icon-svg")){const e=t.target.dataset.id;x(e),L(e)}});function w(){const t=JSON.parse(localStorage.getItem("favoriteData"))||[],e=document.querySelector(".favorites-contanier-block"),r=document.querySelector(".pagination-mobile-list");e.innerHTML="",t.length===0&&(e.innerHTML=`<img class="message-info-svg" src="./img/dumbbell.png" alt="dumbbell" />
       <p class="message-info-text">
         It appears that you haven't added any exercises to your favorites yet.
         To get started, you can add exercises that you like to your favorites
         for easier access in the future.
-      </p>`,i.style.display="none");const a=document.createElement("ul");a.classList.add("favorites-list"),e.appendChild(a);const o=t.map(s=>{let r=s.name,n=s.target;const c=window.innerWidth;return c>=1440?(r.length>25&&(r=s.name[0].toUpperCase()+s.name.slice(1,25).trim()+"..."),n.length>20&&(n=s.target[0].toUpperCase()+s.target.slice(1,17).trim()+"...")):c<1440&&c>=768?r.length>17&&(r=s.name[0].toUpperCase()+s.name.slice(1,16).trim()+"..."):r=s.name[0].toUpperCase()+s.name.slice(1,20).trim()+"...",`<li class="favorites-list-item" tabindex="0">
+      </p>`,r.style.display="none");const o=document.createElement("ul");o.classList.add("favorites-list"),e.appendChild(o);const a=t.map(s=>{let i=s.name,n=s.target;const c=window.innerWidth;return c>=1440?(i.length>25&&(i=s.name[0].toUpperCase()+s.name.slice(1,25).trim()+"..."),n.length>20&&(n=s.target[0].toUpperCase()+s.target.slice(1,17).trim()+"...")):c<1440&&c>=768?i.length>17&&(i=s.name[0].toUpperCase()+s.name.slice(1,16).trim()+"..."):i=s.name[0].toUpperCase()+s.name.slice(1,20).trim()+"...",`<li class="favorites-list-item" tabindex="0">
           <div class="favorites-card-heder">
             <div class="favorites-oval">
               <span>WORKOUT</span>
               <button class="favorites-icon-svg" data-id="${s._id}">
                 <svg width="16" height="16" fill="none">
-                  <use href="./img/sprite.svg#trash"></use>
+                  <use href="${l}#trash"></use>
                 </svg>
               </button>
             </div>
@@ -21,15 +21,15 @@ import{L as d,g,c as m}from"./assets/modals-functions-a3f6c7fe.js";import"./asse
                 height="14"
                 stroke="#1B1B1B"
               >
-                <use href="./img/sprite.svg#arrow"></use>
+                <use href="${l}#arrow"></use>
               </svg>
             </button>
           </div>
           <div class="favorites-list-container">
             <svg class="favorite-list-svg" width="24" height="24">
-              <use href="./img/sprite.svg#dude"></use>
+              <use href="${l}#dude"></use>
             </svg>
-            <h3 class="favorites-list-text">${r}</h3>
+            <h3 class="favorites-list-text">${i}</h3>
           </div>
           <div class="favorites-card-text">
             <ul class="favorites-card-text-list">
@@ -49,5 +49,5 @@ import{L as d,g,c as m}from"./assets/modals-functions-a3f6c7fe.js";import"./asse
               </li>
             </ul>
           </div>
-        </li>`}).join("");a.innerHTML=o}document.addEventListener("DOMContentLoaded",w);const f={exerciseModal:document.querySelector(".modal"),exsCont:document.querySelector(".exs-container")};document.addEventListener("click",L);async function L(t){try{if(t.target.classList.contains("favorites-list-button")){const e=await g(t.target.dataset.id);f.exsCont.innerHTML=m(e.data),f.exerciseModal.classList.toggle("is-open");const i=document.querySelector(".ex-rating-active"),a=document.querySelector(".modal-rating-value");i.style.width=await`${parseInt(a.textContent)/.05}%`}}catch(e){throw new Error(e.message)}}
+        </li>`}).join("");o.innerHTML=a}document.addEventListener("DOMContentLoaded",w);const d={exerciseModal:document.querySelector(".modal"),exsCont:document.querySelector(".exs-container"),body:document.querySelector("body")};document.addEventListener("click",S);async function S(t){try{if(t.target.classList.contains("favorites-list-button")){const e=await m(t.target.dataset.id);d.exsCont.innerHTML=h(e.data),d.exerciseModal.classList.toggle("is-open"),y(),d.body.classList.add("body-modal")}}catch(e){throw new Error(e.message)}}
 //# sourceMappingURL=commonHelpers.js.map
