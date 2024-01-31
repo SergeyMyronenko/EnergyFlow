@@ -116,7 +116,7 @@
 
 .favorites-icon-svg:hover,
 .favorites-icon-svg:focus {
-  transform: scale(1.09);
+ transform: scale(1.1);
 }
 .favorites-list-button {
   display: flex;
@@ -133,7 +133,7 @@
 
 .favorites-list-button:hover,
 .favorites-list-button:focus {
-  transform: scale(1.07);
+  transform: scale(1.1);
 }
 
 .favorites-list-button-icon {
@@ -318,7 +318,7 @@
 
   .favorites-list-item:hover,
   .favorites-list-item:focus {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 
   .message-info {
