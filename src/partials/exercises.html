@@ -9,13 +9,18 @@
           ><span class="exercise-name visually-hidden"></span>
         </h2>
         <div class="exersizes-header-filter-cont">
-          <ul class="exersizes-list list">
+          <ul
+            class="exersizes-list list"
+            aria-label="filter"
+            aria-description="list of buttons which filter types of activity "
+          >
             <li class="exersizes-list-item list">
               <button
                 class="exersizes-menu-btn exersizes-menu-btn-active"
                 type="button"
                 name="muscles"
                 value="Muscles"
+                aria-label="Muscles filter"
               >
                 Muscles
               </button>
@@ -26,6 +31,7 @@
                 type="button"
                 name="body parts"
                 value="Body parts"
+                aria-label="Body parts filter"
               >
                 Body parts
               </button>
@@ -36,6 +42,7 @@
                 type="button"
                 name="equipment"
                 value="Equipment"
+                aria-label="Equipment filter"
               >
                 Equipment
               </button>
@@ -52,10 +59,17 @@
               id="email"
               placeholder="Search"
               autocomplete="off"
+              role="search"
+              aria-label="exercise serch"
+              description="Searching for exercises"
               required
             />
             <div class="exersizes-input-btn-container">
-              <button class="exersizes-input-btn hidden" type="button">
+              <button
+                class="exersizes-input-btn hidden"
+                type="button"
+                aria-label="deleting search input"
+              >
                 <svg
                   class="exersizes-input-clear-icon"
                   width="18"
@@ -69,6 +83,7 @@
                 class="exersizes-input-btn-s"
                 type="submit"
                 name="search-submit"
+                aria-label="search button"
               >
                 <svg
                   class="exersizes-input-icon"
@@ -85,17 +100,41 @@
 
         <!-- ================ Контейнер для карток =============================================  -->
 
-        <ul class="exersizes-cards-container list"></ul>
+        <div class="exersizes-cards-container-wrapper hidden">
+          <ul
+            class="exersizes-cards-container list"
+            aria-live="polite"
+            aria-label="collection"
+            aria-description="list of different types of activity "
+          >
+            >
+          </ul>
+        </div>
         <!-- ================== Контейнер для карток другої частини. Після тесту макету - додати клас hidden ===================-->
 
-        <ul class="exersizes-result-card-container list hidden"></ul>
+        <div class="exersizes-result-card-container-wrapper hidden">
+          <ul
+            class="exersizes-result-card-container list hidden"
+            aria-live="polite"
+            aria-label="collection"
+            aria-description="The biggest exercise collection"
+          ></ul>
+        </div>
 
         <!-- =================== Контейнер для повідомлення. Після тесту макету - додати клас hidden =========================== -->
 
-        <div class="exersizes-message-container hidden"></div>
+        <div
+          class="exersizes-message-container hidden"
+          role="alert"
+          aria-label="error message"
+          aria-live="assertive"
+        ></div>
         <!-- ==================== Пагінація =============================================== -->
         <div class="exersizes-pagination-container">
-          <ul class="exersizes-pagination-list list"></ul>
+          <ul
+            class="exersizes-pagination-list list"
+            aria-label="page numbers"
+          ></ul>
         </div>
       </div>
 

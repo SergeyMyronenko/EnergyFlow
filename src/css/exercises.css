@@ -170,6 +170,7 @@ address {
 }
 .exersizes-card-btn {
   position: relative;
+  z-index: 999;
   transition: transform 0.3s ease-in-out;
 }
 .arrow-icon {
@@ -552,6 +553,8 @@ html {
 
 .exersizes-card-btn-icon {
   stroke: var(--primary-color);
+  position: relative;
+  z-index: -1;
 }
 
 .exersizes-card-workout-title-cont {
@@ -636,6 +639,18 @@ html {
     animation-delay: 1s;
   }
   /* ======================= */
+
+  /* ================================NB================ */
+  .exersizes-result-card-container-wrapper {
+    min-height: 775px;
+  }
+
+  /* ================================================= */
+  .exersizes-cards-container-wrapper {
+    min-height: 1061px;
+  }
+  /* ================================================= */
+
   .exersizes-header-filter-cont {
     flex-direction: row;
     justify-content: space-between;
@@ -808,6 +823,16 @@ html {
     padding-top: 32px;
   }
 
+  /* ===========================NB=================== */
+  .exersizes-result-card-container-wrapper {
+    min-height: 511px;
+  }
+
+  .exersizes-cards-container-wrapper {
+    min-height: 862px;
+  }
+  /* ================================================= */
+
   .exersizes-cards-container {
     row-gap: 40px;
     column-gap: 20px;
@@ -833,8 +858,8 @@ html {
   }
 
   .exersizes-card-info-list {
-    row-gap: 16px;
-    justify-content: space-between;
+    column-gap: 16px;
+    justify-content: flex-start;
   }
 
   .noresult-message {
