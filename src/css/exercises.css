@@ -170,11 +170,11 @@ address {
 }
 .exersizes-card-btn {
   position: relative;
-  z-index: 9;
+  z-index: 1;
   transition: transform 0.3s ease-in-out;
 }
 .arrow-icon {
-  position: relative;
+  position: absolute;
   z-index: -1;
 }
 
