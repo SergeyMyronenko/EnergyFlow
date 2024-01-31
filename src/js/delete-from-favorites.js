@@ -11,7 +11,7 @@ function animationOfDisapiaring(deletedElement) {
 
     setTimeout(() => {
         deletedElement.style.transform = "translateX(-200%)";
-    }, 150);
+    }, 100);
 
     setTimeout(() => {
         deletedElement.style.position = "absolute";
