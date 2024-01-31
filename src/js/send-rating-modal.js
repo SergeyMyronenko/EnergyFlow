@@ -31,7 +31,7 @@ async function handleSubmit(e) {
         review: e.target.elements.comment.value.trim(),
       }
     );
-    operationSuccess();
+    operationSuccess('Thank you! Your opinion really important for us!');
   } catch (error) {
     throw new Error(error.message);
   } finally {
@@ -39,7 +39,7 @@ async function handleSubmit(e) {
   }
 }
 
-function resetForm() {
+export function resetForm() {
   refs.modalBackdrop.classList.remove('is-open');
   refs.exerciseModal.classList.remove('is-open');
   refs.rateValue.textContent = '0.0';

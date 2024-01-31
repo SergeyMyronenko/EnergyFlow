@@ -16,6 +16,7 @@ async function addToFavorites(e) {
       const findCopy = inLocalStorage.some(item => item._id === data._id);
       const modalHeart = document.querySelector('.modal-button-favorites-icon');
       const modalHeartSvg = document.querySelector('.modal-button-favorites-icon-svg');
+
       if (!findCopy) {
         inLocalStorage.push(data);
       } else {
