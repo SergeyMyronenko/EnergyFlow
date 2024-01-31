@@ -1,5 +1,5 @@
 export default function policyModal() {
-  const policy = document.querySelector('.foter-policy');
+  const policy = document.querySelector('.footer-policy');
   const service = document.querySelector('.footer-service');
   const serviceOverlay = document.querySelector('.modal-overlay');
   const policyOverlay = document.querySelector('.policy-modal-overlay');
