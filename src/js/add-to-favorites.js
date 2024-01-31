@@ -5,12 +5,11 @@ const modalWindow = document.querySelector('.modal');
 modalExercises.addEventListener('click', addToFavorites);
 
 export const LOCAL_STORAGE_KEY = 'favoriteData';
-export let inLocalStorage;
+export let inLocalStorage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
 
 async function addToFavorites(e) {
   try {
     if (e.target.classList.contains('modal-button-favorites')) {
-      inLocalStorage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
       const itemId = await getData(e.target.dataset.id);
       const data = itemId.data;
       const findCopy = inLocalStorage.some(item => item._id === data._id);
