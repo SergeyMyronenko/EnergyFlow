@@ -1,3 +1,5 @@
+import icons from '../img/sprite.svg';
+
 export function renderFavorites() {
   const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
   const favoritesContainer = document.querySelector('.favorites-contanier-block');
@@ -20,37 +22,32 @@ export function renderFavorites() {
   favoritesList.classList.add('favorites-list');
   favoritesContainer.appendChild(favoritesList);
 
-  
   const favoritesHTML = storedData
-    .map(item => { 
+    .map(item => {
       let exerciseName = item.name;
       let exerciseTarget = item.target;
       const viewPortWidth = window.innerWidth;
       if (viewPortWidth >= 1440) {
         if (exerciseName.length > 25) {
-          exerciseName =
-            item.name[0].toUpperCase() + item.name.slice(1, 25).trim() + '...';
+          exerciseName = item.name[0].toUpperCase() + item.name.slice(1, 25).trim() + '...';
         }
         if (exerciseTarget.length > 20) {
-          exerciseTarget =
-            item.target[0].toUpperCase() + item.target.slice(1, 17).trim() + '...';
+          exerciseTarget = item.target[0].toUpperCase() + item.target.slice(1, 17).trim() + '...';
         }
       } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
         if (exerciseName.length > 17) {
-          exerciseName =
-            item.name[0].toUpperCase() + item.name.slice(1, 16).trim() + '...';
+          exerciseName = item.name[0].toUpperCase() + item.name.slice(1, 16).trim() + '...';
         }
       } else {
-        exerciseName =
-          item.name[0].toUpperCase() + item.name.slice(1, 20).trim() + '...';
-        };
-     return `<li class="favorites-list-item" tabindex="0">
+        exerciseName = item.name[0].toUpperCase() + item.name.slice(1, 20).trim() + '...';
+      }
+      return `<li class="favorites-list-item" tabindex="0">
           <div class="favorites-card-heder">
             <div class="favorites-oval">
               <span>WORKOUT</span>
               <button class="favorites-icon-svg" data-id="${item._id}">
                 <svg width="16" height="16" fill="none">
-                  <use href="./img/sprite.svg#trash"></use>
+                  <use href="${icons}#trash"></use>
                 </svg>
               </button>
             </div>
@@ -62,13 +59,13 @@ export function renderFavorites() {
                 height="14"
                 stroke="#1B1B1B"
               >
-                <use href="./img/sprite.svg#arrow"></use>
+                <use href="${icons}#arrow"></use>
               </svg>
             </button>
           </div>
           <div class="favorites-list-container">
             <svg class="favorite-list-svg" width="24" height="24">
-              <use href="./img/sprite.svg#dude"></use>
+              <use href="${icons}#dude"></use>
             </svg>
             <h3 class="favorites-list-text">${exerciseName}</h3>
           </div>
@@ -90,7 +87,8 @@ export function renderFavorites() {
               </li>
             </ul>
           </div>
-        </li>`})
+        </li>`;
+    })
     .join('');
 
   favoritesList.innerHTML = favoritesHTML;

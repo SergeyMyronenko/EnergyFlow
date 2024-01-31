@@ -1,12 +1,12 @@
 import { getData } from './exercises-modal.js';
+
 const addToFavoritesBtn = document.querySelector('.modal-button-favorites');
 const modalExercises = document.querySelector('.modal');
-const modalWindow = document.querySelector('.modal');
+
 modalExercises.addEventListener('click', addToFavorites);
 
 export const LOCAL_STORAGE_KEY = 'favoriteData';
-export let inLocalStorage =
-  JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
+export let inLocalStorage = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || [];
 
 async function addToFavorites(e) {
   try {
@@ -14,6 +14,7 @@ async function addToFavorites(e) {
       const itemId = await getData(e.target.dataset.id);
       const data = itemId.data;
       const findCopy = inLocalStorage.some(item => item._id === data._id);
+      const modalHeart = document.querySelector('.modal-button-favorites-icon');
 
       if (!findCopy) {
         inLocalStorage.push(data);
@@ -21,7 +22,10 @@ async function addToFavorites(e) {
         return;
       }
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inLocalStorage));
-      modalWindow.classList.remove('is-open');
+      modalHeart.style.backgroundColor = '#EEA10C';
+      setTimeout(() => {
+        modalExercises.classList.remove('is-open');
+      }, 500);
     }
   } catch (error) {
     console.log(error.message);
