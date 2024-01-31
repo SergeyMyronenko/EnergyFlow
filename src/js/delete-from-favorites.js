@@ -32,10 +32,10 @@ function removeWorkoutCard(removedWorkoutID) {
 const favoritesWotkoutContainer = document.querySelector('.favorites-contanier-block');
 
 favoritesWotkoutContainer.addEventListener('click', e => {
-  if (e.target.dataset.id) {
-    const workoutIdToDelete = e.target.dataset.id;
-    removeFromFavotites(workoutIdToDelete);
-    removeWorkoutCard(workoutIdToDelete);
+  if (e.target.classList.contains("favorites-icon-svg")) {
+      const workoutIdToDelete = e.target.dataset.id;
+      removeFromFavotites(workoutIdToDelete);
+      removeWorkoutCard(workoutIdToDelete);
   }
   return;
 });

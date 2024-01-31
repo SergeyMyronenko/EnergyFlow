@@ -218,6 +218,6 @@
   screen and (min-resolution: 2dppx) and (min-width: 1440px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1440px) {
   .image-block-1-container {
-    background-image: url(../img/Block-1/t-q-ex-img/t-q-ex-img@2x.jpg);
+    background-image: url(../img/Block-1/d-q-ex-img/d-q-ex-img@2x.jpg);
   }
 }
