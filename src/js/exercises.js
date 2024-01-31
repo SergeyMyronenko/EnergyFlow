@@ -3,13 +3,16 @@ import axios from 'axios';
 axios.defaults.baseURL = 'https://energyflow.b.goit.study/api';
 
 const FILTER_IMG_CONTAINER = document.querySelector(
-  '.exersizes-cards-container'
+  '.exersizes-cards-container-wrapper'
 );
+const FILTER_IMG_LIST = document.querySelector('.exersizes-cards-container');
 
 const EXERCISES_CARD_CONTAINER = document.querySelector(
+  '.exersizes-result-card-container-wrapper'
+);
+const EXERCISES_CARD_LIST = document.querySelector(
   '.exersizes-result-card-container'
 );
-
 const MESSAGE_CONTAINER = document.querySelector(
   '.exersizes-message-container'
 );
@@ -28,10 +31,10 @@ let filterType;
 
 const filterListener = document.querySelector('.exersizes-list');
 const paginationListener = document.querySelector('.exersizes-pagination-list');
-const paginationBtn = document.querySelector('.exersizes-pagination-btn');
+// const paginationBtn = document.querySelector('.exersizes-pagination-btn');
 
 // ============ Запуск фільтрації при завантаженні сторінки ============
-
+scrollToTopShowOrHide();
 document.addEventListener('DOMContentLoaded', filterFetch());
 
 // ============ Запуск фільтрації при кліку на кнопку ============
@@ -209,25 +212,10 @@ async function searchByName(e) {
 async function renderFilterImg(resp) {
   const results = resp.data.results;
   FILTER_IMG_CONTAINER.classList.remove('hidden');
-
-  // ====================== Test=====================
-
-  document
-    .querySelector('.exersizes-cards-container-wrapper')
-    .classList.remove('hidden');
-
-  // =================================================
-
   EXERCISES_CARD_CONTAINER.classList.add('hidden');
-  // ====================== Test=====================
-
-  document
-    .querySelector('.exersizes-result-card-container-wrapper')
-    .classList.add('hidden');
-  // =================================================
   MESSAGE_CONTAINER.classList.add('hidden');
 
-  FILTER_IMG_CONTAINER.innerHTML = '';
+  FILTER_IMG_LIST.innerHTML = '';
   const markup = results
     .map(el => {
       const filter = el.filter;
@@ -248,7 +236,7 @@ async function renderFilterImg(resp) {
       </div></li>`;
     })
     .join('');
-  FILTER_IMG_CONTAINER.insertAdjacentHTML('beforeend', markup);
+  FILTER_IMG_LIST.insertAdjacentHTML('beforeend', markup);
   FILTER_IMG_CONTAINER.addEventListener('keyup', choseByEnter);
 }
 // ======================== Функція відкривання картки вправи по Enter ========================
@@ -265,28 +253,15 @@ function renderExersizesCard(resp) {
   FILTER_IMG_CONTAINER.removeEventListener('keyup', choseByEnter);
   EXERCISES_CARD_CONTAINER.classList.remove('hidden');
   document;
-
-  // ====================== Test=====================
-
-  document
-    .querySelector('.exersizes-cards-container-wrapper')
-    .classList.add('hidden');
-
-  // =================================================
-
-  // ====================== Test=====================
-  document
-    .querySelector('.exersizes-result-card-container-wrapper')
-    .classList.remove('hidden');
-  // =================================================
   FILTER_IMG_CONTAINER.classList.add('hidden');
   MESSAGE_CONTAINER.classList.add('hidden');
   FILTER_IMG_CONTAINER.removeEventListener('keyup', choseByEnter);
-  EXERCISES_CARD_CONTAINER.innerHTML = '';
+  EXERCISES_CARD_LIST.innerHTML = '';
   let id;
   const markup = results
     .map(el => {
       let exerciseName = el.name;
+      let exerciseTarget = el.target;
       id = el._id;
       const viewPortWidth = window.innerWidth;
 
@@ -294,6 +269,10 @@ function renderExersizesCard(resp) {
         if (exerciseName.length > 25) {
           exerciseName =
             el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
+        }
+        if (exerciseTarget.length > 12) {
+          exerciseTarget =
+            el.target[0].toUpperCase() + el.target.slice(1, 8).trim() + '...';
         }
       } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
         if (exerciseName.length > 17) {
@@ -332,7 +311,7 @@ function renderExersizesCard(resp) {
 
     <div class="exersizes-card-workout-title-cont">
 <svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="./img/sprite.svg#dude"></use>
+                    <use href="./img/sprite.svg#runner"></use>
                 </svg>
                 <h3 class="exersizes-card-title-h">${exerciseName}</h3>
     </div>
@@ -346,14 +325,12 @@ function renderExersizesCard(resp) {
               el.bodyPart[0].toUpperCase() + el.bodyPart.slice(1)
             }</span></p></li>
         <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
-            <span class="exersizes-card-info-data" data-filter-sub-type>${
-              el.target[0].toUpperCase() + el.target.slice(1)
-            }</span></p></li>
+            <span class="exersizes-card-info-data" data-filter-sub-type>${exerciseTarget}</span></p></li>
     </ul>
 </div></li>`;
     })
     .join('');
-  EXERCISES_CARD_CONTAINER.insertAdjacentHTML('beforeend', markup);
+  EXERCISES_CARD_LIST.insertAdjacentHTML('beforeend', markup);
   EXERCISES_CARD_CONTAINER.addEventListener('keyup', choseByEnter);
 }
 
@@ -361,18 +338,7 @@ function renderExersizesCard(resp) {
 
 async function renderMessage(error) {
   FILTER_IMG_CONTAINER.classList.add('hidden');
-
-  // ====================== Test=====================
-  document
-    .querySelector('.exersizes-cards-container-wrapper')
-    .classList.add('hidden');
-
   EXERCISES_CARD_CONTAINER.classList.add('hidden');
-  // ====================== Test=====================
-  document
-    .querySelector('.exersizes-result-card-container-wrapper')
-    .classList.add('hidden');
-  // =================================================
   MESSAGE_CONTAINER.classList.remove('hidden');
   const paginationList = document.querySelector('.exersizes-pagination-list');
   paginationList.innerHTML = '';
@@ -600,5 +566,3 @@ function removeLoading() {
 }
 
 // =================== Скролл догори ===================
-
-scrollToTopShowOrHide();

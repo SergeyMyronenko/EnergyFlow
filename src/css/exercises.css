@@ -170,7 +170,7 @@ address {
 }
 .exersizes-card-btn {
   position: relative;
-  z-index: 999;
+  z-index: 9;
   transition: transform 0.3s ease-in-out;
 }
 .arrow-icon {
@@ -660,7 +660,7 @@ html {
 
   .exersizes-message-container {
     padding-top: 222px;
-    height: 1091px;
+    height: 775px;
   }
 
   .exersizes-result-card-container {
@@ -815,7 +815,7 @@ html {
 @media screen and (min-width: 1440px) {
   .exersizes-message-container {
     padding-top: 217px;
-    height: 827px;
+    height: 511px;
   }
 
   .exersizes-result-card-container {
@@ -867,12 +867,12 @@ html {
     max-width: 684px;
   }
   .up-link {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
   .up-svg {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
   }
   .exersizes-container {
     padding-top: 64px;
