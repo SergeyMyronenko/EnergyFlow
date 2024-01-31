@@ -34,7 +34,7 @@ export function renderFavorites() {
                 </svg>
               </button>
             </div>
-            <button class="favorites-list-button" type="button">
+            <button class="favorites-list-button" data-id="${item._id}" type="button">
               Start
               <svg
                 class="favorites-list-button-icon"
