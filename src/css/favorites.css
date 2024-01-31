@@ -399,7 +399,7 @@
 /* Delete button Z-index */
 .favorites-icon-svg {
   position: relative;
-  z-index: 999;
+  z-index: 0;
   background: transparent;
 }
 
@@ -421,5 +421,5 @@
   position: relative;
 }
 .favorites-list-item {
-  transition: transform 1s ease-in-out;
+  transition: transform 800ms ease-in-out;
 }
