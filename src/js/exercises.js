@@ -2,17 +2,20 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://energyflow.b.goit.study/api';
 
+const FILTER_IMG_LIST = document.querySelector('.exersizes-cards-container');
+
 const FILTER_IMG_CONTAINER = document.querySelector(
   '.exersizes-cards-container-wrapper'
 );
-const FILTER_IMG_LIST = document.querySelector('.exersizes-cards-container');
+
+const EXERCISES_CARD_LIST = document.querySelector(
+  '.exersizes-result-card-container'
+);
 
 const EXERCISES_CARD_CONTAINER = document.querySelector(
   '.exersizes-result-card-container-wrapper'
 );
-const EXERCISES_CARD_LIST = document.querySelector(
-  '.exersizes-result-card-container'
-);
+
 const MESSAGE_CONTAINER = document.querySelector(
   '.exersizes-message-container'
 );
@@ -31,10 +34,14 @@ let filterType;
 
 const filterListener = document.querySelector('.exersizes-list');
 const paginationListener = document.querySelector('.exersizes-pagination-list');
-// const paginationBtn = document.querySelector('.exersizes-pagination-btn');
+const paginationBtn = document.querySelector('.exersizes-pagination-btn');
+
+// ============ Показуємо кнопку "Догори" при скролі вниз ============
+
+scrollToTopShowOrHide();
 
 // ============ Запуск фільтрації при завантаженні сторінки ============
-scrollToTopShowOrHide();
+
 document.addEventListener('DOMContentLoaded', filterFetch());
 
 // ============ Запуск фільтрації при кліку на кнопку ============
@@ -96,12 +103,11 @@ PAGINATION_CONTAINER.addEventListener('click', e => {
 
     if (sessionStorage.getItem(`filterSubType`)) {
       filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
-    } else {
-      // filterSubType = sessionStorage.getItem('filterSubType');
     }
-
+    scrollPage(filterSubType);
     paginationFetch(filterType, filterSubType, page);
     changingPaginationBtnStyle(e);
+
     removeLoading();
   }
 });
@@ -201,7 +207,6 @@ async function searchByName(e) {
       pagination(response);
     }
   } catch (error) {
-    console.log(error);
     renderMessage();
   }
   removeLoading();
@@ -270,7 +275,7 @@ function renderExersizesCard(resp) {
           exerciseName =
             el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
         }
-        if (exerciseTarget.length > 12) {
+        if (exerciseTarget.length >= 9) {
           exerciseTarget =
             el.target[0].toUpperCase() + el.target.slice(1, 8).trim() + '...';
         }
@@ -285,24 +290,24 @@ function renderExersizesCard(resp) {
         console.log('320');
       }
 
-      return `        <li class="second-filter"><div class="exersizes-card" tabindex="0">
+      return `        <li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
     <div class="exersizes-card-header-cont">
         <div class="exersizes-card-workout-cont">
             <div class="exersizes-card-workout-header-title">workout</div>
             <div class="exersizes-card-workout-rate-container">
-                <span class="exersizes-card-workout-rate">${Math.round(
+                <span class="exersizes-card-workout-rate" aria-label="Exercise rating">${Math.round(
                   el.rating
                 )
                   .toString()
                   .padEnd(3, '.0')}</span>
-                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="rate-icon">
+                <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="Star icon">
                     <use href="./img/sprite.svg#star"></use>
                 </svg>
             
             </div>
            
         </div>
-       <button class="exersizes-card-btn" type="button" data-id=${id}>start 
+       <button class="exersizes-card-btn" type="button" data-id=${id} aria-label="Start button">start 
         <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
             <use href="./img/sprite.svg#arrow"></use>
         </svg>
@@ -310,21 +315,23 @@ function renderExersizesCard(resp) {
     </div>
 
     <div class="exersizes-card-workout-title-cont">
-<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="man-icon">
-                    <use href="./img/sprite.svg#runner"></use>
+<svg class="exersizes-card-title-icon" width="24" height="24" aria-label="Runner icon">
+                    <use href="./img/sprite.svg#dude"></use>
                 </svg>
-                <h3 class="exersizes-card-title-h">${exerciseName}</h3>
+                <h3 class="exersizes-card-title-h" aria-description="${
+                  el.name
+                }">${exerciseName}</h3>
     </div>
     <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Burned calories:
-            <span class="exersizes-card-info-data" data-burning-calories>${
+        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
+            <span class="exersizes-card-info-data" data-burning-calories aria-label="Calories time">${
               el.burnedCalories
             } / ${el.time} min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Body part:
+        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Body part">Body part:
             <span class="exersizes-card-info-data" data-body-type>${
               el.bodyPart[0].toUpperCase() + el.bodyPart.slice(1)
             }</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr">Target:
+        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Exercise name">Target:
             <span class="exersizes-card-info-data" data-filter-sub-type>${exerciseTarget}</span></p></li>
     </ul>
 </div></li>`;
@@ -345,7 +352,7 @@ async function renderMessage(error) {
 
   MESSAGE_CONTAINER.innerHTML = '';
   const markupMessage =
-    '<p class="noresult-message" >Unfortunately, <em class="span-strong">no results</em> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>';
+    '<p class="noresult-message" aria-label="Error message">Unfortunately, <em class="span-strong">no results</em> were found. You may want to consider other search options to find the exercise you are looking for. Our range is wide and you have the opportunity to find more options that suit your needs.</p>';
 
   MESSAGE_CONTAINER.insertAdjacentHTML('beforeend', markupMessage);
 }
@@ -566,3 +573,19 @@ function removeLoading() {
 }
 
 // =================== Скролл догори ===================
+function scrollPage(filterSubType) {
+  let cardItem = document.querySelector('.exersizes-card-bytype');
+  if (window.innerWidth < 1091) {
+    if (!filterSubType) {
+      cardItem = document.querySelector('.exersizes-card-bytype');
+    } else {
+      cardItem = document.querySelector('.exersizes-card');
+    }
+
+    const scrollingPosition = cardItem.getBoundingClientRect().y;
+    window.scrollTo({
+      top: scrollingPosition,
+      behavior: 'smooth',
+    });
+  }
+}
