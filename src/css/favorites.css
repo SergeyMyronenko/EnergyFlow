@@ -116,7 +116,7 @@
 
 .favorites-icon-svg:hover,
 .favorites-icon-svg:focus {
- transform: scale(1.1);
+  transform: scale(1.1);
 }
 .favorites-list-button {
   display: flex;
@@ -269,7 +269,8 @@
   .favorites-contanier-block {
     padding-right: 24px;
     display: flex;
-    height: 720px;
+    max-height: 720px;
+    justify-content: flex-start;
   }
 
   .favorites-title {
@@ -370,10 +371,10 @@
 
   .favorites-contanier-block {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: flex-start;
     flex-wrap: wrap;
+    max-height: 482px;
   }
 
   .favorites-list {
