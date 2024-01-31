@@ -104,7 +104,7 @@ PAGINATION_CONTAINER.addEventListener('click', e => {
     if (sessionStorage.getItem(`filterSubType`)) {
       filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
     }
-    scrollPage(filterSubType);
+    scrollPage();
     paginationFetch(filterType, filterSubType, page);
     changingPaginationBtnStyle(e);
 
@@ -573,16 +573,10 @@ function removeLoading() {
 }
 
 // =================== Скролл догори ===================
-function scrollPage(filterSubType) {
-  let cardItem = document.querySelector('.exersizes-card-bytype');
+function scrollPage() {
+  let scrollTarget = document.querySelector('.exersizes-container');
   if (window.innerWidth < 1091) {
-    if (!filterSubType) {
-      cardItem = document.querySelector('.exersizes-card-bytype');
-    } else {
-      cardItem = document.querySelector('.exersizes-card');
-    }
-
-    const scrollingPosition = cardItem.getBoundingClientRect().y;
+    const scrollingPosition = scrollTarget.getBoundingClientRect().y;
     window.scrollTo({
       top: scrollingPosition,
       behavior: 'smooth',
