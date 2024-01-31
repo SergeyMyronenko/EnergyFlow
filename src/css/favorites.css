@@ -257,7 +257,7 @@
 
 @media (min-width: 768px) {
   .favorites-card {
-    padding: 64px 48px;
+    padding: 64px 16px 64px 48px;
     width: 736px;
     height: auto;
   }
@@ -267,7 +267,9 @@
   }
 
   .favorites-contanier-block {
+    padding-right: 24px;
     display: flex;
+    height: 720px;
   }
 
   .favorites-title {
@@ -288,6 +290,19 @@
     align-items: center;
     column-gap: 14px;
     row-gap: 20px;
+  }
+
+  /* ===== Scroll-Bar ===== */
+  .favorites-contanier-block::-webkit-scrollbar {
+    width: 8px;
+  }
+  .favorites-contanier-block::-webkit-scrollbar-track {
+    background-color: rgba(27, 27, 27, 0.1);
+  }
+  .favorites-contanier-block::-webkit-scrollbar-thumb {
+    background-color: var(--grey);
+    border-radius: 12px;
+    height: 153px;
   }
 
   .favorites-list-item {
@@ -348,7 +363,6 @@
 /* ------------------DESKTOP----------------------- */
 @media (min-width: 1440px) {
   .favorites-card {
-    padding: 64px 48px;
     width: 1408px;
     display: flex;
     flex-direction: column;
