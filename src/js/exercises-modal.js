@@ -13,37 +13,36 @@ export function createMarkup(obj) {
           <h4 class="modal-title">${obj.name}</h4>
 
           <div class="modal-rating">
-            <p class="modal-rating-value">${obj.rating}</p>
-
-       <div class="ex-rating">
-                <div class="ex-rating-body">
-                  <div class="ex-rating-active"></div>
-                  <div class="ex-rating-items">
-                    <input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="1"
-                      name="exrating"
-                    /><input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="2"
-                      name="exrating"
-                    /><input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="3"
-                      name="exrating"
-                    /><input
-                      type="radio"
-                      class="ex-rating-item"
-                      value="4"
-                      name="exrating"
-                    /><input type="radio" class="ex-rating-item" value="5" name="exrating" />
+            <p class="modal-rating-value">${parseFloat(obj.rating)}</p>
+          <div class="ex-rating">
+                    <div class="ex-rating-body">
+                      <div class="ex-rating-active"></div>
+                      <div class="ex-rating-items">
+                        <input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="1"
+                          name="exrating"
+                        /><input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="2"
+                          name="exrating"
+                        /><input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="3"
+                          name="exrating"
+                        /><input
+                          type="radio"
+                          class="ex-rating-item"
+                          value="4"
+                          name="exrating"
+                        /><input type="radio" class="ex-rating-item" value="5" name="exrating" />
+                      </div>
+                    </div>
                   </div>
-                </div>
               </div>
-          </div>
 
           <ul class="modal-list">
             <li class="modal-list-item">
@@ -73,5 +72,20 @@ export function createMarkup(obj) {
       </div>
     </div>
   </div>
+  <div class="modal-buttons">
+        <button class="modal-button-favorites" type="button" data-id="${obj._id}">
+          Add to favorites
+          <svg
+            class="modal-button-favorites-icon"
+            width="20"
+            height="20"
+            aria-label="heart-icon"
+          >
+            <use href="./img/sprite.svg#heart"></use>
+          </svg>
+        </button>
+
+        <button class="modal-button-rating">Give a rating</button>
+      </div>
   `;
 }
