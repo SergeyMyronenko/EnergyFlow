@@ -15,17 +15,19 @@ async function addToFavorites(e) {
       const data = itemId.data;
       const findCopy = inLocalStorage.some(item => item._id === data._id);
       const modalHeart = document.querySelector('.modal-button-favorites-icon');
-
+      const modalHeartSvg = document.querySelector('.modal-button-favorites-icon-svg');
       if (!findCopy) {
         inLocalStorage.push(data);
       } else {
         return;
       }
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inLocalStorage));
-      modalHeart.style.backgroundColor = '#EEA10C';
+      modalHeart.style.fill = '#EEA10C';
+      // modalHeartSvg.style.fill = '#EEA10C';
+
       setTimeout(() => {
         modalExercises.classList.remove('is-open');
-      }, 500);
+      }, 1000);
     }
   } catch (error) {
     console.log(error.message);
