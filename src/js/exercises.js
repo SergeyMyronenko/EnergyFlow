@@ -2,6 +2,8 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://energyflow.b.goit.study/api';
 
+import icons from './img/sprite.svg';
+
 const FILTER_IMG_LIST = document.querySelector('.exersizes-cards-container');
 
 const FILTER_IMG_CONTAINER = document.querySelector(
@@ -202,13 +204,14 @@ async function searchByName(e) {
       if (response.data.results.length === 0) {
         throw new Error('No results found...');
       }
-      simpleInputCleaning();
+
       renderExersizesCard(response);
       pagination(response);
     }
   } catch (error) {
     renderMessage();
   }
+  simpleInputCleaning();
   removeLoading();
 }
 
@@ -301,7 +304,7 @@ function renderExersizesCard(resp) {
                   .toString()
                   .padEnd(3, '.0')}</span>
                 <svg class="exersizes-card-rate-icon" width="18" height="18" aria-label="Star icon">
-                    <use href="./img/sprite.svg#star"></use>
+                    <use href="${icons}#star"></use>
                 </svg>
             
             </div>
@@ -309,14 +312,14 @@ function renderExersizesCard(resp) {
         </div>
        <button class="exersizes-card-btn" type="button" data-id=${id} aria-label="Start button">start 
         <svg class="exersizes-card-btn-icon" width="14" height="14" aria-label="arrow-icon">
-            <use href="./img/sprite.svg#arrow"></use>
+            <use href="${icons}#arrow"></use>
         </svg>
        </button>
     </div>
 
     <div class="exersizes-card-workout-title-cont">
 <svg class="exersizes-card-title-icon" width="24" height="24" aria-label="Runner icon">
-                    <use href="./img/sprite.svg#dude"></use>
+                    <use href="${icons}#runner"></use>
                 </svg>
                 <h3 class="exersizes-card-title-h" aria-description="${
                   el.name
@@ -577,9 +580,12 @@ function scrollPage() {
   let scrollTarget = document.querySelector('.exersizes-container');
   if (window.innerWidth < 1091) {
     const scrollingPosition = scrollTarget.getBoundingClientRect().y;
-    window.scrollTo({
+    window.scrollBy({
       top: scrollingPosition,
       behavior: 'smooth',
     });
   }
 }
+let scrollTarget = document.querySelector('.exersizes-container');
+const scrollingPosition = scrollTarget.getBoundingClientRect().y;
+console.log(scrollingPosition);
