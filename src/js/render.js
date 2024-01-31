@@ -30,11 +30,31 @@ export function renderFavorites() {
   favoritesList.classList.add('favorites-list');
   favoritesContainer.appendChild(favoritesList);
 
+  
   const favoritesHTML = storedData
-    .map(
-      item => `
-
-    <li class="favorites-list-item" tabindex="0">
+    .map(item => { 
+      let exerciseName = item.name;
+      let exerciseTarget = item.target;
+      const viewPortWidth = window.innerWidth;
+      if (viewPortWidth >= 1440) {
+        if (exerciseName.length > 25) {
+          exerciseName =
+            item.name[0].toUpperCase() + item.name.slice(1, 25).trim() + '...';
+        }
+        if (exerciseTarget.length > 20) {
+          exerciseTarget =
+            item.target[0].toUpperCase() + item.target.slice(1, 17).trim() + '...';
+        }
+      } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
+        if (exerciseName.length > 17) {
+          exerciseName =
+            item.name[0].toUpperCase() + item.name.slice(1, 16).trim() + '...';
+        }
+      } else {
+        exerciseName =
+          item.name[0].toUpperCase() + item.name.slice(1, 20).trim() + '...';
+        };
+     return `<li class="favorites-list-item" tabindex="0">
           <div class="favorites-card-heder">
             <div class="favorites-oval">
               <span>WORKOUT</span>
@@ -60,7 +80,7 @@ export function renderFavorites() {
             <svg class="favorite-list-svg" width="24" height="24">
               <use href="./img/sprite.svg#dude"></use>
             </svg>
-            <h3 class="favorites-list-text">${item.name}</h3>
+            <h3 class="favorites-list-text">${exerciseName}</h3>
           </div>
           <div class="favorites-card-text">
             <ul class="favorites-card-text-list">
@@ -75,14 +95,12 @@ export function renderFavorites() {
                 </div>
                 <div class="favorites-card-text-wrapper">
                   <h4 class="favorites-card-text-title">Target:</h4>
-                  <p class="favorites-card-text-block">${item.target}</p>
+                  <p class="favorites-card-text-block">${exerciseTarget}</p>
                 </div>
               </li>
             </ul>
           </div>
-        </li>
-    `
-    )
+        </li>`})
     .join('');
 
   favoritesList.innerHTML = favoritesHTML;
