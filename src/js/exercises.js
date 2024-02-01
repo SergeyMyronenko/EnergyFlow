@@ -495,7 +495,7 @@ function changingPaginationBtnStyle(e) {
 // =================== Функція повернення сторінки до форми пошуку ===================
 
 function scrollToTopShowOrHide() {
-  if (window.scrollY > 100) {
+  if (window.scrollY > 120) {
     document.querySelector('.up-link').classList.add('show');
   } else {
     document.querySelector('.up-link').classList.remove('show');
