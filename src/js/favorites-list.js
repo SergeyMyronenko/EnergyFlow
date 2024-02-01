@@ -4,11 +4,9 @@ let paginationButtons;
 const itemsPerPage = 6;
 if (window.location.pathname === '/page-2.html') {
   favoritesList = document.querySelector('.favorites-list');
-  paginationButtons = document.querySelectorAll(
-    '.favorites-pagination-block button'
-  );
+  paginationButtons = document.querySelectorAll('.favorites-pagination-block button');
   showPage(1);
-  
+
   paginationButtons.forEach(button => {
     button.addEventListener('click', () => {
       const pageNumber = parseInt(button.textContent);
