@@ -27,12 +27,12 @@ async function addToFavorites(e) {
       modalHeart.style.animation = 'scale-animation 500ms cubic-bezier(.46,.51,.73,.7)';
       modalHeart.style.fill = '#EEA10C';
       modalHeart.style.stroke = '#EEA10C';
-    
+
       setTimeout(() => {
         modalExercises.classList.remove('is-open');
       }, 550);
 
-      // body.classList.remove('body-modal');
+      body.classList.remove('body-modal');
     }
   } catch (error) {
     console.log(error.message);
