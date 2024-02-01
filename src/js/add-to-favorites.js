@@ -32,7 +32,7 @@ async function addToFavorites(e) {
         modalExercises.classList.remove('is-open');
       }, 550);
 
-      // body.classList.remove('body-modal');
+      body.classList.remove('body-modal');
     }
   } catch (error) {
     console.log(error.message);
