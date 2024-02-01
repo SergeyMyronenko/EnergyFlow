@@ -30,7 +30,7 @@ const paginationBtn = document.querySelector('.exersizes-pagination-btn');
 
 // ============ Показуємо кнопку "Догори" при скролі вниз ============
 
-scrollToTopShowOrHide();
+document.addEventListener('scroll', scrollToTopShowOrHide);
 
 // ============ Запуск фільтрації при завантаженні сторінки ============
 
@@ -75,10 +75,10 @@ function choseFilterCard(e) {
   const filterSubType = e.target.dataset.target;
 
   fetchExersizes(filterType, filterSubType, page);
+  removeLoading();
   scrollPage();
   showExerciseName(e);
   inputVisualisationAddListeners();
-  removeLoading();
   sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
   sessionStorage.setItem('filterType', JSON.stringify(filterType));
 }
@@ -458,10 +458,10 @@ function changingPaginationBtnStyle(e) {
 // =================== Функція повернення сторінки до форми пошуку ===================
 
 function scrollToTopShowOrHide() {
-  if (window.scrollY > 120) {
-    document.querySelector('.up-link').classList.add('show');
+  if (window.scrollY > 100) {
+    document.querySelector('.up-link').classList.remove('hidden');
   } else {
-    document.querySelector('.up-link').classList.remove('show');
+    document.querySelector('.up-link').classList.add('hidden');
   }
 }
 

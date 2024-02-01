@@ -198,13 +198,13 @@ html {
 }
 
 .up-link {
-  display: none;
+  display: block;
   position: fixed;
+  z-index: 2;
   width: 40px;
   height: 40px;
-  right: 10px;
+  right: 16px;
   bottom: 16px;
-  width: fit-content;
   border-radius: 50%;
   opacity: 0.6;
   background-color: var(--grey);
@@ -212,25 +212,17 @@ html {
   transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
     transform 0.2s ease-in-out;
 }
-.up-link.show {
-  display: block;
-}
 .up-link:hover {
-  transform: scale(1.15);
+  transform: scale(1.03);
   opacity: 1;
 }
 .up-link:active {
   background-color: var(--dark-grey);
 }
 .up-svg {
-  display: block;
-  position: absolute;
-  top: 10%;
-  left: 10%;
   margin: 0 auto;
-  fill: var(--secondary-color);
+  fill: #fafafa;
   opacity: 0.85;
-  z-index: 99999999999999999;
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .up-svg:hover {
