@@ -57,10 +57,9 @@
   padding: 6px 26px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 30px;
-  background: var(--white);
-  color: var(--primary-color);
+  /* background: var(--white); */
+  color: var(--white);
   font-family: 'DM Sans';
   font-size: 16px;
   font-style: normal;
@@ -74,9 +73,8 @@
   padding: 6px 26px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 30px;
-  background: var(--grey);
+  /* background: var(--grey); */
   color: var(--white);
   font-family: 'DM Sans';
   font-size: 16px;
@@ -85,6 +83,12 @@
   line-height: 1.5;
   border: none;
   width: 96px;
+}
+/* Стилі для активного класу */
+.mobile-menu-btn-content-home.active,
+.mobile-menu-btn-content-favorites.active {
+  background: white;
+  color: black;
 }
 .mobile-menu-social-icons {
   display: flex;
