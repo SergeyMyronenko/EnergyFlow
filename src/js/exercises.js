@@ -22,7 +22,7 @@ const dash = document.querySelector('.dash');
 const exerciseName = document.querySelector('.exercise-name');
 
 const page = 1;
-let filterType;
+// let filterType;
 
 const filterListener = document.querySelector('.exersizes-list');
 const paginationListener = document.querySelector('.exersizes-pagination-list');
@@ -36,67 +36,86 @@ document.addEventListener('DOMContentLoaded', filterFetch());
 
 // ============ Запуск фільтрації при кліку на кнопку ============
 
-filterListener.addEventListener('click', e => {
+filterListener.addEventListener('click', imageRenderingByFilter);
+
+async function imageRenderingByFilter(e) {
   e.preventDefault();
-  // addLoading();
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
-    const filterType = e.target.textContent.trim();
-    sessionStorage.clear();
-    sessionStorage.setItem('filterType', JSON.stringify(filterType));
-    filterFetch(filterType);
-    exerciseNameHiding();
-    inputHidingAndRemoveListeners();
-    changeFilterBtnStyle(e);
-    // removeLoading();
+    try {
+      addLoading();
+      const filterType = e.target.textContent.trim();
+      sessionStorage.clear();
+      sessionStorage.setItem('filterType', JSON.stringify(filterType));
+      filterFetch(filterType);
+      scrollPage();
+      exerciseNameHiding();
+      inputHidingAndRemoveListeners();
+      changeFilterBtnStyle(e);
+    } catch (error) {
+      console.log(error);
+      renderMessage();
+    }
+    removeLoading();
   }
-});
+}
 
 // ============ Запуск фільтрації при кліку на загальну картку ============
 
-FILTER_IMG_CONTAINER.addEventListener('click', choseFilterCard);
-// ================= Функція запуску фільтрації при кліку на картку вправи =================
-function choseFilterCard(e) {
+FILTER_IMG_CONTAINER.addEventListener('click', imageRenderingByType);
+// ================= Функція запуску фільтрації при кліку на картку типу  вправи =================
+async function imageRenderingByType(e) {
   e.preventDefault();
-  // addLoading();
+
   if (e.target.nodeName !== 'DIV' && e.target.nodeName !== 'H3' && e.target.nodeName !== 'P') {
     return;
+  } else {
+    const filterType = e.target.dataset.filter;
+    const filterSubType = e.target.dataset.target;
+    try {
+      addLoading();
+      fetchExersizes(filterType, filterSubType, page);
+      removeLoading();
+      showExerciseName(e);
+      inputVisualisationAddListeners();
+      sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
+      sessionStorage.setItem('filterType', JSON.stringify(filterType));
+    } catch (error) {
+      renderMessage();
+    }
+    removeLoading();
   }
-
-  const filterType = e.target.dataset.filter;
-  const filterSubType = e.target.dataset.target;
-
-  fetchExersizes(filterType, filterSubType, page);
-  showExerciseName(e);
-  inputVisualisationAddListeners();
-  // removeLoading();
-  sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
-  sessionStorage.setItem('filterType', JSON.stringify(filterType));
 }
 
 // ============ Запуск фільтрації при кліку на пагінацію ============
 
-PAGINATION_CONTAINER.addEventListener('click', e => {
+PAGINATION_CONTAINER.addEventListener('click', imageRenderingByPagination);
+
+async function imageRenderingByPagination(e) {
   e.preventDefault();
-  // addLoading();
+
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
-    const filterType = JSON.parse(sessionStorage.getItem('filterType'));
-    const page = e.target.textContent.trim();
-    let filterSubType;
+    try {
+      const filterType = JSON.parse(sessionStorage.getItem('filterType'));
+      const page = e.target.textContent.trim();
+      let filterSubType;
+      addLoading();
 
-    if (sessionStorage.getItem(`filterSubType`)) {
-      filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
+      if (sessionStorage.getItem(`filterSubType`)) {
+        filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
+      }
+      scrollPage();
+      paginationFetch(filterType, filterSubType, page);
+      changingPaginationBtnStyle(e);
+    } catch (error) {
+      renderMessage();
     }
-    scrollPage();
-    paginationFetch(filterType, filterSubType, page);
-    changingPaginationBtnStyle(e);
-
-    // removeLoading();
+    removeLoading();
   }
-});
+}
 
 //  ===================== Запит по фільтру типів =====================
 
