@@ -22,7 +22,7 @@ const dash = document.querySelector('.dash');
 const exerciseName = document.querySelector('.exercise-name');
 
 const page = 1;
-let filterType;
+// let filterType;
 
 const filterListener = document.querySelector('.exersizes-list');
 const paginationListener = document.querySelector('.exersizes-pagination-list');
