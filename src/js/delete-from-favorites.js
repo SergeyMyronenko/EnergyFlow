@@ -27,15 +27,18 @@ function removeWorkoutCard(removedWorkoutID) {
   const deletedWorkoutCard = document.querySelector(`[data-id="${removedWorkoutID}"]`).parentElement
     .parentElement.parentElement;
   animationOfDisapiaring(deletedWorkoutCard);
-}
+};
 
 const favoritesWorkoutContainer = document.querySelector('.favorites-contanier-block');
 
-favoritesWorkoutContainer.addEventListener('click', e => {
-  if (e.target.classList.contains('favorites-icon-svg')) {
-    const workoutIdToDelete = e.target.dataset.id;
-    removeFromFavotites(workoutIdToDelete);
-    removeWorkoutCard(workoutIdToDelete);
-  }
-  return;
-});
+
+if (window.location.pathname === "/favorites.html") {
+  favoritesWotkoutContainer.addEventListener('click', e => {
+    if (e.target.classList.contains('favorites-icon-svg')) {
+      const workoutIdToDelete = e.target.dataset.id;
+      removeFromFavotites(workoutIdToDelete);
+      removeWorkoutCard(workoutIdToDelete);
+    }
+    return;
+  });
+};

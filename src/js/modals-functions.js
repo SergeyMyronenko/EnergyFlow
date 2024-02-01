@@ -97,7 +97,9 @@ function handleRemoveFromFavorites(e) {
   localStorage.setItem(LOCAL_STORAGE_KEY, newFavoritesWorkouts);
 
   refs.body.classList.remove('body-modal');
-  // operationSuccess('You have removed it from favorites');
-  // removeWorkoutCard(e.target.d ataset.id);
+
+  if (window.location.pathname === "/favorites.html") {
+    removeWorkoutCard(e.target.dataset.id);
+  };
   resetForm();
 }
