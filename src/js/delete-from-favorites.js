@@ -29,11 +29,12 @@ function removeWorkoutCard(removedWorkoutID) {
   animationOfDisapiaring(deletedWorkoutCard);
 };
 
-const favoritesWorkoutContainer = document.querySelector('.favorites-contanier-block');
+
 
 
 if (window.location.pathname === "/favorites.html") {
-  favoritesWotkoutContainer.addEventListener('click', e => {
+  const favoritesWorkoutContainer = document.querySelector('.favorites-contanier-block');
+  favoritesWorkoutContainer.addEventListener('click', e => {
     if (e.target.classList.contains('favorites-icon-svg')) {
       const workoutIdToDelete = e.target.dataset.id;
       removeFromFavotites(workoutIdToDelete);
