@@ -110,7 +110,6 @@ function changingPaginationBtnStyle(e) {
   const pageNumber = e.target.textContent.trim();
   const previousActiveBtn = document.querySelector('.exersizes-pagination-item-active');
   const currentActiveBtn = e.target.parentElement;
-  console.log(currentActiveBtn);
   previousActiveBtn.classList.remove('exersizes-pagination-item-active');
   currentActiveBtn.classList.add('exersizes-pagination-item-active');
   currentActiveBtn.style.border = 'var(--primary-color) 1px solid';
