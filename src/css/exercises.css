@@ -884,6 +884,18 @@ html {
     min-height: 827px;
     width: 100%;
   }
+  .card-title-wrapper {
+    width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-title-last {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .just-wrapper {
     display: flex;
     column-gap: 8px;

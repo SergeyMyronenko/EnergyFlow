@@ -317,9 +317,11 @@ function renderExersizesCard(resp) {
 <svg class="exersizes-card-title-icon" width="24" height="24" aria-label="Runner icon">
                     <use href="${icons}#runner"></use>
                 </svg>
-                <h3 class="exersizes-card-title-h" aria-description="${
+                <div class="card-title-wrapper">
+                <h3 class="exersizes-card-title-h card-title-last" aria-description="${
                   el.name
-                }">${exerciseName}</h3>
+                }">${exerciseName}</h3></div>
+    </div>
     </div>
     <div class="just-wrapper">
    
