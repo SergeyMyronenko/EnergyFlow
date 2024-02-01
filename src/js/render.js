@@ -1,4 +1,5 @@
 import icons from '../img/sprite.svg';
+import dumb from '../img/dumbbell.png';
 
 export function renderFavorites() {
   const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
@@ -8,7 +9,7 @@ export function renderFavorites() {
   favoritesContainer.innerHTML = '';
 
   if (storedData.length === 0) {
-    favoritesContainer.innerHTML = `<img class="message-info-svg" src="./img/dumbbell.png" alt="dumbbell" />
+    favoritesContainer.innerHTML = `<img class="message-info-svg" src="${dumb}" alt="dumbbell" />
       <p class="message-info-text">
         It appears that you haven't added any exercises to your favorites yet.
         To get started, you can add exercises that you like to your favorites

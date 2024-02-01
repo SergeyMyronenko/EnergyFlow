@@ -2,7 +2,7 @@ import { getData, createMarkup } from './exercises-modal';
 import { resetForm } from './send-rating-modal';
 import { LOCAL_STORAGE_KEY } from './add-to-favorites';
 import { operationSuccess } from './izitoasts';
-import { removeWorkoutCard } from './delete-from-favorites';
+// import { removeWorkoutCard } from './delete-from-favorites';
 
 export let id;
 const refs = {
@@ -95,10 +95,9 @@ function handleRemoveFromFavorites(e) {
     favoritesWorkout.filter(workout => workout._id !== e.target.dataset.id)
   );
   localStorage.setItem(LOCAL_STORAGE_KEY, newFavoritesWorkouts);
-
-<<<<<<< Updated upstream
+  
   refs.body.classList.remove('body-modal');
-=======
+  
   const removeFromFavIcon = document.querySelector(".modal-button-favorites-rem > .modal-button-favorites-icon")
 
   removeFromFavIcon.style.animation = 'unscale-animation 500ms cubic-bezier(.46,.51,.73,.7)';
@@ -110,7 +109,6 @@ function handleRemoveFromFavorites(e) {
     resetForm();
   }, 550);
 
->>>>>>> Stashed changes
   if (window.location.pathname === "/favorites.html") {
     removeWorkoutCard(e.target.dataset.id);
   };
