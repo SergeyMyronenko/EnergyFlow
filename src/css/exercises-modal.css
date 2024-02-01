@@ -5,17 +5,32 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 10;
+  z-index: 51;
   opacity: 1;
   pointer-events: auto;
   display: flex;
   align-items: center;
   overflow-y: auto;
 }
+.body-modal {
+  overflow: hidden;
+}
 
 .modal-wrapper {
   margin: auto;
+  left: -200%;
+  top: -200%;
+  transform: translate(0, 0) scale(0.1);
+  transition: opacity 300ms ease-in-out, top 100ms ease-in-out, transform 1000ms ease-in-out;
 }
+
+.modal.is-open > .modal-wrapper {
+  top: 50%;
+  left: 50%;
+  transform: translate(0, 0) scale(1);
+  transition: transform 550ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .modal-inner {
   margin: 40px 0;
   background: #f6f6f6;
@@ -34,16 +49,13 @@
 }
 
 .modal-img {
-  background-image: linear-gradient(
-      0deg,
-      rgba(27, 27, 27, 0.2) 0%,
-      rgba(27, 27, 27, 0.2) 100%
-    ),
+  background-image: linear-gradient(0deg, rgba(27, 27, 27, 0.2) 0%, rgba(27, 27, 27, 0.2) 100%),
     url();
-  width: 270px;
+  width: 295px;
   height: 258px;
   border-radius: 12px;
 }
+
 .modal-button-close {
   position: absolute;
   top: 14px;
@@ -198,12 +210,31 @@
   font-weight: 400;
   line-height: 1.28;
   border: none;
+  transition: transform 800ms ease-in-out;
   transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-button-favorites-rem {
+  display: flex;
+  padding: 12px 28px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 30px;
+  background: var(--grey);
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.28;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button-favorites:hover,
 .modal-button-favorites:focus,
-.modal-button-favorites:focus-visible {
+.modal-button-favorites:focus-visible,
+.modal-button-favorites-rem:hover,
+.modal-button-favorites-rem:focus,
+.modal-button-favorites-rem:focus-visible {
   background: #5f6560;
   outline: 0;
 }
@@ -215,7 +246,7 @@
 
 .modal-button-rating {
   display: block;
-  padding: 12px 106px;
+  padding: 12px;
   justify-content: center;
   align-items: center;
   border-radius: 30px;
@@ -224,14 +255,15 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
-  transition: border 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button-rating:hover,
 .modal-button-rating:focus {
-  border: 1px solid var(--grey);
+  border-color: var(--grey);
+  color: var(--grey);
   outline: none;
-
 }
 
 /*___________________________Tablet_______________________ */
@@ -305,4 +337,29 @@
   .modal-description {
     width: 342px;
   }
+}
+
+@keyframes scale-animation {
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@keyframes unscale-animation {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.modal-button-favorites-rem > .modal-button-favorites-icon {
+  fill: var(--yellow);
+  stroke: var(--yellow);
 }

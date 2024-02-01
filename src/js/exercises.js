@@ -2,29 +2,19 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://energyflow.b.goit.study/api';
 
-import icons from './img/sprite.svg';
+import icons from '../img/sprite.svg';
 
 const FILTER_IMG_LIST = document.querySelector('.exersizes-cards-container');
 
-const FILTER_IMG_CONTAINER = document.querySelector(
-  '.exersizes-cards-container-wrapper'
-);
+const FILTER_IMG_CONTAINER = document.querySelector('.exersizes-cards-container-wrapper');
 
-const EXERCISES_CARD_LIST = document.querySelector(
-  '.exersizes-result-card-container'
-);
+const EXERCISES_CARD_LIST = document.querySelector('.exersizes-result-card-container');
 
-const EXERCISES_CARD_CONTAINER = document.querySelector(
-  '.exersizes-result-card-container-wrapper'
-);
+const EXERCISES_CARD_CONTAINER = document.querySelector('.exersizes-result-card-container-wrapper');
 
-const MESSAGE_CONTAINER = document.querySelector(
-  '.exersizes-message-container'
-);
+const MESSAGE_CONTAINER = document.querySelector('.exersizes-message-container');
 
-const PAGINATION_CONTAINER = document.querySelector(
-  '.exersizes-pagination-container'
-);
+const PAGINATION_CONTAINER = document.querySelector('.exersizes-pagination-container');
 const inputContainer = document.querySelector('.exersizes-input-container');
 const clearBtn = document.querySelector('.exersizes-input-btn');
 const searchBtn = document.querySelector('.exersizes-input-btn-s');
@@ -72,11 +62,7 @@ FILTER_IMG_CONTAINER.addEventListener('click', choseFilterCard);
 function choseFilterCard(e) {
   e.preventDefault();
   addLoading();
-  if (
-    e.target.nodeName !== 'DIV' &&
-    e.target.nodeName !== 'H3' &&
-    e.target.nodeName !== 'P'
-  ) {
+  if (e.target.nodeName !== 'DIV' && e.target.nodeName !== 'H3' && e.target.nodeName !== 'P') {
     return;
   }
 
@@ -188,10 +174,7 @@ async function searchByName(e) {
     return;
   }
   addLoading();
-  const searchQuery = document
-    .querySelector('.exersizes-input')
-    .value.trim()
-    .toLowerCase();
+  const searchQuery = document.querySelector('.exersizes-input').value.trim().toLowerCase();
 
   const filterType = JSON.parse(sessionStorage.getItem('filterType'));
   const filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
@@ -275,17 +258,13 @@ function renderExersizesCard(resp) {
 
       if (viewPortWidth >= 1440) {
         if (exerciseName.length > 25) {
-          exerciseName =
-            el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
-        }
+          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
       } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
         if (exerciseName.length > 17) {
-          exerciseName =
-            el.name[0].toUpperCase() + el.name.slice(1, 16).trim() + '...';
+          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 16).trim() + '...';
         }
       } else {
-        exerciseName =
-          el.name[0].toUpperCase() + el.name.slice(1, 20).trim() + '...';
+        exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 20).trim() + '...';
         console.log('320');
       }
 
@@ -405,12 +384,7 @@ function keyGen(filterType, filterSubType, page, searchQuery) {
   } else if (!filterType && !filterSubType) {
     config.filter = 'Muscles';
     return config;
-  } else if (
-    filterType &&
-    filterSubType &&
-    window.innerWidth >= 768 &&
-    window.innerWidth < 1440
-  ) {
+  } else if (filterType && filterSubType && window.innerWidth >= 768 && window.innerWidth < 1440) {
     config.limit = 8;
   } else if (filterType && filterSubType && window.innerWidth >= 1440) {
     config.limit = 9;
@@ -483,9 +457,7 @@ async function pagination(resp, error) {
 
 function changingPaginationBtnStyle(e) {
   const pageNumber = e.target.textContent.trim();
-  const previousActiveBtn = document.querySelector(
-    '.exersizes-pagination-item-active'
-  );
+  const previousActiveBtn = document.querySelector('.exersizes-pagination-item-active');
   const currentActiveBtn = e.target;
   previousActiveBtn.classList.remove('exersizes-pagination-item-active');
   currentActiveBtn.classList.add('exersizes-pagination-item-active');
@@ -558,13 +530,8 @@ function simpleInputCleaning() {
 // =================== Функція додавання спінера, стилю search-btn-disabled, змінення стану кнопки на відключено ===================
 
 function addLoading() {
-  const loaderContainer = document.querySelector(
-    '.exersizes-header-filter-cont'
-  );
-  loaderContainer.insertAdjacentHTML(
-    'afterbegin',
-    '<span class="loader"></span>'
-  );
+  const loaderContainer = document.querySelector('.exersizes-header-filter-cont');
+  loaderContainer.insertAdjacentHTML('afterbegin', '<span class="loader"></span>');
 }
 
 // =================== Функція видалення спінера, стилю search-btn-disabled, змінення стану кнопки на включено, обнулення форми ===================
