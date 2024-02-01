@@ -59,7 +59,9 @@
               id="email"
               placeholder="Search"
               autocomplete="off"
-              aria-label="exercise search"
+              role="search"
+              aria-label="exercise serch"
+              description="Searching for exercises"
               required
             />
             <div class="exersizes-input-btn-container">
@@ -104,7 +106,9 @@
             aria-live="polite"
             aria-label="collection"
             aria-description="list of different types of activity "
-          ></ul>
+          >
+            >
+          </ul>
         </div>
         <!-- ================== Контейнер для карток другої частини. Після тесту макету - додати клас hidden ===================-->
 
@@ -127,17 +131,18 @@
         ></div>
         <!-- ==================== Пагінація =============================================== -->
         <div class="exersizes-pagination-container">
-          <ul class="exersizes-pagination-list list" aria-label="page numbers"></ul>
+          <ul
+            class="exersizes-pagination-list list"
+            aria-label="page numbers"
+          ></ul>
         </div>
       </div>
 
-      <div class="up-link hidden">
-        <a href="#top" class="up-svg link">
-          <svg width="40" height="40">
-            <use href="./img/sprite.svg#top"></use>
-          </svg>
-        </a>
-      </div>
+      <a href="#top" class="up-link">
+        <svg class="up-svg" width="40" height="40">
+          <use href="./img/sprite.svg#top"></use>
+        </svg>
+      </a>
     </div>
   </div>
 </section>
