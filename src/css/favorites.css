@@ -24,6 +24,7 @@
   width: 85px;
   height: 52px;
   margin-top: 80px;
+  margin: 0 auto;
 }
 
 .message-info-text {
@@ -35,8 +36,9 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.28;
+
+  margin: 0 auto;
   margin-top: 28px;
-  margin-bottom: 128px;
 }
 
 .favorites-card {
@@ -408,7 +410,6 @@
 
   .message-info-svg {
     margin-top: 146px;
-    text-align: center;
     width: 115px;
     height: 71px;
   }

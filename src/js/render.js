@@ -14,7 +14,7 @@ export function renderFavorites() {
         To get started, you can add exercises that you like to your favorites
         for easier access in the future.
       </p>`;
-
+    favoritesContainer.style.overflowY = 'hidden';
     mobilePagination.style.display = 'none';
   }
 
