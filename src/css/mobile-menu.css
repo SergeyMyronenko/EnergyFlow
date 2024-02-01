@@ -86,6 +86,12 @@
   border: none;
   width: 96px;
 }
+/* Стилі для активного класу */
+.mobile-menu-btn-content-home.active,
+.mobile-menu-btn-content-favorites.active {
+  background: white;
+}
+
 .mobile-menu-social-icons {
   display: flex;
   justify-content: center;
