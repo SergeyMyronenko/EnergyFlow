@@ -367,11 +367,7 @@ html {
   border-radius: 12px;
   border: 1px solid rgba(246, 246, 246, 0.3);
 
-  background: linear-gradient(
-    0deg,
-    rgba(16, 16, 16, 0.7) 0%,
-    rgba(16, 16, 16, 0.7) 100%
-  );
+  background: linear-gradient(0deg, rgba(16, 16, 16, 0.7) 0%, rgba(16, 16, 16, 0.7) 100%);
   background-size: cover;
   background-repeat: no-repeat;
   cursor: pointer;

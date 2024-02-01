@@ -1,8 +1,32 @@
 import icons from '../img/sprite.svg';
 import dumb from '../img/dumbbell.png';
+import {pagination, cardsPerPage} from './favorites-list'
+const viewPortWidth = window.innerWidth;
+export function renderFavorites(e) {
+  let storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
+  
+  if (viewPortWidth < 768) {
+  let cutStoredData = [];
+  let i = 1;
+    let currentPage = e.target.textContent;
+    let minNumOfCard = 0;
+     
+    if (!currentPage) {
+      currentPage = 1;
+    } else {
+      minNumOfCard = cardsPerPage * (currentPage - 1);
+  }
 
-export function renderFavorites() {
-  const storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
+    storedData.map(workoutCard => {
+      if (i > minNumOfCard && i <= Math.ceil(cardsPerPage * currentPage)) {
+        cutStoredData.push(workoutCard);
+      };
+      i += 1;
+    });
+    storedData = cutStoredData;
+  };
+
+
   const favoritesContainer = document.querySelector('.favorites-contanier-block');
   const mobilePagination = document.querySelector('.pagination-mobile-list');
 
@@ -93,6 +117,9 @@ export function renderFavorites() {
     .join('');
 
   favoritesList.innerHTML = favoritesHTML;
+  if (viewPortWidth < 768) {
+    pagination();
+  };
 }
 
 document.addEventListener('DOMContentLoaded', renderFavorites);
