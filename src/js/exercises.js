@@ -289,7 +289,7 @@ function renderExersizesCard(resp) {
         console.log('320');
       }
 
-      return `        <li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
+      return `<li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
     <div class="exersizes-card-header-cont">
         <div class="exersizes-card-workout-cont">
             <div class="exersizes-card-workout-header-title">workout</div>
@@ -318,10 +318,7 @@ function renderExersizesCard(resp) {
                     <use href="${icons}#runner"></use>
                 </svg>
                 <div class="card-title-wrapper">
-                <h3 class="exersizes-card-title-h card-title-last" aria-description="${
-                  el.name
-                }">${exerciseName}</h3></div>
-    </div>
+                <h3 class="exersizes-card-title-h card-title-last">${exerciseName}</h3></div>
     </div>
     <div class="just-wrapper">
    
