@@ -32,7 +32,7 @@ export function removeWorkoutCard(removedWorkoutID) {
 
 
 
-if (window.location.pathname === "/favorites.html") {
+if (window.location.pathname.endsWith("/favorites.html")) {
   const favoritesWorkoutContainer = document.querySelector('.favorites-contanier-block');
   favoritesWorkoutContainer.addEventListener('click', e => {
     if (e.target.classList.contains('favorites-icon-svg')) {
