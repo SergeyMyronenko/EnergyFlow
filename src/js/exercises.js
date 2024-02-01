@@ -29,7 +29,7 @@ const paginationListener = document.querySelector('.exersizes-pagination-list');
 const paginationBtn = document.querySelector('.exersizes-pagination-btn');
 
 // ============ Показуємо кнопку "Догори" при скролі вниз ============
-
+document.addEventListener('scroll', scrollToTopShowOrHide);
 // ============ Запуск фільтрації при завантаженні сторінки ============
 
 document.addEventListener('DOMContentLoaded', filterFetch());
