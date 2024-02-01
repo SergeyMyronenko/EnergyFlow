@@ -30,7 +30,7 @@ const paginationBtn = document.querySelector('.exersizes-pagination-btn');
 
 // ============ Показуємо кнопку "Догори" при скролі вниз ============
 
-// document.addEventListener('scroll', scrollToTopShowOrHide);
+scrollToTopShowOrHide();
 
 // ============ Запуск фільтрації при завантаженні сторінки ============
 
@@ -40,20 +40,19 @@ document.addEventListener('DOMContentLoaded', filterFetch());
 
 filterListener.addEventListener('click', e => {
   e.preventDefault();
+  addLoading();
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
-    addLoading();
     const filterType = e.target.textContent.trim();
     sessionStorage.clear();
     sessionStorage.setItem('filterType', JSON.stringify(filterType));
     filterFetch(filterType);
-    scrollPage();
     exerciseNameHiding();
     inputHidingAndRemoveListeners();
     changeFilterBtnStyle(e);
+    removeLoading();
   }
-  removeLoading();
 });
 
 // ============ Запуск фільтрації при кліку на загальну картку ============
@@ -63,22 +62,17 @@ FILTER_IMG_CONTAINER.addEventListener('click', choseFilterCard);
 function choseFilterCard(e) {
   e.preventDefault();
   addLoading();
-   if (
-    e.target.nodeName !== 'DIV' &&
-    e.target.nodeName !== 'H3' &&
-    e.target.nodeName !== 'P'
-  ) {
+  if (e.target.nodeName !== 'DIV' && e.target.nodeName !== 'H3' && e.target.nodeName !== 'P') {
     return;
   }
-  addLoading();
+
   const filterType = e.target.dataset.filter;
   const filterSubType = e.target.dataset.target;
 
   fetchExersizes(filterType, filterSubType, page);
-  removeLoading();
-  scrollPage();
   showExerciseName(e);
   inputVisualisationAddListeners();
+  removeLoading();
   sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
   sessionStorage.setItem('filterType', JSON.stringify(filterType));
 }
@@ -87,11 +81,10 @@ function choseFilterCard(e) {
 
 PAGINATION_CONTAINER.addEventListener('click', e => {
   e.preventDefault();
-
+  addLoading();
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
-    addLoading();
     const filterType = JSON.parse(sessionStorage.getItem('filterType'));
     const page = e.target.textContent.trim();
     let filterSubType;
@@ -102,8 +95,9 @@ PAGINATION_CONTAINER.addEventListener('click', e => {
     scrollPage();
     paginationFetch(filterType, filterSubType, page);
     changingPaginationBtnStyle(e);
+
+    removeLoading();
   }
-  removeLoading();
 });
 
 //  ===================== Запит по фільтру типів =====================
@@ -260,7 +254,25 @@ function renderExersizesCard(resp) {
       let exerciseName = el.name;
       let exerciseTarget = el.target;
       id = el._id;
-      return `<li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
+      const viewPortWidth = window.innerWidth;
+
+      if (viewPortWidth >= 1440) {
+        if (exerciseName.length > 25) {
+          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
+        }
+        if (exerciseTarget.length >= 9) {
+          exerciseTarget = el.target[0].toUpperCase() + el.target.slice(1, 8).trim() + '...';
+        }
+      } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
+        if (exerciseName.length > 17) {
+          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 16).trim() + '...';
+        }
+      } else {
+        exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 20).trim() + '...';
+        console.log('320');
+      }
+
+      return `        <li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
     <div class="exersizes-card-header-cont">
         <div class="exersizes-card-workout-cont">
             <div class="exersizes-card-workout-header-title">workout</div>
@@ -288,25 +300,22 @@ function renderExersizesCard(resp) {
 <svg class="exersizes-card-title-icon" width="24" height="24" aria-label="Runner icon">
                     <use href="${icons}#runner"></use>
                 </svg>
-                <div class="card-title-wrapper">
-                <h3 class="exersizes-card-title-h card-title-last">${exerciseName}</h3></div>
+                <h3 class="exersizes-card-title-h" aria-description="${
+                  el.name
+                }">${exerciseName}</h3>
     </div>
-    <div class="just-wrapper">
-   
-        <p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
+    <ul class="exersizes-card-info-list">
+        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
             <span class="exersizes-card-info-data" data-burning-calories aria-label="Calories time">${
               el.burnedCalories
-            } / ${el.time} min</span><p>
-        <p class="exersizes-card-info-descr">Body part:
+            } / ${el.time} min</span></p></li>
+        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Body part">Body part:
             <span class="exersizes-card-info-data" data-body-type>${
               el.bodyPart[0].toUpperCase() + el.bodyPart.slice(1)
-            }</span></p>
-        <p class="exersizes-card-info-descr last">Target:
-            <span class="exersizes-card-info-data" data-filter-sub-type>${
-              exerciseTarget[0].toUpperCase() + exerciseTarget.slice(1)
-            }</span></p>
-   
-    </div>
+            }</span></p></li>
+        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Exercise name">Target:
+            <span class="exersizes-card-info-data" data-filter-sub-type>${exerciseTarget}</span></p></li>
+    </ul>
 </div></li>`;
     })
     .join('');
@@ -458,10 +467,10 @@ function changingPaginationBtnStyle(e) {
 // =================== Функція повернення сторінки до форми пошуку ===================
 
 function scrollToTopShowOrHide() {
-  if (window.scrollY > 100) {
-    document.querySelector('.up-link').classList.remove('hidden');
+  if (window.scrollY > 120) {
+    document.querySelector('.up-link').classList.add('show');
   } else {
-    document.querySelector('.up-link').classList.add('hidden');
+    document.querySelector('.up-link').classList.remove('show');
   }
 }
 
