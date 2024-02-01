@@ -30,8 +30,6 @@ const paginationBtn = document.querySelector('.exersizes-pagination-btn');
 
 // ============ Показуємо кнопку "Догори" при скролі вниз ============
 
-scrollToTopShowOrHide();
-
 // ============ Запуск фільтрації при завантаженні сторінки ============
 
 document.addEventListener('DOMContentLoaded', filterFetch());
@@ -254,25 +252,8 @@ function renderExersizesCard(resp) {
       let exerciseName = el.name;
       let exerciseTarget = el.target;
       id = el._id;
-      const viewPortWidth = window.innerWidth;
 
-      if (viewPortWidth >= 1440) {
-        if (exerciseName.length > 25) {
-          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
-        }
-        if (exerciseTarget.length >= 9) {
-          exerciseTarget = el.target[0].toUpperCase() + el.target.slice(1, 8).trim() + '...';
-        }
-      } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
-        if (exerciseName.length > 17) {
-          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 16).trim() + '...';
-        }
-      } else {
-        exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 20).trim() + '...';
-        // console.log('320');
-      }
-
-      return `        <li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
+      return `<li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
     <div class="exersizes-card-header-cont">
         <div class="exersizes-card-workout-cont">
             <div class="exersizes-card-workout-header-title">workout</div>
@@ -300,22 +281,25 @@ function renderExersizesCard(resp) {
 <svg class="exersizes-card-title-icon" width="24" height="24" aria-label="Runner icon">
                     <use href="${icons}#runner"></use>
                 </svg>
-                <h3 class="exersizes-card-title-h" aria-description="${
-                  el.name
-                }">${exerciseName}</h3>
+                <div class="card-title-wrapper">
+                <h3 class="exersizes-card-title-h card-title-last">${exerciseName}</h3></div>
     </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
+    <div class="just-wrapper">
+   
+        <p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
             <span class="exersizes-card-info-data" data-burning-calories aria-label="Calories time">${
               el.burnedCalories
-            } / ${el.time} min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Body part">Body part:
+            } / ${el.time} min</span><p>
+        <p class="exersizes-card-info-descr">Body part:
             <span class="exersizes-card-info-data" data-body-type>${
               el.bodyPart[0].toUpperCase() + el.bodyPart.slice(1)
-            }</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Exercise name">Target:
-            <span class="exersizes-card-info-data" data-filter-sub-type>${exerciseTarget}</span></p></li>
-    </ul>
+            }</span></p>
+        <p class="exersizes-card-info-descr last">Target:
+            <span class="exersizes-card-info-data" data-filter-sub-type>${
+              exerciseTarget[0].toUpperCase() + exerciseTarget.slice(1)
+            }</span></p>
+   
+    </div>
 </div></li>`;
     })
     .join('');
@@ -467,10 +451,10 @@ function changingPaginationBtnStyle(e) {
 // =================== Функція повернення сторінки до форми пошуку ===================
 
 function scrollToTopShowOrHide() {
-  if (window.scrollY > 120) {
-    document.querySelector('.up-link').classList.add('show');
+  if (window.scrollY > 100) {
+    document.querySelector('.up-link').classList.remove('hidden');
   } else {
-    document.querySelector('.up-link').classList.remove('show');
+    document.querySelector('.up-link').classList.add('hidden');
   }
 }
 
