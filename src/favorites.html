@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Favorites</title>
-    <link rel="icon" type="image/svg+xml" href="./img/icon.svg" />
+    <link rel="icon" type="image/svg+xml" href="./img/icon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -17,10 +17,13 @@
 
   <body>
     <load src="./partials/favorites-header.html" />
+    <load src="./partials/mobile-menu.html" />
     <load src="./partials/favorites-quote.html" />
-    <load src="./partials/favorites-exercises.html" />
-    <load src="./partials/iv-buzin-favorites.html" />
+    <load src="./partials/favorites-list.html" />
+    <load src="./partials/exercises-modal.html" />
+    <load src="./partials/raiting-modal.html" />
 
-    <script type="module" src="./favorites.js"></script>
+    <script type="module" src="./favorites.js" defer></script>
+    <script type="module" src="./js/quote.js" defer></script>
   </body>
 </html>
