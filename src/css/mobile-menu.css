@@ -57,7 +57,6 @@
   padding: 6px 26px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 30px;
   /* background: var(--white); */
   color: var(--white);
@@ -74,7 +73,6 @@
   padding: 6px 26px;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   border-radius: 30px;
   /* background: var(--grey); */
   color: var(--white);
@@ -86,20 +84,12 @@
   border: none;
   width: 96px;
 }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 /* Стилі для активного класу */
 .mobile-menu-btn-content-home.active,
 .mobile-menu-btn-content-favorites.active {
   background: white;
-<<<<<<< Updated upstream
-=======
-  color: #000;
->>>>>>> Stashed changes
+  color: black;
 }
-
 .mobile-menu-social-icons {
   display: flex;
   justify-content: center;
