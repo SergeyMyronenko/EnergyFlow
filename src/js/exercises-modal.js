@@ -77,7 +77,7 @@ export function createMarkup(obj) {
   </div>
   <div class="modal-buttons">
         <button class="modal-button-favorites-rem" type="button" data-id="${obj._id}">
-          Remove from favorites
+          Remove from
           <svg
             class="modal-button-favorites-icon"
             width="20"
