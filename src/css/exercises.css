@@ -220,14 +220,9 @@ html {
   background-color: var(--dark-grey);
 }
 .up-svg {
-  display: block;
-  position: absolute;
-  top: 10%;
-  left: 1%;
   margin: 0 auto;
   fill: #fafafa;
   opacity: 0.85;
-  z-index: 9999;
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .up-svg:hover {
