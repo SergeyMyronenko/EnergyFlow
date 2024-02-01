@@ -25,15 +25,15 @@ async function addToFavorites(e) {
         return;
       }
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(inLocalStorage));
-      modalHeart.style.transform = "scale(1.4)";
+      modalHeart.style.animation = 'scale-animation 500ms cubic-bezier(.46,.51,.73,.7)';
       modalHeart.style.fill = '#EEA10C';
       modalHeart.style.stroke = '#EEA10C';
     
       setTimeout(() => {
         modalExercises.classList.remove('is-open');
-      }, 700);
+      }, 550);
 
-      body.classList.remove('body-modal');
+      // body.classList.remove('body-modal');
     }
   } catch (error) {
     console.log(error.message);
