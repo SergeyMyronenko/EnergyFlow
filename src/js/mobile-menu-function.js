@@ -22,7 +22,6 @@ function closeMobileMenu() {
 }
 
 burgerButton.addEventListener('click', openMobileMenu);
-
 mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
 
 
@@ -35,3 +34,13 @@ favoritesButton.addEventListener('click', () => {
   window.location.href = "favorites.html";
 });
 
+/* Перемекання кнопки після кліку на кнопки home та favorites */
+window.addEventListener('load', () => {
+  if (window.location.pathname.endsWith('favorites.html')) {
+    favoritesButton.classList.add('active');
+    homeButton.classList.remove('active');
+  } else {
+    homeButton.classList.add('active');
+    favoritesButton.classList.remove('active');
+  }
+});
