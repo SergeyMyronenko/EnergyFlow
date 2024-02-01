@@ -228,7 +228,7 @@ html {
   top: 10%;
   left: 10%;
   margin: 0 auto;
-  fill: #fafafa;
+  fill: var(--secondary-color);
   opacity: 0.85;
   z-index: 99999999999999999;
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
