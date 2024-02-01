@@ -1,0 +1,331 @@
+.on-home {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+}
+
+.header-main {
+  height: 52px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-burger {
+  position: relative;
+  width: 32px;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 20px;
+  display: flex;
+  border: transparent;
+  justify-content: center;
+}
+
+.burger-line,
+.burger-line::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background-color: #7e847f;
+  border-radius: 5px;
+}
+
+.burger-line::after {
+  top: 6px;
+}
+.header-social-list {
+  /* display: flex; */
+  display: none;
+  gap: 12px;
+}
+
+.header-social-list-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(126, 132, 127, 0.2);
+}
+.header-social-list-icon {
+  fill: #7e847f;
+  transition: transform 0.3s ease-in-out;
+}
+.header-social-list-icon:hover {
+  fill: #5f6560;
+
+}
+.header-logo {
+  color: #1b1b1b;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.12em;
+  letter-spacing: -0.02em;
+  margin-left: 20px;
+}
+.header-nav {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between;  */
+}
+.header-nav-list {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 211px;
+  height: 52px;
+  background-color: #7e847f;
+  border-radius: 60px;
+  margin: 0;
+  padding: 0;
+  gap: 16px;
+}
+.header-list-item {
+  display: flex;
+  justify-content: center;
+  font-family: 'DM Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+/* будет добавляться класс и меняться цвет шрифта у фейворитс */
+/* .header-home{
+  width: 96px;
+  height: 36px;
+  padding: 6px 26px;
+  background-color: white;
+  color: #1B1B1B;
+  border-radius: 30px;
+} */
+
+.header-favorites {
+  /* при переходе на фейворитс у хоум будет меняться цвет на белый */
+  width: 96px;
+  height: 36px;
+  padding: 6px 26px;
+  background-color: white;
+  color: #1b1b1b;
+  border-radius: 30px;
+}
+.mobile-menu-wrapper.modal-is-hidden {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header-burger {
+    display: none;
+  }
+  .header-social-list {
+    /* display: flex; */
+    display: none;
+    gap: 12px;
+  }
+
+  .header-social-list-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(126, 132, 127, 0.2);
+  }
+  .header-social-list-icon {
+    fill: #7e847f;
+  }
+  .header-social-list-icon:hover {
+    fill: #5f6560;
+  }
+  .header-logo {
+    color: #1b1b1b;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.12em;
+    letter-spacing: -0.02em;
+    margin-left: 20px;
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between;  */
+  }
+  .header-nav-list {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 52px;
+    background-color: #7e847f;
+    border-radius: 60px;
+    margin: 0;
+    padding: 0;
+    gap: 16px;
+  }
+  .header-list-item {
+    display: flex;
+    justify-content: center;
+    font-family: 'DM Sans';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+  }
+  /* будет добавляться класс и меняться цвет шрифта у фейворитс */
+  /* .header-home{
+    width: 96px;
+    height: 36px;
+    padding: 6px 26px;
+    background-color: white;
+    color: #1B1B1B;
+    border-radius: 30px;
+  } */
+
+  .header-favorites {
+    /* при переходе на фейворитс у хоум будет меняться цвет на белый */
+    width: 96px;
+    height: 36px;
+    padding: 6px 26px;
+    background-color: white;
+    color: #1b1b1b;
+    border-radius: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .on-home {
+    top: 24px;
+  }
+
+  .header-burger {
+    display: none;
+  }
+  .header-social-list {
+    display: flex;
+  }
+  .header-nav-list {
+    display: flex;
+  }
+  .header-logo {
+    font-size: 28px;
+    line-height: 1em;
+    letter-spacing: -0.02em;
+  }
+  .header-social-list {
+    margin-right: 32px;
+  }
+  .header-logo {
+    margin-left: 32px;
+  }
+}
+@media (min-width: 1440px) {
+  .on-home {
+    top: 32px;
+  }
+  .header-social-list {
+    margin-right: 48px;
+  }
+  .header-logo {
+    margin-left: 48px;
+  }
+}
+
+/* Animation of pages hover */
+@media (min-width: 768px) {
+  .on-home .header-nav-list {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    width: 211px;
+    height: 52px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 42px;
+    padding-right: 16px;
+    border-radius: 60px;
+    background: #7e847f;
+  }
+
+  .on-home .ghost {
+    position: absolute;
+    width: 96px;
+    height: 36px;
+    left: 16px;
+    border-radius: 60px;
+    background-color: #fff;
+    z-index: 1;
+    transition: transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .on-home .link-home {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    transition: color 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .on-home .link-favorites {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    transition: color 1.5s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .on-home .home {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+  }
+  .on-home .favorites {
+    position: relative;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 110%;
+    height: 100%;
+    background-color: transparent;
+  }
+
+  .on-home .favorites:hover > .link-favorites {
+    transform: translateX(-40%);
+  }
+
+  .on-home .favorites:hover > .link-favorites {
+    color: #000;
+  }
+
+  .on-home .favorites:hover + .home > .link-home {
+    color: #fff;
+  }
+
+  .on-home .favorites:hover + .home > .link-home {
+    transform: translateX(-30%);
+  }
+
+  .on-home .favorites:hover ~ .ghost {
+    transform: translateX(73%);
+  }
+
+  .on-home .d:first-child:hover .d:last-child {
+    background-color: #000;
+  }
+}

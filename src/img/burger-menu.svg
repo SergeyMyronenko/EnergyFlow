@@ -1,0 +1,8 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-burger-menu" viewBox="0 0 64 32">
+<path fill="none" stroke="#7e847f" style="stroke: var(--color1, #7e847f)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M56 20.667h-48"></path>
+<path fill="none" stroke="#7e847f" style="stroke: var(--color1, #7e847f)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M56 10h-48"></path>
+</symbol>
+</defs>
+</svg>

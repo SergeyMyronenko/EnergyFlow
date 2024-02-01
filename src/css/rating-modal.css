@@ -5,12 +5,23 @@
     border-radius: 20px;
     background-color: var(--secondary-color);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 9999;
     padding: 40px 20px;
+    left: -200%;
+    top: -200%;
+    transform: translate(-50%, -50%) scale(0.1);
+    transition: opacity 300ms ease-in-out,
+                top 100ms ease-in-out,
+                transform 1000ms ease-in-out;
   }
+
+  .js-backdrop-modal.is-open>.rating-modal-wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .rating-close {
     position: absolute;
     top: 14px;
@@ -46,27 +57,54 @@
     font-family: 'DM Sans';
     line-height: 18px;
   }
+  .simple-rating {
+    position: relative;
+    font-size: 20px;
+    display: inline-block;
+  }
+  .simple-rating::before {
+    content: '★★★★★';
+    display: block;
+  }
   .rating-stars-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: row-reverse;
+    overflow: hidden;
   }
-
-  .rating-star-svg {
-    background-image: url('../img/star.svg');
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 24px;
-    height: 24px;
-    transition: background-image 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  .rating-stars-item {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
   }
-  .rating-star-svg:hover,
-  .rating-star-svg:hover ~ .rating-star-svg {
-    background-image: url('../img/star-hover.svg');
+  .rating-label {
+    flex: 0 0 20%;
+    height: 100%;
+    color: var(--grey);
     cursor: pointer;
   }
-  .star-active,
-  .star-active ~ .rating-star-svg {
-    background-image: url('../img/star-hover.svg');
+  .rating-label::before {
+    content: '★';
+    display: block;
+    transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .rating-stars-item:checked,
+  .rating-stars-item:checked ~ .rating-label {
+    color: var(--yellow);
+  }
+
+  .rating-label:hover,
+  .rating-label:hover ~ .rating-label,
+  .rating-label:checked ~ .rating-label:hover {
+    color: var(--yellow);
   }
 
   .rating-form {

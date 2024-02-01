@@ -1,4 +1,4 @@
-.favorites-quote-section {
+.favorites-quote-wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -163,8 +163,8 @@
 
 /* Desktop */
 
-@media screen and (min-width: 1280px) {
-  .favorites-quote-section {
+@media screen and (min-width: 1440px) {
+  .favorites-quote-wrapper {
     flex-direction: row;
   }
 
@@ -221,17 +221,17 @@
 @media screen and (min-resolution: 192dpi) and (min-width: 768px),
   (min-resolution: 2dppx) and (min-width: 768px),
   (min-device-pixel-ratio: 2) and (min-width: 768px) {
-  .hero-photo-wrapper {
+  .quote-photo-wrapper {
     background-image: url(../img/Favorites-quote/t-f-q-img/favorites-quote-photo-tablet@2x.jpg);
   }
 }
 
 /* DPI desktop */
 
-@media screen and (min-resolution: 192dpi) and (min-width: 1280px),
-  (min-resolution: 2dppx) and (min-width: 1280px),
-  (min-device-pixel-ratio: 2) and (min-width: 1280px) {
-  .hero-photo-wrapper {
+@media screen and (min-resolution: 192dpi) and (min-width: 1440px),
+  (min-resolution: 2dppx) and (min-width: 1440px),
+  (min-device-pixel-ratio: 2) and (min-width: 1440px) {
+  .quote-photo-wrapper {
     background-image: url(../img/Favorites-quote/d-f-q-img/favorites-quote-photo-desktop@2x.jpg);
   }
 }
