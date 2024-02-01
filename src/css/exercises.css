@@ -598,6 +598,36 @@ html {
   color: var(--primary-color);
   white-space: nowrap;
 }
+.card-title-wrapper {
+  width: 215px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-title-last {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.just-wrapper {
+  display: flex;
+  column-gap: 6px;
+  row-gap: 6px;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
+  flex-wrap: wrap;
+  padding-top: 16px;
+}
+.last {
+  width: calc(100% / 2) px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 @media (min-width: 375px) {
   .exersizes-input {
     width: 295px;
@@ -809,6 +839,27 @@ html {
     line-height: 1.33;
     letter-spacing: -0.01em;
   }
+  .card-title-wrapper {
+    width: 238px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-title-last {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .just-wrapper {
+    display: flex;
+    column-gap: 8px;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+    padding-top: 8px;
+  }
 }
 /* ======================================= Адаптація під десктоп ========================================= */
 
@@ -883,6 +934,58 @@ html {
     border-radius: 30px;
     min-height: 827px;
     width: 100%;
+  }
+  .card-title-wrapper {
+    width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-title-last {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .just-wrapper {
+    display: flex;
+    column-gap: 8px;
+    text-align: left;
+    width: 392px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    padding-top: 8px;
+  }
+  .last {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-title-wrapper {
+    width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-title-last {
+    width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .just-wrapper {
+    display: flex;
+    column-gap: 8px;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    padding-top: 8px;
+  }
+  .last {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 .hidden {
