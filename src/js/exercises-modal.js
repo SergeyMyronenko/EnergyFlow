@@ -7,7 +7,8 @@ export function getData(id) {
 }
 
 export function createMarkup(obj) {
-  if (JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)).some(item => item._id === obj._id)) {
+  const localStorageData = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+  if (localStorageData && localStorageData.some(item => item._id === obj._id)) {
     return `
       <div class="modal-content">
         <img class="modal-img" src="${obj.gifUrl}" alt="">
