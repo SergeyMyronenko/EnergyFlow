@@ -202,7 +202,7 @@ html {
   position: fixed;
   width: 40px;
   height: 40px;
-  right: 16px;
+  right: 10px;
   bottom: 16px;
   width: fit-content;
   border-radius: 50%;
@@ -228,9 +228,9 @@ html {
   top: 10%;
   left: 10%;
   margin: 0 auto;
-  fill: #fafafa;
+  fill: var(--secondary-color);
   opacity: 0.85;
-  z-index: 999999;
+  z-index: 99999999999999999;
   transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 .up-svg:hover {
@@ -647,7 +647,7 @@ html {
 
   /* ================================================= */
   .exersizes-cards-container-wrapper {
-    min-height: 1061px;
+    min-height: 1601px;
   }
   /* ================================================= */
 

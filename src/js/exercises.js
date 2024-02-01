@@ -545,14 +545,9 @@ function removeLoading() {
 // =================== Скролл догори ===================
 function scrollPage() {
   let scrollTarget = document.querySelector('.exersizes-container');
-  if (window.innerWidth < 1091) {
-    const scrollingPosition = scrollTarget.getBoundingClientRect().y;
-    window.scrollBy({
-      top: scrollingPosition,
-      behavior: 'smooth',
-    });
-  }
+  const scrollingPosition = scrollTarget.getBoundingClientRect().y;
+  window.scrollBy({
+    top: scrollingPosition,
+    behavior: 'smooth',
+  });
 }
-let scrollTarget = document.querySelector('.exersizes-container');
-const scrollingPosition = scrollTarget.getBoundingClientRect().y;
-console.log(scrollingPosition);
