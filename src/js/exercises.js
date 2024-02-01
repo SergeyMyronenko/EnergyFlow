@@ -40,19 +40,20 @@ document.addEventListener('DOMContentLoaded', filterFetch());
 
 filterListener.addEventListener('click', e => {
   e.preventDefault();
-  addLoading();
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
+    addLoading();
     const filterType = e.target.textContent.trim();
     sessionStorage.clear();
     sessionStorage.setItem('filterType', JSON.stringify(filterType));
     filterFetch(filterType);
+    scrollPage();
     exerciseNameHiding();
     inputHidingAndRemoveListeners();
     changeFilterBtnStyle(e);
-    removeLoading();
   }
+  removeLoading();
 });
 
 // ============ Запуск фільтрації при кліку на загальну картку ============
@@ -62,14 +63,19 @@ FILTER_IMG_CONTAINER.addEventListener('click', choseFilterCard);
 function choseFilterCard(e) {
   e.preventDefault();
   addLoading();
-  if (e.target.nodeName !== 'DIV' && e.target.nodeName !== 'H3' && e.target.nodeName !== 'P') {
+   if (
+    e.target.nodeName !== 'DIV' &&
+    e.target.nodeName !== 'H3' &&
+    e.target.nodeName !== 'P'
+  ) {
     return;
   }
-
+  addLoading();
   const filterType = e.target.dataset.filter;
   const filterSubType = e.target.dataset.target;
 
   fetchExersizes(filterType, filterSubType, page);
+  scrollPage();
   showExerciseName(e);
   inputVisualisationAddListeners();
   removeLoading();
@@ -81,10 +87,11 @@ function choseFilterCard(e) {
 
 PAGINATION_CONTAINER.addEventListener('click', e => {
   e.preventDefault();
-  addLoading();
+
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
+    addLoading();
     const filterType = JSON.parse(sessionStorage.getItem('filterType'));
     const page = e.target.textContent.trim();
     let filterSubType;
@@ -95,9 +102,8 @@ PAGINATION_CONTAINER.addEventListener('click', e => {
     scrollPage();
     paginationFetch(filterType, filterSubType, page);
     changingPaginationBtnStyle(e);
-
-    removeLoading();
   }
+  removeLoading();
 });
 
 //  ===================== Запит по фільтру типів =====================
@@ -254,20 +260,6 @@ function renderExersizesCard(resp) {
       let exerciseName = el.name;
       let exerciseTarget = el.target;
       id = el._id;
-      const viewPortWidth = window.innerWidth;
-
-      if (viewPortWidth >= 1440) {
-        if (exerciseName.length > 25) {
-          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
-      } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
-        if (exerciseName.length > 17) {
-          exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 16).trim() + '...';
-        }
-      } else {
-        exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 20).trim() + '...';
-        console.log('320');
-      }
-
       return `<li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">
     <div class="exersizes-card-header-cont">
         <div class="exersizes-card-workout-cont">
