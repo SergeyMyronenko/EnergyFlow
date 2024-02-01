@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', filterFetch());
 
 filterListener.addEventListener('click', e => {
   e.preventDefault();
-  addLoading();
+  // addLoading();
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
@@ -51,7 +51,7 @@ filterListener.addEventListener('click', e => {
     exerciseNameHiding();
     inputHidingAndRemoveListeners();
     changeFilterBtnStyle(e);
-    removeLoading();
+    // removeLoading();
   }
 });
 
@@ -61,7 +61,7 @@ FILTER_IMG_CONTAINER.addEventListener('click', choseFilterCard);
 // ================= Функція запуску фільтрації при кліку на картку вправи =================
 function choseFilterCard(e) {
   e.preventDefault();
-  addLoading();
+  // addLoading();
   if (e.target.nodeName !== 'DIV' && e.target.nodeName !== 'H3' && e.target.nodeName !== 'P') {
     return;
   }
@@ -72,7 +72,7 @@ function choseFilterCard(e) {
   fetchExersizes(filterType, filterSubType, page);
   showExerciseName(e);
   inputVisualisationAddListeners();
-  removeLoading();
+  // removeLoading();
   sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
   sessionStorage.setItem('filterType', JSON.stringify(filterType));
 }
@@ -81,7 +81,7 @@ function choseFilterCard(e) {
 
 PAGINATION_CONTAINER.addEventListener('click', e => {
   e.preventDefault();
-  addLoading();
+  // addLoading();
   if (e.target.nodeName !== 'BUTTON') {
     return;
   } else {
@@ -96,7 +96,7 @@ PAGINATION_CONTAINER.addEventListener('click', e => {
     paginationFetch(filterType, filterSubType, page);
     changingPaginationBtnStyle(e);
 
-    removeLoading();
+    // removeLoading();
   }
 });
 
@@ -173,7 +173,7 @@ async function searchByName(e) {
   if (e.target.nodeName !== 'BUTTON' && e.keyCode !== 13) {
     return;
   }
-  addLoading();
+  // addLoading();
   const searchQuery = document.querySelector('.exersizes-input').value.trim().toLowerCase();
 
   const filterType = JSON.parse(sessionStorage.getItem('filterType'));
@@ -195,7 +195,7 @@ async function searchByName(e) {
     renderMessage();
   }
   simpleInputCleaning();
-  removeLoading();
+  // removeLoading();
 }
 
 //  ===================== Вставлення карток по фільтру =====================
@@ -269,7 +269,7 @@ function renderExersizesCard(resp) {
         }
       } else {
         exerciseName = el.name[0].toUpperCase() + el.name.slice(1, 20).trim() + '...';
-        console.log('320');
+        // console.log('320');
       }
 
       return `        <li class="second-filter" aria-label="Exercise"><div class="exersizes-card" tabindex="0">

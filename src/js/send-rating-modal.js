@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { id } from './modals-functions';
+// import { id } from './modals-functions';
 import { operationSuccess } from './izitoasts';
 
 const refs = {
@@ -21,7 +21,8 @@ function handleStarClick(e) {
 
 async function handleSubmit(e) {
   e.preventDefault();
-
+  console.log(e.target);
+  const id = e.target.dataset.id;
   try {
     const response = await axios.patch(
       `https://energyflow.b.goit.study/api/exercises/${id}/rating`,
