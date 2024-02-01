@@ -278,10 +278,6 @@ function renderExersizesCard(resp) {
           exerciseName =
             el.name[0].toUpperCase() + el.name.slice(1, 25).trim() + '...';
         }
-        if (exerciseTarget.length >= 9) {
-          exerciseTarget =
-            el.target[0].toUpperCase() + el.target.slice(1, 8).trim() + '...';
-        }
       } else if (viewPortWidth < 1440 && viewPortWidth >= 768) {
         if (exerciseName.length > 17) {
           exerciseName =
@@ -325,18 +321,22 @@ function renderExersizesCard(resp) {
                   el.name
                 }">${exerciseName}</h3>
     </div>
-    <ul class="exersizes-card-info-list">
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
+    <div class="just-wrapper">
+   
+        <p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
             <span class="exersizes-card-info-data" data-burning-calories aria-label="Calories time">${
               el.burnedCalories
-            } / ${el.time} min</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Body part">Body part:
+            } / ${el.time} min</span><p>
+        <p class="exersizes-card-info-descr">Body part:
             <span class="exersizes-card-info-data" data-body-type>${
               el.bodyPart[0].toUpperCase() + el.bodyPart.slice(1)
-            }</span></p></li>
-        <li class="exersizes-card-info-item"><p class="exersizes-card-info-descr" aria-label="Exercise name">Target:
-            <span class="exersizes-card-info-data" data-filter-sub-type>${exerciseTarget}</span></p></li>
-    </ul>
+            }</span></p>
+        <p class="exersizes-card-info-descr last">Target:
+            <span class="exersizes-card-info-data" data-filter-sub-type>${
+              exerciseTarget[0].toUpperCase() + exerciseTarget.slice(1)
+            }</span></p>
+   
+    </div>
 </div></li>`;
     })
     .join('');

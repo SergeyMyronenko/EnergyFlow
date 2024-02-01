@@ -884,6 +884,20 @@ html {
     min-height: 827px;
     width: 100%;
   }
+  .just-wrapper {
+    display: flex;
+    column-gap: 8px;
+    text-align: left;
+    width: 392px;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    padding-top: 8px;
+  }
+  .last {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .hidden {
   display: none;
