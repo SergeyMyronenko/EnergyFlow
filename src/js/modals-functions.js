@@ -95,11 +95,21 @@ function handleRemoveFromFavorites(e) {
     favoritesWorkout.filter(workout => workout._id !== e.target.dataset.id)
   );
   localStorage.setItem(LOCAL_STORAGE_KEY, newFavoritesWorkouts);
-
+  
   refs.body.classList.remove('body-modal');
+  
+  const removeFromFavIcon = document.querySelector(".modal-button-favorites-rem > .modal-button-favorites-icon")
+
+  removeFromFavIcon.style.animation = 'unscale-animation 500ms cubic-bezier(.46,.51,.73,.7)';
+  removeFromFavIcon.style.fill = 'none';
+  removeFromFavIcon.style.stroke = '#f6f6f6';
+
+  setTimeout(() => {
+    refs.body.classList.remove('body-modal')
+    resetForm();
+  }, 550);
 
   if (window.location.pathname === "/favorites.html") {
     removeWorkoutCard(e.target.dataset.id);
   };
-  resetForm();
 }
