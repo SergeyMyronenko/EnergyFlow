@@ -59,8 +59,8 @@
   align-items: center;
   gap: 10px;
   border-radius: 30px;
-  background: var(--white);
-  color: var(--primary-color);
+  /* background: var(--white); */
+  color: var(--white);
   font-family: 'DM Sans';
   font-size: 16px;
   font-style: normal;
@@ -76,7 +76,7 @@
   align-items: center;
   gap: 10px;
   border-radius: 30px;
-  background: var(--grey);
+  /* background: var(--grey); */
   color: var(--white);
   font-family: 'DM Sans';
   font-size: 16px;
@@ -86,10 +86,18 @@
   border: none;
   width: 96px;
 }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 /* Стилі для активного класу */
 .mobile-menu-btn-content-home.active,
 .mobile-menu-btn-content-favorites.active {
   background: white;
+<<<<<<< Updated upstream
+=======
+  color: #000;
+>>>>>>> Stashed changes
 }
 
 .mobile-menu-social-icons {
