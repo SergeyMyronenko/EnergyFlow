@@ -30,7 +30,7 @@ const paginationBtn = document.querySelector('.exersizes-pagination-btn');
 
 // ============ Показуємо кнопку "Догори" при скролі вниз ============
 
-document.addEventListener('scroll', scrollToTopShowOrHide);
+// document.addEventListener('scroll', scrollToTopShowOrHide);
 
 // ============ Запуск фільтрації при завантаженні сторінки ============
 
