@@ -2,7 +2,7 @@ import { getData, createMarkup } from './exercises-modal';
 import { resetForm } from './send-rating-modal';
 import { LOCAL_STORAGE_KEY } from './add-to-favorites';
 import { operationSuccess } from './izitoasts';
-import { removeWorkoutCard } from './delete-from-favorites';
+// import { removeWorkoutCard } from './delete-from-favorites';
 
 export let id;
 const refs = {
@@ -97,6 +97,7 @@ function handleRemoveFromFavorites(e) {
   localStorage.setItem(LOCAL_STORAGE_KEY, newFavoritesWorkouts);
 
   refs.body.classList.remove('body-modal');
+
   if (window.location.pathname === "/favorites.html") {
     removeWorkoutCard(e.target.dataset.id);
   };

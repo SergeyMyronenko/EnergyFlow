@@ -23,13 +23,14 @@ function animationOfDisapiaring(deletedElement) {
   setTimeout(() => deletedElement.remove(), 1000);
 }
 
-export function removeWorkoutCard(removedWorkoutID) {
+function removeWorkoutCard(removedWorkoutID) {
   const deletedWorkoutCard = document.querySelector(`[data-id="${removedWorkoutID}"]`).parentElement
     .parentElement.parentElement;
   animationOfDisapiaring(deletedWorkoutCard);
 };
 
-const favoritesWotkoutContainer = document.querySelector('.favorites-contanier-block');
+const favoritesWorkoutContainer = document.querySelector('.favorites-contanier-block');
+
 
 if (window.location.pathname === "/favorites.html") {
   favoritesWotkoutContainer.addEventListener('click', e => {
