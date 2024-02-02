@@ -79,7 +79,6 @@ async function imageRenderingByType(e) {
     try {
       addLoading();
       fetchExersizes(filterType, filterSubType, page);
-      removeLoading();
       showExerciseName(e);
       inputVisualisationAddListeners();
       sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
@@ -194,13 +193,14 @@ async function searchByName(e) {
   if (e.target.nodeName !== 'BUTTON' && e.keyCode !== 13) {
     return;
   }
-  // addLoading();
+
   const searchQuery = document.querySelector('.exersizes-input').value.trim().toLowerCase();
 
   const filterType = JSON.parse(sessionStorage.getItem('filterType'));
   const filterSubType = JSON.parse(sessionStorage.getItem('filterSubType'));
 
   try {
+    addLoading();
     if (searchQuery.length !== 0) {
       const response = await axios.get('/exercises', {
         params: keyGen(filterType, filterSubType, page, searchQuery),
@@ -214,11 +214,11 @@ async function searchByName(e) {
     }
   } catch (error) {
     renderMessage();
+  } finally {
+    simpleInputCleaning();
+    removeLoading();
   }
-  simpleInputCleaning();
-  // removeLoading();
 }
-
 //  ===================== Вставлення карток по фільтру =====================
 
 async function renderFilterImg(resp) {
