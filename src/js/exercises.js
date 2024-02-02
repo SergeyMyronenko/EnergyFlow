@@ -78,11 +78,14 @@ async function imageRenderingByType(e) {
     const filterSubType = e.target.dataset.target;
     try {
       addLoading();
-      fetchExersizes(filterType, filterSubType, page);
-      showExerciseName(e);
-      inputVisualisationAddListeners();
-      sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
-      sessionStorage.setItem('filterType', JSON.stringify(filterType));
+      scrollPage();
+      setTimeout(() => {
+        fetchExersizes(filterType, filterSubType, page);
+        showExerciseName(e);
+        inputVisualisationAddListeners();
+        sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
+        sessionStorage.setItem('filterType', JSON.stringify(filterType));
+      }, 500);
     } catch (error) {
       renderMessage();
     } finally {
