@@ -173,10 +173,6 @@ address {
   z-index: 1;
   transition: transform 0.3s ease-in-out;
 }
-.arrow-icon {
-  position: absolute;
-  z-index: -1;
-}
 
 .exersizes-card-btn:hover,
 .exersizes-card-btn:focus {
@@ -526,6 +522,7 @@ html {
 
 .exersizes-card-btn {
   display: flex;
+  position: relative;
   width: fit-content;
   align-items: center;
   column-gap: 8px;
@@ -536,6 +533,7 @@ html {
   line-height: 1.28;
   text-transform: capitalize;
   border: none;
+  z-index: 1;
 }
 
 .exersizes-card-btn-icon {
