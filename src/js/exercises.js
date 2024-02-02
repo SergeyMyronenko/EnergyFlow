@@ -74,6 +74,14 @@ async function imageRenderingByType(e) {
   if (e.target.nodeName !== 'DIV' && e.target.nodeName !== 'H3' && e.target.nodeName !== 'P') {
     return;
   } else {
+    let delay;
+    if (e.pageY < 1200) {
+      delay = 50;
+    } else if (e.pageY > 1200 && e.pageY < 2000) {
+      delay = 250;
+    } else {
+      delay = 500;
+    }
     const filterType = e.target.dataset.filter;
     const filterSubType = e.target.dataset.target;
     try {
@@ -85,7 +93,7 @@ async function imageRenderingByType(e) {
         inputVisualisationAddListeners();
         sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
         sessionStorage.setItem('filterType', JSON.stringify(filterType));
-      }, 500);
+      }, delay);
     } catch (error) {
       renderMessage();
     } finally {
