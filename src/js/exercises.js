@@ -79,7 +79,6 @@ async function imageRenderingByType(e) {
     try {
       addLoading();
       fetchExersizes(filterType, filterSubType, page);
-      removeLoading();
       showExerciseName(e);
       inputVisualisationAddListeners();
       sessionStorage.setItem('filterSubType', JSON.stringify(filterSubType));
