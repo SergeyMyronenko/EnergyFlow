@@ -260,6 +260,15 @@ async function renderFilterImg(resp) {
     })
     .join('');
   FILTER_IMG_LIST.insertAdjacentHTML('beforeend', markup);
+  const filterCards = document.querySelectorAll('.first-filter');
+  filterCards.forEach(card => {
+    card.classList.add('animation-f');
+  });
+  const disappearance = setTimeout(() => {
+    filterCards.forEach(card => {
+      card.classList.remove('animation-f');
+    });
+  }, 500);
   FILTER_IMG_CONTAINER.addEventListener('keyup', choseByEnter);
 }
 // ======================== Функція відкривання картки вправи по Enter ========================
@@ -338,6 +347,15 @@ function renderExersizesCard(resp) {
     })
     .join('');
   EXERCISES_CARD_LIST.insertAdjacentHTML('beforeend', markup);
+  const exCards = document.querySelectorAll('.second-filter');
+  exCards.forEach(card => {
+    card.classList.add('animation');
+  });
+  const disappearance = setTimeout(() => {
+    exCards.forEach(card => {
+      card.classList.remove('animation');
+    });
+  }, 500);
   EXERCISES_CARD_CONTAINER.addEventListener('keyup', choseByEnter);
 }
 
