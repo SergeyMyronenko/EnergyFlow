@@ -203,8 +203,8 @@ html {
   z-index: 2;
   width: 40px;
   height: 40px;
-  right: 16px;
-  bottom: 16px;
+  right: 20px;
+  bottom: 35px;
   border-radius: 50%;
   opacity: 0.6;
   background-color: var(--grey);
