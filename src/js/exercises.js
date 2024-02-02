@@ -22,14 +22,16 @@ const dash = document.querySelector('.dash');
 const exerciseName = document.querySelector('.exercise-name');
 
 const page = 1;
-// let filterType;
+let filterType;
 
 const filterListener = document.querySelector('.exersizes-list');
 const paginationListener = document.querySelector('.exersizes-pagination-list');
 const paginationBtn = document.querySelector('.exersizes-pagination-btn');
 
 // ============ Показуємо кнопку "Догори" при скролі вниз ============
+
 document.addEventListener('scroll', scrollToTopShowOrHide);
+
 // ============ Запуск фільтрації при завантаженні сторінки ============
 
 document.addEventListener('DOMContentLoaded', filterFetch());
@@ -56,8 +58,9 @@ async function imageRenderingByFilter(e) {
     } catch (error) {
       console.log(error);
       renderMessage();
+    } finally {
+      removeLoading();
     }
-    removeLoading();
   }
 }
 
@@ -83,11 +86,11 @@ async function imageRenderingByType(e) {
       sessionStorage.setItem('filterType', JSON.stringify(filterType));
     } catch (error) {
       renderMessage();
+    } finally {
+      removeLoading();
     }
-    removeLoading();
   }
 }
-
 // ============ Запуск фільтрації при кліку на пагінацію ============
 
 PAGINATION_CONTAINER.addEventListener('click', imageRenderingByPagination);
@@ -112,8 +115,9 @@ async function imageRenderingByPagination(e) {
       changingPaginationBtnStyle(e);
     } catch (error) {
       renderMessage();
+    } finally {
+      removeLoading();
     }
-    removeLoading();
   }
 }
 
