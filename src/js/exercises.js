@@ -80,7 +80,11 @@ async function imageRenderingByType(e) {
     } else if (e.pageY > 1200 && e.pageY < 2000) {
       delay = 250;
     } else {
-      delay = 500;
+      if (window.innerWidth > 1440) {
+        delay = 250;
+      } else {
+        delay = 500;
+      }
     }
     const filterType = e.target.dataset.filter;
     const filterSubType = e.target.dataset.target;
@@ -193,6 +197,10 @@ async function paginationFetch(filterType, filterSubType, page) {
 
   if (filterSubType) {
     response = await fetchExersizes(filterType, filterSubType, page);
+    const exCards = document.querySelectorAll('.second-filter');
+    exCards.forEach(card => {
+      card.classList.remove('animation');
+    });
   } else {
     response = await filterFetchPag(filterType, filterSubType, page);
   }
