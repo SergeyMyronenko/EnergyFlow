@@ -978,14 +978,18 @@ html {
 @keyframes appear {
   0% {
     transform: scale(0.5);
+    opacity: 0.8;
   }
   50% {
     transform: scale(1.05);
+    opacity: 0.85;
   }
   75% {
     transform: scale(0.9);
+    opacity: 0.95;
   }
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
