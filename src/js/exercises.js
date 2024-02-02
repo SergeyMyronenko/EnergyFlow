@@ -340,7 +340,7 @@ function renderExersizesCard(resp) {
         <p class="exersizes-card-info-descr" aria-description="How much calories you burn during a certain amount of time">Burned calories:
             <span class="exersizes-card-info-data" data-burning-calories aria-label="Calories time">${
               el.burnedCalories
-            } / ${el.time} min</span><p>
+            } / ${el.time} min</span></p>
         <p class="exersizes-card-info-descr">Body part:
             <span class="exersizes-card-info-data" data-body-type>${
               el.bodyPart[0].toUpperCase() + el.bodyPart.slice(1)
