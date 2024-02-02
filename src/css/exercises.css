@@ -980,7 +980,7 @@ html {
     transform: scale(0.5);
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   75% {
     transform: scale(0.9);
