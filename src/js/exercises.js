@@ -193,6 +193,10 @@ async function paginationFetch(filterType, filterSubType, page) {
 
   if (filterSubType) {
     response = await fetchExersizes(filterType, filterSubType, page);
+    const exCards = document.querySelectorAll('.second-filter');
+    exCards.forEach(card => {
+      card.classList.remove('animation');
+    });
   } else {
     response = await filterFetchPag(filterType, filterSubType, page);
   }
