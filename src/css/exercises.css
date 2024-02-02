@@ -971,11 +971,11 @@ html {
 }
 
 .animation-f {
-  animation-name: appear;
+  animation-name: appear-f;
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
 }
-@keyframes appear {
+@keyframes appear-f {
   0% {
     transform: scale(0.5);
     opacity: 0.8;
