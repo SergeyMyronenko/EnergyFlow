@@ -26,6 +26,8 @@ function openModalHandler(e) {
   if (e.target.classList.contains('exersizes-card-btn')) {
     openExerciseModal(e);
   } else if (e.target.classList.contains('modal-button-rating')) {
+    const workoutId = e.target.dataset.id;
+    sessionStorage.setItem("workoutIdForRating", workoutId);
     openRatingModal(e);
   } else if (e.target.classList.contains('modal-button-favorites-rem')) {
     handleRemoveFromFavorites(e);
@@ -109,7 +111,7 @@ function handleRemoveFromFavorites(e) {
     resetForm();
   }, 550);
 
-  if (window.location.pathname === "/favorites.html") {
+  if (window.location.pathname.endsWith("/favorites.html")) {
     removeWorkoutCard(e.target.dataset.id);
   };
 }

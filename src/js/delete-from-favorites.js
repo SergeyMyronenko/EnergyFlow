@@ -1,4 +1,6 @@
 import { LOCAL_STORAGE_KEY } from './add-to-favorites';
+import { renderPagination } from './favorites-list';
+import { renderFavorites } from './render'
 
 export function removeFromFavotites(removedWorkoutID) {
   const favoritesWorkout = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -39,6 +41,11 @@ if (window.location.pathname.endsWith("/favorites.html")) {
       const workoutIdToDelete = e.target.dataset.id;
       removeFromFavotites(workoutIdToDelete);
       removeWorkoutCard(workoutIdToDelete);
+      setTimeout(() => {
+      renderFavorites();
+      renderPagination();
+      },550)
+      
     }
     return;
   });
