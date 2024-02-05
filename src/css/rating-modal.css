@@ -10,16 +10,14 @@
     left: -200%;
     top: -200%;
     transform: translate(-50%, -50%) scale(0.1);
-    transition: opacity 300ms ease-in-out,
-                top 100ms ease-in-out,
-                transform 1000ms ease-in-out;
+    transition: opacity 300ms ease-in-out, top 100ms ease-in-out, transform 250ms ease-in-out;
   }
 
-  .js-backdrop-modal.is-open>.rating-modal-wrapper {
+  .js-backdrop-modal.is-open > .rating-modal-wrapper {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .rating-close {

@@ -173,7 +173,7 @@ export function createMarkup(obj) {
           </svg>
         </button>
 
-        <button class="modal-button-rating">Give a rating</button>
+        <button class="modal-button-rating" data-id="${obj._id}" >Give a rating</button>
       </div>
   `;
 }

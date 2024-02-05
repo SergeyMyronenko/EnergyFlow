@@ -1,80 +1,20 @@
 import { LOCAL_STORAGE_KEY } from './add-to-favorites';
-import {renderFavorites} from './render'
+import {renderFavorites, currentPage} from './render'
 
-// let favoritesList;
-// let paginationButtons;
 
-// const itemsPerPage = 6;
-// if (window.location.pathname === '/favorites.html') {
-//   favoritesList = document.querySelector('.favorites-list');
-//   paginationButtons = document.querySelectorAll(
-//     '.favorites-pagination-block button'
-//   );
-//   showPage(1);
-  
-//   paginationButtons.forEach(button => {
-//     button.addEventListener('click', () => {
-//       const pageNumber = parseInt(button.textContent);
-//       showPage(pageNumber);
-//     });
-//   });
-// }
-
-// function showPage(pageNumber) {
-//   const startIndex = (pageNumber - 1) * itemsPerPage;
-//   const endIndex = startIndex + itemsPerPage;
-
-//   const items = favoritesList.querySelectorAll('.favorites-list-item');
-//   items.forEach((item, index) => {
-//     if (index >= startIndex && index < endIndex) {
-//       item.style.display = 'block';
-//     } else {
-//       item.style.display = 'none';
-//     }
-//   });
-
-//   paginationButtons.forEach(button => {
-//     if (parseInt(button.textContent) === pageNumber) {
-//       button.classList.add('active-btn');
-//     } else {
-//       button.classList.remove('active-btn');
-//     }
-//   });
-// };
-
-// const 
-
-// пагінація
-// async function filterFetchPag(filterType, filterSubType, page) {
-//   const response = await axios.get('/filters', {
-//     params: keyGen(filterType, filterSubType, page),
-//   });
-
-//   try {
-//     if (response.data.results.length === 0) {
-//       throw new Error('No results found...');
-//     }
-//     filterType = response.data.results[0].filter;
-//     renderFilterImg(response);
-//   } catch (error) {
-//     renderMessage();
-//   }
-// };
 export const cardsPerPage = 8;
-export function pagination() {
-  const favoritesWorkout = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+export function renderPagination() {
+  if (window.location.pathname.endsWith("/favorites.html")) {
+    const favoritesWorkout = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
   let paginationElements = '';
-  // if (error) {
-  //   paginationList.innerHTML = '';
-  //   return;
-  // }
+  const paginationList = document.querySelector(".favorites-pagination-block");
   const pagesQuantity = Math.ceil(favoritesWorkout.length / cardsPerPage);
   paginationList.innerHTML = '';
   if (pagesQuantity > 1) {
     for (let i = 1; i <= pagesQuantity; i++) {
       if (i === 1) {
         paginationElements += `<li
-                class="exersizes-pagination-item exersizes-pagination-item-active"
+                class="exersizes-pagination-item"
               >
 
           
@@ -103,30 +43,44 @@ export function pagination() {
       }
     }
   }
-  paginationList.insertAdjacentHTML('beforeend', paginationElements);
+  
+    paginationList.insertAdjacentHTML('beforeend', paginationElements);
+    const allPaginationBtns = document.querySelectorAll(".exersizes-pagination-btn");
+    Array.from(allPaginationBtns).map((btn) => {
+      if (Number(btn.textContent) === Number(currentPage)) {
+        btn.parentElement.classList.add('exersizes-pagination-item-active');
+        return;
+      }
+    })
+  }
 };
-
 function changingPaginationBtnStyle(e) {
-  const pageNumber = e.target.textContent.trim();
-  const previousActiveBtn = document.querySelector('.exersizes-pagination-item-active');
+const previousActiveBtn = document.querySelector('.exersizes-pagination-item-active');
   const currentActiveBtn = e.target.parentElement;
   previousActiveBtn.classList.remove('exersizes-pagination-item-active');
   currentActiveBtn.classList.add('exersizes-pagination-item-active');
-  currentActiveBtn.style.border = 'var(--primary-color) 1px solid';
-  currentActiveBtn.style.color = 'var(--primary-color)';
-  previousActiveBtn.style.border = 'none';
-  previousActiveBtn.style.color = 'rgba(27, 27, 27, 0.4)';
 };
+function scrollToTop(element) {
+    const scrollHeight = element.getBoundingClientRect().y;
+  window.scrollBy({
+  top: scrollHeight,
+  behavior: "smooth",
+});
+}
 
-const paginationList = document.querySelector('.favorites-pagination-block');
+if (window.location.pathname.endsWith("/favorites.html")) {
+  const paginationList = document.querySelector('.favorites-pagination-block');
 
-paginationList.addEventListener("click", (e) => {
+  paginationList.addEventListener("click", (e) => {
   if (e.target.classList.contains('exersizes-pagination-btn')) {
     changingPaginationBtnStyle(e);
     const favoritesContainer = document.querySelector('.favorites-contanier-block');
   favoritesContainer.innerHTML = '';
     renderFavorites(e);
-  }
-  
+    scrollToTop(favoritesContainer.parentElement);
+
+  };
 });
+}
+
 

@@ -1,30 +1,35 @@
 import icons from '../img/sprite.svg';
 import dumb from '../img/dumbbell.png';
-import {pagination, cardsPerPage} from './favorites-list'
+import {renderPagination, cardsPerPage} from './favorites-list'
 const viewPortWidth = window.innerWidth;
-export function renderFavorites(e) {
-  let storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
+export let currentPage;
+export function renderFavorites() {
+  if (window.location.pathname.endsWith("/favorites.html")) {
+   let storedData = JSON.parse(localStorage.getItem('favoriteData')) || [];
   
-  if (viewPortWidth < 768) {
-  let cutStoredData = [];
-  let i = 1;
-    let currentPage = e.target.textContent;
-    let minNumOfCard = 0;
+    if (viewPortWidth < 768) {
+      if (storedData.length > 8) {
+        const activePaginationBtn = document.querySelector(".exersizes-pagination-item-active")
+        let cutStoredData = [];
+        let i = 1;
+        let minNumOfCard = 0;
      
-    if (!currentPage) {
-      currentPage = 1;
-    } else {
-      minNumOfCard = cardsPerPage * (currentPage - 1);
-  }
+        if (!activePaginationBtn) {
+          currentPage = 1;
+        } else {
+          currentPage = activePaginationBtn.textContent;
+          minNumOfCard = cardsPerPage * (currentPage - 1);
+        }
 
-    storedData.map(workoutCard => {
-      if (i > minNumOfCard && i <= Math.ceil(cardsPerPage * currentPage)) {
-        cutStoredData.push(workoutCard);
+        storedData.map(workoutCard => {
+          if (i > minNumOfCard && i <= Math.ceil(cardsPerPage * currentPage)) {
+            cutStoredData.push(workoutCard);
+          };
+          i += 1;
+        });
+        storedData = cutStoredData;
       };
-      i += 1;
-    });
-    storedData = cutStoredData;
-  };
+};
 
 
   const favoritesContainer = document.querySelector('.favorites-contanier-block');
@@ -32,7 +37,7 @@ export function renderFavorites(e) {
 
   favoritesContainer.innerHTML = '';
 
-  if (storedData.length === 0) {
+  if (JSON.parse(localStorage.getItem('favoriteData')).length === 0) {
     favoritesContainer.innerHTML = `<img class="message-info-svg" src="${dumb}" alt="dumbbell" />
       <p class="message-info-text">
         It appears that you haven't added any exercises to your favorites yet.
@@ -116,10 +121,12 @@ export function renderFavorites(e) {
     })
     .join('');
 
-  favoritesList.innerHTML = favoritesHTML;
-  if (viewPortWidth < 768) {
-    pagination();
+    favoritesList.innerHTML = favoritesHTML;
   };
 }
 
 document.addEventListener('DOMContentLoaded', renderFavorites);
+    
+if (viewPortWidth < 768) {
+    document.addEventListener('DOMContentLoaded', renderPagination);
+  }; 
